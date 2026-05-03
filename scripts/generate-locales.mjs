@@ -318,18 +318,28 @@ const uiEn = {
       activeFilters: 'Active filters',
     },
     sort: {
-      label: 'Sort by',
+      label: 'Sort',
       priceAsc: 'Price: low to high',
       dateAsc: 'Next departure: earliest first',
       durationAsc: 'Duration: shortest first',
+      chipDateAsc: 'Date',
+      chipPriceAsc: 'Price',
+      chipDurationAsc: 'Duration',
     },
     filters: {
       all: 'All',
       category: 'Category',
       audience: 'Audience',
+      duration: 'Duration',
+      durationAll: 'Any duration',
+      duration1: '1 day',
+      duration2: '2 days',
+      duration3Plus: '3+ days',
       drawerTitle: 'Filter trips',
-      drawerDescription: 'Choose category and audience. Results update when you close this panel.',
+      drawerDescription:
+        'Use the dropdowns for category, audience, duration, and sort. Trip count updates below; close when you are done.',
       openButton: 'Filters',
+      resetAll: 'Clear filters',
     },
     categories: {
       kids: 'Kids',
@@ -904,17 +914,26 @@ ro.trips.results.available_one = '{{count}} excursie disponibilă'
 ro.trips.results.available_few = '{{count}} excursii disponibile'
 ro.trips.results.available_other = '{{count}} de excursii disponibile'
 ro.trips.results.activeFilters = 'Filtre active'
-ro.trips.sort.label = 'Sortează după'
+ro.trips.sort.label = 'Sortare'
 ro.trips.sort.priceAsc = 'Preț: de la mic la mare'
 ro.trips.sort.dateAsc = 'Următoarea plecare: cea mai apropiată'
 ro.trips.sort.durationAsc = 'Durată: cea mai scurtă'
+ro.trips.sort.chipDateAsc = 'Dată'
+ro.trips.sort.chipPriceAsc = 'Preț'
+ro.trips.sort.chipDurationAsc = 'Durată'
 ro.trips.filters.all = 'Toate'
 ro.trips.filters.category = 'Categorie'
 ro.trips.filters.audience = 'Public'
 ro.trips.filters.drawerTitle = 'Filtrează excursiile'
 ro.trips.filters.drawerDescription =
-  'Alege categoria și publicul. Lista se actualizează când închizi acest panou.'
+  'Folosește listele pentru categorie, public, durată și sortare. Numărul excursiilor apare dedesubt; închide panoul când ai terminat.'
 ro.trips.filters.openButton = 'Filtre'
+ro.trips.filters.resetAll = 'Șterge filtrele'
+ro.trips.filters.duration = 'Durată'
+ro.trips.filters.durationAll = 'Orice durată'
+ro.trips.filters.duration1 = '1 zi'
+ro.trips.filters.duration2 = '2 zile'
+ro.trips.filters.duration3Plus = '3+ zile'
 ro.trips.categories.kids = 'Copii'
 ro.trips.categories.family = 'Familie'
 ro.trips.categories.adults = 'Adulți'
@@ -1204,13 +1223,22 @@ ru.trips.sort.label = 'Сортировка'
 ru.trips.sort.priceAsc = 'Цена: по возрастанию'
 ru.trips.sort.dateAsc = 'Ближайший выезд: сначала раньше'
 ru.trips.sort.durationAsc = 'Длительность: сначала короче'
+ru.trips.sort.chipDateAsc = 'Дата'
+ru.trips.sort.chipPriceAsc = 'Цена'
+ru.trips.sort.chipDurationAsc = 'Длительность'
 ru.trips.filters.all = 'Все'
 ru.trips.filters.category = 'Категория'
 ru.trips.filters.audience = 'Аудитория'
 ru.trips.filters.drawerTitle = 'Фильтр туров'
 ru.trips.filters.drawerDescription =
-  'Выберите категорию и аудиторию. Список обновится после закрытия панели.'
+  'Выберите категорию, аудиторию, длительность и сортировку в списках. Число туров ниже; закройте панель, когда закончите.'
 ru.trips.filters.openButton = 'Фильтры'
+ru.trips.filters.resetAll = 'Сбросить фильтры'
+ru.trips.filters.duration = 'Длительность'
+ru.trips.filters.durationAll = 'Любая длительность'
+ru.trips.filters.duration1 = '1 день'
+ru.trips.filters.duration2 = '2 дня'
+ru.trips.filters.duration3Plus = '3+ дня'
 ru.trips.categories.kids = 'Дети'
 ru.trips.categories.family = 'Семья'
 ru.trips.categories.adults = 'Взрослые'

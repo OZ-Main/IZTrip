@@ -101,29 +101,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="rounded-[1.25rem] border border-border/80 bg-gradient-to-br from-muted/50 via-card to-card p-card shadow-card sm:p-form">
-        <div className="mx-auto max-w-content space-y-relaxed">
-          <header className="space-y-tight">
+      <section className="rounded-[1.25rem] border border-border/80 bg-card/90 p-card shadow-card sm:p-form">
+        <div className="space-y-relaxed">
+          <header className="max-w-3xl space-y-tight">
             <h2 className="font-display text-heading-xl font-semibold text-foreground">
               {t('about.audience.title')}
             </h2>
-            <p className="max-w-3xl text-body-lg text-muted-foreground">
-              {t('about.audience.lead')}
-            </p>
+            <p className="text-body-lg text-muted-foreground">{t('about.audience.lead')}</p>
           </header>
-          <ul className="mx-auto max-w-3xl divide-y divide-border/70 border-y border-border/70">
+          <div className="grid gap-relaxed sm:grid-cols-2">
             {AUDIENCE_KEYS.map((audienceKey) => (
-              <li key={audienceKey} className="flex gap-relaxed py-relaxed first:pt-0 last:pb-0">
-                <span
-                  className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent"
-                  aria-hidden
-                />
-                <span className="min-w-0 text-body leading-relaxed text-foreground">
+              <div
+                key={audienceKey}
+                className="rounded-xl border border-border/80 bg-muted/15 p-relaxed text-left shadow-sm"
+              >
+                <p className="text-body leading-relaxed text-foreground">
                   {t(`about.audience.${audienceKey}`)}
-                </span>
-              </li>
+                </p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 

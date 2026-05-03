@@ -6,14 +6,14 @@ export const tripDetailsSectionRootVariants = cva(
 
 export const tripDetailsSectionInnerVariants = cva('p-card sm:p-form')
 
-export const tripDetailsSectionHeaderVariants = cva('flex items-start gap-tight')
+export const tripDetailsSectionHeaderVariants = cva('flex items-center gap-tight')
 
 export const tripDetailsSectionIconWrapVariants = cva(
   'inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary',
 )
 
 export const tripDetailsSectionTitleVariants = cva(
-  'min-w-0 flex-1 pt-0.5 font-display text-heading-md font-semibold leading-snug text-foreground',
+  'min-w-0 flex-1 font-display text-heading-md font-semibold leading-snug text-foreground',
 )
 
 export const tripDetailsSectionBodyVariants = cva('mt-relaxed min-w-0')

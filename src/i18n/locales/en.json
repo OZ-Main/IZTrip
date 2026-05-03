@@ -187,18 +187,27 @@
       "activeFilters": "Active filters"
     },
     "sort": {
-      "label": "Sort by",
+      "label": "Sort",
       "priceAsc": "Price: low to high",
       "dateAsc": "Next departure: earliest first",
-      "durationAsc": "Duration: shortest first"
+      "durationAsc": "Duration: shortest first",
+      "chipDateAsc": "Date",
+      "chipPriceAsc": "Price",
+      "chipDurationAsc": "Duration"
     },
     "filters": {
       "all": "All",
       "category": "Category",
       "audience": "Audience",
+      "duration": "Duration",
+      "durationAll": "Any duration",
+      "duration1": "1 day",
+      "duration2": "2 days",
+      "duration3Plus": "3+ days",
       "drawerTitle": "Filter trips",
-      "drawerDescription": "Choose category and audience. Results update when you close this panel.",
-      "openButton": "Filters"
+      "drawerDescription": "Use the dropdowns for category, audience, duration, and sort. Trip count updates below; close when you are done.",
+      "openButton": "Filters",
+      "resetAll": "Clear filters"
     },
     "categories": {
       "kids": "Kids",

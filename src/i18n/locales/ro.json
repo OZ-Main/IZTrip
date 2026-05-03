@@ -188,18 +188,27 @@
       "available_few": "{{count}} excursii disponibile"
     },
     "sort": {
-      "label": "Sortează după",
+      "label": "Sortare",
       "priceAsc": "Preț: de la mic la mare",
       "dateAsc": "Următoarea plecare: cea mai apropiată",
-      "durationAsc": "Durată: cea mai scurtă"
+      "durationAsc": "Durată: cea mai scurtă",
+      "chipDateAsc": "Dată",
+      "chipPriceAsc": "Preț",
+      "chipDurationAsc": "Durată"
     },
     "filters": {
       "all": "Toate",
       "category": "Categorie",
       "audience": "Public",
+      "duration": "Durată",
+      "durationAll": "Orice durată",
+      "duration1": "1 zi",
+      "duration2": "2 zile",
+      "duration3Plus": "3+ zile",
       "drawerTitle": "Filtrează excursiile",
-      "drawerDescription": "Alege categoria și publicul. Lista se actualizează când închizi acest panou.",
-      "openButton": "Filtre"
+      "drawerDescription": "Folosește listele pentru categorie, public, durată și sortare. Numărul excursiilor apare dedesubt; închide panoul când ai terminat.",
+      "openButton": "Filtre",
+      "resetAll": "Șterge filtrele"
     },
     "categories": {
       "kids": "Copii",

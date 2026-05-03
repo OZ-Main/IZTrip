@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 
 export const tripsCatalogHeroRootVariants = cva(
-  'relative overflow-hidden rounded-[1.25rem] border border-border/80 bg-gradient-to-br from-card via-card to-muted/40 p-card shadow-card sm:p-form',
+  'relative overflow-hidden rounded-[1.25rem] border border-border/80 bg-gradient-to-br from-card via-card to-muted/35 p-card shadow-card sm:p-form',
 )
 
 export const tripsCatalogHeroGlowVariants = cva(
@@ -9,11 +9,11 @@ export const tripsCatalogHeroGlowVariants = cva(
 )
 
 export const tripsCatalogHeroStatVariants = cva(
-  'flex min-h-[44px] flex-1 flex-col gap-0.5 rounded-card border border-border/70 bg-background/70 px-card py-stack backdrop-blur-sm',
+  'flex min-h-[44px] flex-1 flex-col gap-0.5 rounded-card border border-border/80 bg-card px-card py-stack text-card-foreground shadow-sm backdrop-blur-sm sm:min-h-[3.25rem]',
 )
 
 export const tripsCatalogHeroStatLabelVariants = cva(
-  'text-caption font-semibold uppercase tracking-wide text-muted-foreground',
+  'text-caption font-semibold uppercase tracking-wide text-muted-foreground/95',
 )
 
 export const tripsCatalogHeroStatValueVariants = cva(

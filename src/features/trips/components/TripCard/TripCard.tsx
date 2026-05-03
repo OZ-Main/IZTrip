@@ -62,17 +62,17 @@ export default function TripCard({ trip }: TripCardProps) {
           <div className="flex flex-wrap gap-tight">
             <CategoryBadge
               category={trip.category}
-              className="border-white/45 bg-background/90 text-primary shadow-sm backdrop-blur-md"
+              className="border border-border/70 bg-card/95 text-foreground shadow-md ring-1 ring-black/10 backdrop-blur-md dark:bg-card/90 dark:ring-white/10"
             />
             <AudienceBadge
               audience={trip.targetAudience}
-              className="border-white/45 bg-background/90 text-primary shadow-sm backdrop-blur-md"
+              className="border border-border/70 bg-card/95 text-foreground shadow-md ring-1 ring-black/10 backdrop-blur-md dark:bg-card/90 dark:ring-white/10"
             />
           </div>
         </div>
         <div className={tripCardImageBottomMetaVariants()}>
-          <span className="inline-flex items-center gap-1">
-            <MapPin className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden />
+          <span className="inline-flex items-center gap-1.5 text-white">
+            <MapPin className="h-3.5 w-3.5 shrink-0 text-white/90" aria-hidden />
             {t(`trips.catalog.${trip.slug}.location`)}
           </span>
         </div>

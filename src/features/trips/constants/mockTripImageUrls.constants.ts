@@ -5,8 +5,8 @@ function unsplashTripImage(photoId: string): string {
 export const MOCK_TRIP_IMAGE_URLS = {
   orheiulVechi: unsplashTripImage('photo-1564501049412-61c2a3083791'),
   cricovaWine: unsplashTripImage('photo-1510812431401-41d2bd2722f3'),
-  sorocaFortress: unsplashTripImage('photo-1585208798174-6cedd86e019a'),
-  chisinauWalking: unsplashTripImage('photo-1467269204594-9661b134dd2b'),
-  saharnaTipova: unsplashTripImage('photo-1441974231531-c6227db76b6e'),
-  weekendNature: unsplashTripImage('photo-1501854140801-50d01698950b'),
+  sorocaFortress: unsplashTripImage('photo-1762224691483-13477e3d8a68'),
+  chisinauWalking: unsplashTripImage('photo-1685027693679-ae0ff848d4e1'),
+  saharnaTipova: unsplashTripImage('photo-1775034600990-cb0f78d8356d'),
+  weekendNature: unsplashTripImage('photo-1635415312333-5b5bf4149ded'),
 } as const

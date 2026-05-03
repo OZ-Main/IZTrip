@@ -33,7 +33,7 @@ export const homeHeroPreviewVariants = cva(
 )
 
 export const homeHeroPreviewImageVariants = cva(
-  'aspect-[4/3] w-full overflow-hidden rounded-[0.75rem] border border-hero-foreground/10 object-cover sm:aspect-[16/10]',
+  'aspect-[4/3] w-full overflow-hidden rounded-[0.75rem] object-cover sm:aspect-[16/10]',
 )
 
 export const homeHeroPreviewStackVariants = cva(

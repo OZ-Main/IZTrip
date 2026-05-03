@@ -25,7 +25,7 @@ export const tripCardImageTopVariants = cva(
 )
 
 export const tripCardImageBottomMetaVariants = cva(
-  'absolute bottom-card left-card right-card flex flex-col gap-0.5 text-caption font-medium text-foreground drop-shadow-sm',
+  'absolute bottom-card left-card right-card flex w-fit max-w-[min(100%,22rem)] flex-col gap-0.5 rounded-md bg-black/55 px-2.5 py-1.5 text-caption font-semibold text-white shadow-sm ring-1 ring-white/20 backdrop-blur-sm',
 )
 
 export const tripCardBodyVariants = cva('flex flex-1 flex-col gap-form-field p-card sm:gap-tight')
@@ -44,9 +44,7 @@ export const tripCardDescriptionVariants = cva(
 
 export const tripCardTrustRowVariants = cva('flex flex-wrap gap-tight')
 
-export const tripCardFooterVariants = cva(
-  'mt-auto flex flex-col gap-tight border-t border-border/60 pt-card',
-)
+export const tripCardFooterVariants = cva('mt-auto flex flex-col gap-tight pt-card')
 
 export const tripCardFooterTopVariants = cva(
   'flex flex-col gap-stack sm:flex-row sm:flex-wrap sm:items-end sm:justify-between sm:gap-tight',

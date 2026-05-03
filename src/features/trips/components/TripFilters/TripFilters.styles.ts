@@ -1,6 +1,20 @@
 import { cva } from 'class-variance-authority'
 
-export const tripFiltersRootVariants = cva('flex flex-col gap-form-field')
+export const tripFiltersRootVariants = cva('w-full min-w-0')
+
+export const tripFiltersToolbarVariants = cva(
+  'flex min-w-0 flex-col divide-y divide-border/60 overflow-hidden rounded-lg bg-muted/25 sm:flex-row sm:divide-x sm:divide-y-0 dark:bg-muted/15',
+)
+
+export const tripFiltersToolbarSegmentVariants = cva(
+  'flex min-w-0 flex-1 flex-col justify-center gap-tight px-3 py-3 sm:min-h-[4.25rem] sm:px-4 sm:py-3',
+)
+
+export const tripFiltersFieldLabelVariants = cva('text-label text-muted-foreground')
+
+export const tripFiltersSelectTriggerVariants = cva(
+  'h-10 min-h-10 w-full border-border/70 bg-gradient-to-b from-card to-card-subtle py-2 text-body-sm shadow-none sm:text-body',
+)
 
 export const tripFiltersGroupVariants = cva('space-y-tight')
 

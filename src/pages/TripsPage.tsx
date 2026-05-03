@@ -1,4 +1,4 @@
-import { Filter } from 'lucide-react'
+import { Filter, X } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, useSearchParams } from 'react-router-dom'
@@ -7,12 +7,17 @@ import EmptyState from '@/components/feedback/EmptyState/EmptyState'
 import FeaturedTrips from '@/features/home/components/FeaturedTrips/FeaturedTrips'
 import TripFilters from '@/features/trips/components/TripFilters/TripFilters'
 import TripsCatalogHero from '@/features/trips/components/TripsCatalogHero/TripsCatalogHero'
+import {
+  TRIP_DURATION_FILTER,
+  type TripDurationFilter,
+} from '@/features/trips/constants/tripDurationFilter.constants'
 import { TRIP_SORT_OPTION, type TripSortOption } from '@/features/trips/constants/tripSort.constants'
 import { MOCK_TRIPS } from '@/features/trips/data/mockTrips'
 import {
   ALL_TRIP_AUDIENCES_FILTER,
   ALL_TRIP_CATEGORIES_FILTER,
   filterTripsByCategoryAndAudience,
+  filterTripsByDuration,
   isTripCategory,
   type TripAudienceFilter,
   type TripCategoryFilter,
@@ -20,14 +25,6 @@ import {
 import { sortTrips } from '@/features/trips/helpers/tripSort.helpers'
 import { tripFiltersChipVariants } from '@/features/trips/components/TripFilters/TripFilters.styles'
 import { Button } from '@/components/ui/button'
-import { Label } from '@/components/ui/label'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 import {
   Sheet,
   SheetContent,
@@ -54,6 +51,105 @@ function audienceFilterLabel(t: (key: string) => string, value: TripAudienceFilt
   return t(`trips.audiences.${value}`)
 }
 
+function durationFilterSummaryLabel(t: (key: string) => string, value: TripDurationFilter) {
+  if (value === TRIP_DURATION_FILTER.ALL) {
+    return t('trips.filters.durationAll')
+  }
+
+  if (value === TRIP_DURATION_FILTER.ONE_DAY) {
+    return t('trips.filters.duration1')
+  }
+
+  if (value === TRIP_DURATION_FILTER.TWO_DAYS) {
+    return t('trips.filters.duration2')
+  }
+
+  return t('trips.filters.duration3Plus')
+}
+
+type TripsResultsMetaProps = {
+  count: number
+  hasActiveFilters: boolean
+  categoryFilter: TripCategoryFilter
+  audienceFilter: TripAudienceFilter
+  durationFilter: TripDurationFilter
+  t: (key: string, options?: Record<string, unknown>) => string
+  onResetFilters?: () => void
+  className?: string
+}
+
+function TripsResultsMeta({
+  count,
+  hasActiveFilters,
+  categoryFilter,
+  audienceFilter,
+  durationFilter,
+  t,
+  onResetFilters,
+  className,
+}: TripsResultsMetaProps) {
+  return (
+    <div className={cn('border-t border-border/60 pt-form-field', className)}>
+      <div className="flex flex-wrap items-start gap-x-3 gap-y-2 sm:items-center sm:justify-between">
+        <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-2">
+          <p className="shrink-0 text-body-sm font-semibold text-foreground tabular-nums sm:text-body">
+            {t('trips.results.available', { count })}
+          </p>
+          {hasActiveFilters ? (
+            <div
+              className="flex min-w-0 flex-wrap items-center gap-tight"
+              aria-label={t('trips.results.activeFilters')}
+            >
+              {categoryFilter !== ALL_TRIP_CATEGORIES_FILTER ? (
+                <span
+                  className={cn(
+                    tripFiltersChipVariants({ state: 'active' }),
+                    'pointer-events-none cursor-default',
+                  )}
+                >
+                  {categoryFilterLabel(t, categoryFilter)}
+                </span>
+              ) : null}
+              {audienceFilter !== ALL_TRIP_AUDIENCES_FILTER ? (
+                <span
+                  className={cn(
+                    tripFiltersChipVariants({ state: 'active' }),
+                    'pointer-events-none cursor-default',
+                  )}
+                >
+                  {audienceFilterLabel(t, audienceFilter)}
+                </span>
+              ) : null}
+              {durationFilter !== TRIP_DURATION_FILTER.ALL ? (
+                <span
+                  className={cn(
+                    tripFiltersChipVariants({ state: 'active' }),
+                    'pointer-events-none cursor-default',
+                  )}
+                >
+                  {durationFilterSummaryLabel(t, durationFilter)}
+                </span>
+              ) : null}
+            </div>
+          ) : null}
+        </div>
+        {hasActiveFilters && onResetFilters ? (
+          <Button
+            type="button"
+            variant="outline"
+            size="sm"
+            className="h-9 shrink-0 gap-1.5"
+            onClick={onResetFilters}
+          >
+            <X className="h-4 w-4" aria-hidden />
+            {t('trips.filters.resetAll')}
+          </Button>
+        ) : null}
+      </div>
+    </div>
+  )
+}
+
 export default function TripsPage() {
   const { t } = useTranslation()
   const [searchParams] = useSearchParams()
@@ -62,6 +158,7 @@ export default function TripsPage() {
   )
   const [audienceFilter, setAudienceFilter] =
     useState<TripAudienceFilter>(ALL_TRIP_AUDIENCES_FILTER)
+  const [durationFilter, setDurationFilter] = useState<TripDurationFilter>(TRIP_DURATION_FILTER.ALL)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [sortBy, setSortBy] = useState<TripSortOption>(TRIP_SORT_OPTION.DATE_ASC)
 
@@ -72,15 +169,27 @@ export default function TripsPage() {
     }
   }, [searchParams])
 
-  const filteredTrips = useMemo(
-    () => filterTripsByCategoryAndAudience(MOCK_TRIPS, categoryFilter, audienceFilter),
-    [audienceFilter, categoryFilter],
-  )
+  const filteredTrips = useMemo(() => {
+    const byCategoryAndAudience = filterTripsByCategoryAndAudience(
+      MOCK_TRIPS,
+      categoryFilter,
+      audienceFilter,
+    )
+    return filterTripsByDuration(byCategoryAndAudience, durationFilter)
+  }, [audienceFilter, categoryFilter, durationFilter])
 
   const sortedTrips = useMemo(() => sortTrips(filteredTrips, sortBy), [filteredTrips, sortBy])
 
   const hasActiveFilters =
-    categoryFilter !== ALL_TRIP_CATEGORIES_FILTER || audienceFilter !== ALL_TRIP_AUDIENCES_FILTER
+    categoryFilter !== ALL_TRIP_CATEGORIES_FILTER ||
+    audienceFilter !== ALL_TRIP_AUDIENCES_FILTER ||
+    durationFilter !== TRIP_DURATION_FILTER.ALL
+
+  function resetTripListFilters() {
+    setCategoryFilter(ALL_TRIP_CATEGORIES_FILTER)
+    setAudienceFilter(ALL_TRIP_AUDIENCES_FILTER)
+    setDurationFilter(TRIP_DURATION_FILTER.ALL)
+  }
 
   return (
     <div className="space-y-section">
@@ -109,20 +218,50 @@ export default function TripsPage() {
             <TripFilters
               categoryFilter={categoryFilter}
               audienceFilter={audienceFilter}
+              durationFilter={durationFilter}
               onCategoryFilterChange={setCategoryFilter}
               onAudienceFilterChange={setAudienceFilter}
+              onDurationFilterChange={setDurationFilter}
+              sortBy={sortBy}
+              onSortChange={setSortBy}
+            />
+            <TripsResultsMeta
+              count={filteredTrips.length}
+              hasActiveFilters={hasActiveFilters}
+              categoryFilter={categoryFilter}
+              audienceFilter={audienceFilter}
+              durationFilter={durationFilter}
+              t={t}
+              onResetFilters={resetTripListFilters}
             />
           </SheetContent>
         </Sheet>
       </div>
 
-      <div className="hidden rounded-[1.25rem] border border-border/80 bg-card/80 p-card shadow-card md:block md:p-form">
-        <TripFilters
-          categoryFilter={categoryFilter}
-          audienceFilter={audienceFilter}
-          onCategoryFilterChange={setCategoryFilter}
-          onAudienceFilterChange={setAudienceFilter}
-        />
+      <div className="hidden md:block">
+        <div className="rounded-xl border border-border/80 bg-card p-3 shadow-sm sm:p-4 md:p-5">
+          <div className="flex flex-col gap-4">
+            <TripFilters
+              categoryFilter={categoryFilter}
+              audienceFilter={audienceFilter}
+              durationFilter={durationFilter}
+              onCategoryFilterChange={setCategoryFilter}
+              onAudienceFilterChange={setAudienceFilter}
+              onDurationFilterChange={setDurationFilter}
+              sortBy={sortBy}
+              onSortChange={setSortBy}
+            />
+            <TripsResultsMeta
+              count={filteredTrips.length}
+              hasActiveFilters={hasActiveFilters}
+              categoryFilter={categoryFilter}
+              audienceFilter={audienceFilter}
+              durationFilter={durationFilter}
+              t={t}
+              onResetFilters={resetTripListFilters}
+            />
+          </div>
+        </div>
       </div>
 
       {filteredTrips.length === 0 ? (
@@ -134,10 +273,7 @@ export default function TripsPage() {
               type="button"
               variant="secondary"
               className="w-full sm:w-auto"
-              onClick={() => {
-                setCategoryFilter(ALL_TRIP_CATEGORIES_FILTER)
-                setAudienceFilter(ALL_TRIP_AUDIENCES_FILTER)
-              }}
+              onClick={resetTripListFilters}
             >
               {t('trips.empty.resetFilters')}
             </Button>
@@ -145,67 +281,7 @@ export default function TripsPage() {
         />
       ) : (
         <>
-          <div className="flex flex-col gap-stack rounded-[1.25rem] border border-border/80 bg-card/70 p-card shadow-card sm:flex-row sm:items-end sm:justify-between sm:gap-form md:p-form">
-            <div className="min-w-0 space-y-tight">
-              <p className="text-body font-semibold text-foreground">
-                {t('trips.results.available', { count: filteredTrips.length })}
-              </p>
-              {hasActiveFilters ? (
-                <div className="flex flex-wrap gap-tight" aria-label={t('trips.results.activeFilters')}>
-                  {categoryFilter !== ALL_TRIP_CATEGORIES_FILTER ? (
-                    <span
-                      className={cn(
-                        tripFiltersChipVariants({ state: 'active' }),
-                        'pointer-events-none cursor-default',
-                      )}
-                    >
-                      {categoryFilterLabel(t, categoryFilter)}
-                    </span>
-                  ) : null}
-                  {audienceFilter !== ALL_TRIP_AUDIENCES_FILTER ? (
-                    <span
-                      className={cn(
-                        tripFiltersChipVariants({ state: 'active' }),
-                        'pointer-events-none cursor-default',
-                      )}
-                    >
-                      {audienceFilterLabel(t, audienceFilter)}
-                    </span>
-                  ) : null}
-                </div>
-              ) : null}
-            </div>
-            <div className="flex w-full min-w-0 flex-col gap-tight sm:max-w-xs sm:items-stretch">
-              <Label htmlFor="trips-sort" className="text-label text-muted-foreground">
-                {t('trips.sort.label')}
-              </Label>
-              <Select
-                value={sortBy}
-                onValueChange={(value) => {
-                  if (
-                    value === TRIP_SORT_OPTION.PRICE_ASC ||
-                    value === TRIP_SORT_OPTION.DATE_ASC ||
-                    value === TRIP_SORT_OPTION.DURATION_ASC
-                  ) {
-                    setSortBy(value)
-                  }
-                }}
-              >
-                <SelectTrigger id="trips-sort" className="h-12 w-full">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value={TRIP_SORT_OPTION.DATE_ASC}>{t('trips.sort.dateAsc')}</SelectItem>
-                  <SelectItem value={TRIP_SORT_OPTION.PRICE_ASC}>{t('trips.sort.priceAsc')}</SelectItem>
-                  <SelectItem value={TRIP_SORT_OPTION.DURATION_ASC}>
-                    {t('trips.sort.durationAsc')}
-                  </SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-
-          <div key={`${categoryFilter}-${audienceFilter}-${sortBy}`}>
+          <div key={`${categoryFilter}-${audienceFilter}-${durationFilter}-${sortBy}`}>
             <FeaturedTrips trips={sortedTrips} />
           </div>
         </>
