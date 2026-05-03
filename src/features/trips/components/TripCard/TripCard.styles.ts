@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 
 export const tripCardRootVariants = cva(
-  'group flex h-full w-full max-w-full flex-col overflow-hidden rounded-[1.05rem] border border-border/80 bg-card text-card-foreground shadow-card transition-[transform,box-shadow] duration-motion-normal ease-motion-out',
+  'group flex h-full w-full max-w-full flex-col overflow-hidden rounded-[1.05rem] border border-border/80 bg-card text-card-foreground shadow-card transition-[transform,box-shadow] duration-[220ms] ease-motion-out',
 )
 
 export const tripCardInteractiveVariants = cva(
@@ -13,7 +13,7 @@ export const tripCardImageWrapVariants = cva(
 )
 
 export const tripCardImageVariants = cva(
-  'h-full w-full object-cover transition-transform duration-motion-slow ease-motion-out motion-safe:group-hover:scale-[1.04]',
+  'h-full w-full object-cover transition-transform duration-[240ms] ease-motion-out motion-safe:group-hover:scale-[1.03]',
 )
 
 export const tripCardImageOverlayVariants = cva(
@@ -42,6 +42,8 @@ export const tripCardDescriptionVariants = cva(
   'line-clamp-2 text-body-sm text-muted-foreground md:line-clamp-3',
 )
 
+export const tripCardTrustRowVariants = cva('flex flex-wrap gap-tight')
+
 export const tripCardFooterVariants = cva(
   'mt-auto flex flex-col gap-tight border-t border-border/60 pt-card',
 )
@@ -53,5 +55,5 @@ export const tripCardFooterTopVariants = cva(
 export const tripCardPriceVariants = cva('text-heading-md font-semibold text-primary')
 
 export const tripCardCtaVariants = cva(
-  'inline-flex min-h-11 w-full items-center justify-center rounded-button border border-primary/25 bg-primary/8 px-4 text-label font-semibold text-primary transition-[background-color,color,transform] duration-motion-fast ease-motion-out group-hover:border-primary/40 group-hover:bg-primary/12 sm:justify-start sm:border-transparent sm:bg-transparent sm:px-0 sm:pl-1 sm:group-hover:bg-transparent',
+  'inline-flex min-h-11 w-full items-center justify-center rounded-button border border-accent/35 bg-accent/12 px-4 text-label font-semibold text-accent-foreground shadow-sm transition-[background-color,color,transform,border-color,box-shadow] duration-motion-fast ease-motion-out group-hover:border-accent/50 group-hover:bg-accent/18 group-hover:shadow-sm sm:justify-start',
 )

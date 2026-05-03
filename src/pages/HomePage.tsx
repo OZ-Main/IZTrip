@@ -22,7 +22,7 @@ export default function HomePage() {
     <div className="space-y-section">
       <HomeHero previewTrip={previewTrip} />
 
-      <section className="space-y-relaxed">
+      <section className="min-w-0 max-w-full space-y-relaxed overflow-x-hidden">
         <SectionHeader
           title={t('home.featured.title')}
           description={t('home.featured.description')}

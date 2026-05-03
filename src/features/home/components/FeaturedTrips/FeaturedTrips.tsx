@@ -1,11 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 import TripCard from '@/features/trips/components/TripCard/TripCard'
-import {
-  featuredTripsGridVariants,
-  featuredTripsHomeItemVariants,
-  featuredTripsHomeLayoutVariants,
-} from '@/features/home/components/FeaturedTrips/FeaturedTrips.styles'
+import { featuredTripsGridVariants } from '@/features/home/components/FeaturedTrips/FeaturedTrips.styles'
 import type { TripDefinition } from '@/features/trips/types/trip.types'
 import { cn } from '@/shared/utils/cn'
 
@@ -18,10 +14,15 @@ type FeaturedTripsProps = {
 export default function FeaturedTrips({ trips, className, layout = 'grid' }: FeaturedTripsProps) {
   const prefersReducedMotion = useReducedMotion()
   const isHomeLayout = layout === 'home'
+  const gridClassName = cn(
+    featuredTripsGridVariants(),
+    'min-w-0 max-w-full transition-opacity duration-200 ease-motion-out',
+    className,
+  )
 
   if (prefersReducedMotion || !isHomeLayout) {
     return (
-      <div className={cn(featuredTripsGridVariants(), className)}>
+      <div className={gridClassName}>
         {trips.map((trip) => (
           <TripCard key={trip.id} trip={trip} />
         ))}
@@ -30,11 +31,11 @@ export default function FeaturedTrips({ trips, className, layout = 'grid' }: Fea
   }
 
   return (
-    <div className={cn(featuredTripsHomeLayoutVariants(), className)}>
+    <div className={gridClassName}>
       {trips.map((trip, index) => (
         <motion.div
           key={trip.id}
-          className={featuredTripsHomeItemVariants()}
+          className="min-w-0"
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.22, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}

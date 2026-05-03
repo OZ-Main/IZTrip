@@ -1,9 +1,10 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useEffect, useState } from 'react'
+import { useForm, useWatch } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
 
+import { bookingFormFieldsVariants } from '@/features/booking/components/BookingForm/BookingForm.styles'
 import {
   createBookingFormSchema,
   type BookingFormValues,
@@ -36,9 +37,10 @@ type BookingFormProps = {
   trip: TripDefinition
   user: User
   onSuccess: (outcome: 'full' | 'emailWarning') => void
+  onPreferredDateChange?: (isoDate: string) => void
 }
 
-export default function BookingForm({ trip, user, onSuccess }: BookingFormProps) {
+export default function BookingForm({ trip, user, onSuccess, onPreferredDateChange }: BookingFormProps) {
   const { t, i18n } = useTranslation()
   const [submitting, setSubmitting] = useState(false)
   const bookingFormSchema = createBookingFormSchema(t, trip)
@@ -55,6 +57,16 @@ export default function BookingForm({ trip, user, onSuccess }: BookingFormProps)
       message: '',
     },
   })
+
+  const preferredDate = useWatch({ control: form.control, name: 'preferredDate' })
+
+  useEffect(() => {
+    if (!preferredDate) {
+      return
+    }
+
+    onPreferredDateChange?.(preferredDate)
+  }, [onPreferredDateChange, preferredDate])
 
   async function onSubmit(values: BookingFormValues) {
     setSubmitting(true)
@@ -101,11 +113,7 @@ export default function BookingForm({ trip, user, onSuccess }: BookingFormProps)
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-form">
-        <div className="rounded-card border border-border/80 bg-muted/30 p-card text-body-sm text-muted-foreground">
-          <p className="font-medium text-foreground">{t(`trips.catalog.${trip.slug}.title`)}</p>
-          <p>{t(`trips.catalog.${trip.slug}.location`)}</p>
-        </div>
+      <form onSubmit={form.handleSubmit(onSubmit)} className={bookingFormFieldsVariants()} noValidate>
         <FormField
           control={form.control}
           name="fullName"
@@ -113,7 +121,7 @@ export default function BookingForm({ trip, user, onSuccess }: BookingFormProps)
             <FormItem>
               <FormLabel>{t('booking.form.fullName')}</FormLabel>
               <FormControl>
-                <Input autoComplete="name" {...field} />
+                <Input autoComplete="name" className="min-h-11" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -126,7 +134,7 @@ export default function BookingForm({ trip, user, onSuccess }: BookingFormProps)
             <FormItem>
               <FormLabel>{t('booking.form.email')}</FormLabel>
               <FormControl>
-                <Input type="email" autoComplete="email" {...field} />
+                <Input type="email" autoComplete="email" className="min-h-11" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -139,7 +147,7 @@ export default function BookingForm({ trip, user, onSuccess }: BookingFormProps)
             <FormItem>
               <FormLabel>{t('booking.form.phone')}</FormLabel>
               <FormControl>
-                <Input type="tel" autoComplete="tel" {...field} />
+                <Input type="tel" autoComplete="tel" className="min-h-11" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -153,8 +161,8 @@ export default function BookingForm({ trip, user, onSuccess }: BookingFormProps)
               <FormLabel>{t('booking.form.preferredDate')}</FormLabel>
               <Select value={field.value} onValueChange={field.onChange}>
                 <FormControl>
-                  <SelectTrigger aria-label={t('booking.form.preferredDate')}>
-                    <SelectValue />
+                  <SelectTrigger className="min-h-11 w-full" aria-label={t('booking.form.preferredDate')}>
+                    <SelectValue placeholder={t('booking.form.preferredDate')} />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -176,7 +184,7 @@ export default function BookingForm({ trip, user, onSuccess }: BookingFormProps)
             <FormItem>
               <FormLabel>{t('booking.form.peopleCount')}</FormLabel>
               <FormControl>
-                <Input type="number" min={1} max={trip.maxPeople} {...field} />
+                <Input type="number" inputMode="numeric" min={1} max={trip.maxPeople} className="min-h-11" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -189,13 +197,20 @@ export default function BookingForm({ trip, user, onSuccess }: BookingFormProps)
             <FormItem>
               <FormLabel>{t('booking.form.message')}</FormLabel>
               <FormControl>
-                <Textarea rows={4} {...field} />
+                <Textarea rows={5} className="min-h-[var(--form-textarea-min-height)] resize-y" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button type="submit" className="min-h-11 w-full sm:w-auto" disabled={submitting}>
+        <Button
+          type="submit"
+          size="lg"
+          variant="accent"
+          className="min-h-12 w-full"
+          disabled={submitting}
+          aria-busy={submitting}
+        >
           {submitting ? t('booking.form.submitting') : t('booking.form.submit')}
         </Button>
       </form>

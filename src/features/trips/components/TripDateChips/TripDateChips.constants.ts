@@ -1,0 +1,1 @@
+export const TRIP_DATE_CHIPS_MAX_VISIBLE = 6

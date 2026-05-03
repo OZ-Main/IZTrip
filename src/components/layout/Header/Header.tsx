@@ -65,7 +65,9 @@ export default function Header() {
             <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary font-display text-caption font-bold text-primary-foreground shadow-sm sm:h-10 sm:w-10">
               IZ
             </span>
-            <span className={cn(headerBrandVariants(), 'min-w-0 truncate')}>{t('brand.name')}</span>
+            <span className={cn(headerBrandVariants(), 'hidden min-w-0 truncate sm:inline')}>
+              {t('brand.name')}
+            </span>
           </Link>
           <nav
             className={cn(

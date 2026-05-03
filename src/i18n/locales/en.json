@@ -2,6 +2,16 @@
   "brand": {
     "name": "IZ Trip"
   },
+  "trust": {
+    "heroNoPayment": "No upfront payment",
+    "heroCuratedRoutes": "Curated local routes",
+    "heroSmallGroups": "Small groups",
+    "badge": {
+      "flexibleDates": "Flexible dates",
+      "smallGroup": "Small group",
+      "localGuide": "Local guide"
+    }
+  },
   "common": {
     "loadingApp": "Preparing your trip workspace…",
     "close": "Close"
@@ -84,9 +94,6 @@
       "subtitle": "Browse a Moldova-first catalog of small-group experiences with clear pricing, vetted partners, and booking requests that stay organized from day one.",
       "primaryCta": "Explore trips",
       "secondaryCta": "Create free account",
-      "trustRoutes": "Curated local routes",
-      "trustPricing": "Transparent pricing and group sizes",
-      "trustSecure": "Secure account-based requests",
       "previewBadge": "Featured route",
       "previewMeta": "{{duration}} · from {{price}}",
       "badgeCurated": "Local guides",
@@ -174,6 +181,17 @@
       "statDatesValue": "Rolling weekend dates through the season"
     },
     "backHome": "Back to home",
+    "results": {
+      "available_one": "{{count}} trip available",
+      "available_other": "{{count}} trips available",
+      "activeFilters": "Active filters"
+    },
+    "sort": {
+      "label": "Sort by",
+      "priceAsc": "Price: low to high",
+      "dateAsc": "Next departure: earliest first",
+      "durationAsc": "Duration: shortest first"
+    },
     "filters": {
       "all": "All",
       "category": "Category",
@@ -202,10 +220,10 @@
     "card": {
       "durationLabel_one": "{{count}} day",
       "durationLabel_other": "{{count}} days",
-      "nextDate": "Next available",
+      "nextDeparture": "Next departure",
       "noUpcomingDates": "Ask for new dates",
       "from": "From",
-      "viewDetails": "View details"
+      "exploreTrip": "Explore trip"
     },
     "empty": {
       "title": "No trips match these filters",
@@ -322,9 +340,23 @@
     "backToTrips": "Back to trips",
     "priceFrom": "Price from",
     "groupSize": "Group size: {{min}}–{{max}} guests",
-    "bookCta": "Book / request trip",
+    "bookCta": "Request this trip",
     "nextDateLabel": "Next departure",
     "bookTrustNote": "No payment is taken yet — we confirm availability and details with you first.",
+    "ctaTrustLine": "No payment required now — we confirm everything with you before you pay.",
+    "noPaymentShort": "No payment required now",
+    "confirmByEmail": "We'll confirm availability and details by email.",
+    "bookingCardEyebrow": "Request this trip",
+    "bookingDurationLabel": "Duration",
+    "bookingGroupLabel": "Group size",
+    "moreDates": "+{{count}} more",
+    "factLabels": {
+      "duration": "Duration",
+      "group": "Group size",
+      "groupValue": "{{min}}–{{max}} guests",
+      "nextDeparture": "Next departure",
+      "price": "From"
+    },
     "metaDuration": "{{duration}}",
     "metaGroup": "{{min}}–{{max}} guests",
     "metaNextDate": "Next: {{date}}",
@@ -338,17 +370,31 @@
   },
   "booking": {
     "page": {
-      "title": "Request this trip",
-      "description": "Tell us who is traveling and when — we save the request securely and notify our coordinators."
+      "title": "Request your trip",
+      "description": "No payment is required now. Tell us who is traveling and when — we save your request securely and follow up personally."
     },
     "summaryTitle": "Trip summary",
     "summaryEyebrow": "You are requesting",
-    "trustTitle": "What happens after you submit",
+    "summary": {
+      "durationLabel": "Duration",
+      "groupLabel": "Group size",
+      "priceFromLabel": "Price from",
+      "preferredDateLabel": "Preferred departure"
+    },
+    "nextSteps": {
+      "title": "What happens next"
+    },
     "trustPoint1": "We save your request securely to your account.",
-    "trustPoint2": "Our team reviews availability for your preferred date.",
-    "trustPoint3": "No payment is taken until details are confirmed with you.",
+    "trustPoint2": "Our team checks availability for your preferred date and group size.",
+    "trustPoint3": "We contact you by email or phone with next steps and any questions.",
+    "trustPoint4": "No payment is taken now — you confirm details with us before anything is charged.",
     "afterSubmitTitle": "What happens next",
     "afterSubmitBody": "You will see an on-screen confirmation and our team monitors new requests in the booking workspace.",
+    "formCard": {
+      "eyebrow": "Your details",
+      "title": "Send your request",
+      "lead": "We use this information to match you with the right coordinator."
+    },
     "form": {
       "fullName": "Full name",
       "email": "Email",
@@ -373,16 +419,18 @@
     "success": {
       "title": "Request received",
       "description": "We saved your booking request and emailed our team. Someone will follow up with you soon.",
+      "tripLabel": "Your trip",
       "nextTitle": "Suggested next steps",
       "next1": "Watch your inbox for a personal reply with availability notes.",
       "next2": "Review the trip page again if you want to adjust guest counts or dates.",
       "next3": "Browse the catalog while you wait — we can bundle nearby routes when it helps.",
       "viewTrip": "Back to trip details",
-      "exploreMore": "Explore more trips"
+      "exploreMore": "Explore more trips",
+      "backHome": "Back to home"
     },
     "successWithWarning": {
       "title": "Request received",
-      "description": "Your booking request was saved. We could not send the notification email automatically, but our team can still see it in the system and will follow up."
+      "description": "Your request is saved. The automatic notification email did not go through, but our team can still see your request and will follow up with you directly."
     },
     "successFullToast": "Booking saved and team notified by email.",
     "emailWarningToast": "Booking saved. The notification email could not be sent — our team can still see your request.",

@@ -1,4 +1,5 @@
 import { MapPin } from 'lucide-react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
@@ -20,13 +21,17 @@ import {
   tripCardPriceVariants,
   tripCardRootVariants,
   tripCardTitleVariants,
+  tripCardTrustRowVariants,
 } from '@/features/trips/components/TripCard/TripCard.styles'
+import { getTripCardTrustBadgeKeys } from '@/features/trips/helpers/tripCardTrustBadges.helpers'
 import {
   formatTripDateDisplay,
   getNextAvailableTripDateIso,
 } from '@/features/trips/helpers/tripDates.helpers'
 import { formatTripPriceEur } from '@/features/trips/helpers/tripFormat.helpers'
 import type { TripDefinition } from '@/features/trips/types/trip.types'
+import TrustPill from '@/shared/components/TrustPill/TrustPill'
+import { TRIP_IMAGE_PLACEHOLDER_SRC } from '@/shared/constants/tripImagePlaceholder.constants'
 import { APP_ROUTE } from '@/shared/constants/routes.constants'
 import { cn } from '@/shared/utils/cn'
 
@@ -36,17 +41,21 @@ type TripCardProps = {
 
 export default function TripCard({ trip }: TripCardProps) {
   const { t, i18n } = useTranslation()
+  const [imageFailed, setImageFailed] = useState(false)
   const nextDateIso = getNextAvailableTripDateIso(trip)
   const detailsPath = APP_ROUTE.tripDetails(trip.slug)
+  const trustKeys = getTripCardTrustBadgeKeys(trip)
+  const imageSrc = imageFailed ? TRIP_IMAGE_PLACEHOLDER_SRC : trip.imageSrc
 
   return (
     <Link to={detailsPath} className={cn(tripCardRootVariants(), tripCardInteractiveVariants())}>
       <div className={tripCardImageWrapVariants()}>
         <img
-          src={trip.imageSrc}
+          src={imageSrc}
           alt={t(`trips.catalog.${trip.slug}.title`)}
           className={tripCardImageVariants()}
           loading="lazy"
+          onError={() => setImageFailed(true)}
         />
         <div className={tripCardImageOverlayVariants()} aria-hidden />
         <div className={tripCardImageTopVariants()}>
@@ -76,10 +85,15 @@ export default function TripCard({ trip }: TripCardProps) {
         <p className={tripCardDescriptionVariants()}>
           {t(`trips.catalog.${trip.slug}.shortDescription`)}
         </p>
+        <div className={tripCardTrustRowVariants()}>
+          {trustKeys.map((key) => (
+            <TrustPill key={key} label={t(`trust.badge.${key}`)} />
+          ))}
+        </div>
         <div className={tripCardFooterVariants()}>
           <div className={tripCardFooterTopVariants()}>
             <div className="min-w-0 space-y-0.5">
-              <p className="text-caption text-muted-foreground">{t('trips.card.nextDate')}</p>
+              <p className="text-caption text-muted-foreground">{t('trips.card.nextDeparture')}</p>
               <p className="text-body font-medium text-foreground">
                 {nextDateIso
                   ? formatTripDateDisplay(nextDateIso, i18n.language)
@@ -91,7 +105,7 @@ export default function TripCard({ trip }: TripCardProps) {
               <p className={tripCardPriceVariants()}>{formatTripPriceEur(trip.priceEur)}</p>
             </div>
           </div>
-          <span className={tripCardCtaVariants()}>{t('trips.card.viewDetails')}</span>
+          <span className={tripCardCtaVariants()}>{t('trips.card.exploreTrip')}</span>
         </div>
       </div>
     </Link>

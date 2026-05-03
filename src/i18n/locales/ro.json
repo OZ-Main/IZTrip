@@ -2,6 +2,16 @@
   "brand": {
     "name": "IZ Trip"
   },
+  "trust": {
+    "heroNoPayment": "Fără plată în avans",
+    "heroCuratedRoutes": "Trasee locale curatoriate",
+    "heroSmallGroups": "Grupuri mici",
+    "badge": {
+      "flexibleDates": "Date flexibile",
+      "smallGroup": "Grup mic",
+      "localGuide": "Ghid local"
+    }
+  },
   "common": {
     "loadingApp": "Se pregătește spațiul tău de călătorie…",
     "close": "Închide"
@@ -84,9 +94,6 @@
       "subtitle": "Răsfoiește un catalog axat pe Moldova: grupuri mici, parteneri verificați, prețuri clare și solicitări de rezervare care rămân organizate.",
       "primaryCta": "Vezi excursiile",
       "secondaryCta": "Creează cont gratuit",
-      "trustRoutes": "Trasee locale curatoriate",
-      "trustPricing": "Prețuri și mărimi de grup transparente",
-      "trustSecure": "Solicitări securizate pe cont",
       "previewBadge": "Rută recomandată",
       "previewMeta": "{{duration}} · de la {{price}}",
       "badgeCurated": "Ghiduri locale",
@@ -174,6 +181,18 @@
       "statDatesValue": "Date de weekend pe tot sezonul"
     },
     "backHome": "Înapoi acasă",
+    "results": {
+      "available_one": "{{count}} excursie disponibilă",
+      "available_other": "{{count}} de excursii disponibile",
+      "activeFilters": "Filtre active",
+      "available_few": "{{count}} excursii disponibile"
+    },
+    "sort": {
+      "label": "Sortează după",
+      "priceAsc": "Preț: de la mic la mare",
+      "dateAsc": "Următoarea plecare: cea mai apropiată",
+      "durationAsc": "Durată: cea mai scurtă"
+    },
     "filters": {
       "all": "Toate",
       "category": "Categorie",
@@ -202,10 +221,10 @@
     "card": {
       "durationLabel_one": "{{count}} zi",
       "durationLabel_other": "{{count}} de zile",
-      "nextDate": "Următoarea dată",
+      "nextDeparture": "Următoarea plecare",
       "noUpcomingDates": "Solicită alte date",
       "from": "De la",
-      "viewDetails": "Vezi detalii",
+      "exploreTrip": "Explorează excursia",
       "durationLabel_few": "{{count}} zile"
     },
     "empty": {
@@ -323,9 +342,23 @@
     "backToTrips": "Înapoi la excursii",
     "priceFrom": "Preț de la",
     "groupSize": "Grup: {{min}}–{{max}} persoane",
-    "bookCta": "Rezervă / solicită excursia",
+    "bookCta": "Solicită această excursie",
     "nextDateLabel": "Următoarea plecare",
     "bookTrustNote": "Nu se încasează plata încă — confirmăm disponibilitatea și detaliile cu tine mai întâi.",
+    "ctaTrustLine": "Fără plată acum — confirmăm totul cu tine înainte de orice plată.",
+    "noPaymentShort": "Fără plată acum",
+    "confirmByEmail": "Confirmăm disponibilitatea și detaliile pe email.",
+    "bookingCardEyebrow": "Solicită această excursie",
+    "bookingDurationLabel": "Durată",
+    "bookingGroupLabel": "Mărimea grupului",
+    "moreDates": "+{{count}} în plus",
+    "factLabels": {
+      "duration": "Durată",
+      "group": "Grup",
+      "groupValue": "{{min}}–{{max}} persoane",
+      "nextDeparture": "Următoarea plecare",
+      "price": "De la"
+    },
     "metaDuration": "{{duration}}",
     "metaGroup": "{{min}}–{{max}} persoane",
     "metaNextDate": "Următoarea: {{date}}",
@@ -339,17 +372,31 @@
   },
   "booking": {
     "page": {
-      "title": "Solicită această excursie",
-      "description": "Spune-ne cine călătorește și când — salvăm solicitarea în siguranță și notificăm coordonatorii."
+      "title": "Solicită excursia",
+      "description": "Nu este nevoie de plată acum. Spune-ne cine călătorește și când — salvăm solicitarea în siguranță și revenim personal."
     },
     "summaryTitle": "Rezumat excursie",
     "summaryEyebrow": "Cerere pentru",
-    "trustTitle": "Ce se întâmplă după trimitere",
+    "summary": {
+      "durationLabel": "Durată",
+      "groupLabel": "Mărimea grupului",
+      "priceFromLabel": "Preț de la",
+      "preferredDateLabel": "Plecare preferată"
+    },
+    "nextSteps": {
+      "title": "Ce urmează"
+    },
     "trustPoint1": "Salvăm solicitarea în siguranță în contul tău.",
-    "trustPoint2": "Echipa verifică disponibilitatea pentru data aleasă.",
-    "trustPoint3": "Nu se ia plată până nu confirmăm detaliile cu tine.",
+    "trustPoint2": "Echipa verifică disponibilitatea pentru data aleasă și numărul de persoane.",
+    "trustPoint3": "Te contactăm pe e-mail sau telefon cu pașii următori și întrebări, dacă e nevoie.",
+    "trustPoint4": "Nu se ia plată acum — confirmăm totul împreună înainte de orice plată.",
     "afterSubmitTitle": "Ce urmează",
     "afterSubmitBody": "Vei vedea o confirmare pe ecran, iar echipa urmărește solicitările noi în spațiul de rezervări.",
+    "formCard": {
+      "eyebrow": "Detaliile tale",
+      "title": "Trimite solicitarea",
+      "lead": "Folosim aceste informații ca să te potrivim cu coordonatorul potrivit."
+    },
     "form": {
       "fullName": "Nume complet",
       "email": "E-mail",
@@ -374,16 +421,18 @@
     "success": {
       "title": "Solicitare primită",
       "description": "Am salvat solicitarea și am trimis un e-mail echipei. Cineva te va contacta în curând.",
+      "tripLabel": "Excursia ta",
       "nextTitle": "Pași următori sugerați",
       "next1": "Urmărește inboxul pentru un răspuns personal cu note de disponibilitate.",
       "next2": "Revino la pagina excursiei dacă vrei să ajustezi numărul de persoane sau data.",
       "next3": "Răsfoiește catalogul așteptând — putem lega rute apropiate când ajută.",
       "viewTrip": "Înapoi la detalii excursie",
-      "exploreMore": "Alte excursii"
+      "exploreMore": "Alte excursii",
+      "backHome": "Înapoi acasă"
     },
     "successWithWarning": {
       "title": "Solicitare primită",
-      "description": "Solicitarea ta a fost salvată. Nu am putut trimite automat e-mailul de notificare, dar echipa o poate vedea în sistem și te va contacta."
+      "description": "Solicitarea este salvată. E-mailul automat de notificare nu s-a trimis, dar echipa poate vedea solicitarea și te va contacta direct."
     },
     "successFullToast": "Salvat și echipa a fost notificată pe e-mail.",
     "emailWarningToast": "Solicitare salvată. E-mailul de notificare nu a putut fi trimis — echipa poate vedea în continuare solicitarea.",

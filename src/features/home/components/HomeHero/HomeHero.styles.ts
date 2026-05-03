@@ -37,14 +37,14 @@ export const homeHeroPreviewImageVariants = cva(
 )
 
 export const homeHeroPreviewStackVariants = cva(
-  'absolute -left-3 top-4 z-20 hidden max-w-[11rem] rounded-card border border-hero-foreground/15 bg-hero-foreground/95 p-tight text-caption font-semibold text-primary shadow-card sm:block lg:-left-6 lg:top-8',
+  'absolute -left-3 top-4 z-20 hidden max-w-[11rem] rounded-card border border-border/70 bg-card/95 p-tight text-card-foreground shadow-card backdrop-blur-md sm:block lg:-left-6 lg:top-8',
 )
 
 export const homeHeroPreviewImageLinkVariants = cva(
   'relative z-0 block min-h-[44px] overflow-hidden rounded-[0.75rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
 )
 
-export const homeHeroBadgeRowVariants = cva('relative z-10 mt-tight flex flex-wrap gap-tight')
+export const homeHeroBadgeRowVariants = cva('relative z-10 mt-relaxed flex flex-wrap gap-tight sm:mt-stack')
 
 export const homeHeroBadgeVariants = cva(
   'rounded-full border border-hero-foreground/15 bg-hero-foreground/10 px-3 py-1 text-caption font-semibold text-hero-foreground',

@@ -6,7 +6,6 @@ import { useAuthStore } from '@/app/store/authStore'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { APP_ROUTE } from '@/shared/constants/routes.constants'
-import { cn } from '@/shared/utils/cn'
 
 const PILLAR_ICONS = [MapPinned, Sparkles, ShieldCheck, HeartHandshake] as const
 
@@ -112,15 +111,16 @@ export default function AboutPage() {
               {t('about.audience.lead')}
             </p>
           </header>
-          <ul className="grid gap-tight sm:grid-cols-2">
+          <ul className="mx-auto max-w-3xl divide-y divide-border/70 border-y border-border/70">
             {AUDIENCE_KEYS.map((audienceKey) => (
-              <li
-                key={audienceKey}
-                className={cn(
-                  'rounded-card border border-border/70 bg-background/80 px-card py-tight text-body font-medium text-foreground shadow-sm backdrop-blur-sm',
-                )}
-              >
-                {t(`about.audience.${audienceKey}`)}
+              <li key={audienceKey} className="flex gap-relaxed py-relaxed first:pt-0 last:pb-0">
+                <span
+                  className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent"
+                  aria-hidden
+                />
+                <span className="min-w-0 text-body leading-relaxed text-foreground">
+                  {t(`about.audience.${audienceKey}`)}
+                </span>
               </li>
             ))}
           </ul>

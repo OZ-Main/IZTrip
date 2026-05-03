@@ -1,4 +1,4 @@
-import { MapPin, ShieldCheck, Wallet } from 'lucide-react'
+import { MapPin, Users, Wallet } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
@@ -77,25 +77,25 @@ export default function HomeHero({ previewTrip, className }: HomeHeroProps) {
           </div>
           <ul className={homeHeroTrustListVariants()}>
             <li className={homeHeroTrustItemVariants()}>
-              <MapPin className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-              <span>{t('home.hero.trustRoutes')}</span>
-            </li>
-            <li className={homeHeroTrustItemVariants()}>
               <Wallet className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-              <span>{t('home.hero.trustPricing')}</span>
+              <span>{t('trust.heroNoPayment')}</span>
             </li>
             <li className={homeHeroTrustItemVariants()}>
-              <ShieldCheck className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-              <span>{t('home.hero.trustSecure')}</span>
+              <MapPin className="h-4 w-4 shrink-0 text-accent" aria-hidden />
+              <span>{t('trust.heroCuratedRoutes')}</span>
+            </li>
+            <li className={homeHeroTrustItemVariants()}>
+              <Users className="h-4 w-4 shrink-0 text-accent" aria-hidden />
+              <span>{t('trust.heroSmallGroups')}</span>
             </li>
           </ul>
         </div>
         <div className={homeHeroPreviewVariants()}>
           <div className={homeHeroPreviewStackVariants()}>
-            <p className="text-caption uppercase tracking-wide text-muted-foreground">
+            <p className="text-caption font-semibold uppercase tracking-wide text-primary">
               {t('home.hero.previewBadge')}
             </p>
-            <p className="mt-tight line-clamp-2 text-body-sm font-semibold text-foreground">
+            <p className="mt-tight line-clamp-2 text-body-sm font-semibold text-card-foreground">
               {t(`trips.catalog.${previewTrip.slug}.title`)}
             </p>
             <p className="mt-tight text-caption text-muted-foreground">

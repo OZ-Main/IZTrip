@@ -17,7 +17,7 @@ export default function TripDetailsPage() {
   }
 
   return (
-    <div className="space-y-section">
+    <div className="mx-auto w-full max-w-content space-y-section">
       <div className="-ms-2">
         <Button type="button" variant="ghost" size="sm" className="min-h-11 px-3" asChild>
           <Link to={APP_ROUTE.trips}>{t('tripDetails.backToTrips')}</Link>
