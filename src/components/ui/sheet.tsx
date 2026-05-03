@@ -65,9 +65,10 @@ function SheetHeader({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
   return <div className={cn(sheetHeaderVariants(), className)} {...props} />
 }
 
-const SheetTitle = forwardRef<ElementRef<typeof DialogPrimitive.Title>, ComponentPropsWithoutRef<
-  typeof DialogPrimitive.Title
->>(({ className, ...props }, ref) => (
+const SheetTitle = forwardRef<
+  ElementRef<typeof DialogPrimitive.Title>,
+  ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
+>(({ className, ...props }, ref) => (
   <DialogPrimitive.Title ref={ref} className={cn(sheetTitleVariants(), className)} {...props} />
 ))
 SheetTitle.displayName = DialogPrimitive.Title.displayName

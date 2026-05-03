@@ -14,6 +14,14 @@
       "ru": "RU"
     }
   },
+  "theme": {
+    "switcherLabel": "Temă",
+    "modes": {
+      "light": "Luminos",
+      "dark": "Întunecat",
+      "system": "Auto"
+    }
+  },
   "nav": {
     "mainLabel": "Principal",
     "home": "Acasă",
@@ -25,6 +33,13 @@
     "openMenu": "Deschide meniul"
   },
   "auth": {
+    "marketingTitle": "Planifică în Moldova fără improvizații",
+    "marketingLead": "Creează un cont ca să trimiți solicitări structurate, să păstrezi contextul excursiei și să primești răspuns de la un coordonator real.",
+    "marketingPoint1": "Catalog curatoriat cu ritm realist și ce e inclus pe înțeles",
+    "marketingPoint2": "Număr de oaspeți și indicii de preț transparente pe fiecare card",
+    "marketingPoint3": "Autentificare securizată ca solicitările să rămână la tine în cont",
+    "marketingPoint4": "Opțiuni pentru familii, copii și grupuri mixte în tot catalogul",
+    "marketingFootnote": "Desk independent, axat pe Moldova — gândit pentru planificare calmă.",
     "signIn": "Autentificare",
     "signInDescription": "Accesează excursiile salvate și solicitări de rezervare securizate.",
     "registerTitle": "Creează contul IZ Trip",
@@ -65,57 +80,98 @@
   "home": {
     "hero": {
       "eyebrow": "Călătorii curatoriate în Moldova",
-      "title": "Descoperă Moldova cu planificare calmă, de weekend, premium",
-      "subtitle": "Rute alese pentru familii, prieteni și exploratori curioși — prețuri transparente, ghizi locali și solicitări de rezervare organizate.",
+      "title": "Escapade de weekend, plimbări urbane și rute la țară — cu grijă locală",
+      "subtitle": "Răsfoiește un catalog axat pe Moldova: grupuri mici, parteneri verificați, prețuri clare și solicitări de rezervare care rămân organizate.",
       "primaryCta": "Vezi excursiile",
-      "secondaryCta": "Creează cont gratuit"
+      "secondaryCta": "Creează cont gratuit",
+      "trustRoutes": "Trasee locale curatoriate",
+      "trustPricing": "Prețuri și mărimi de grup transparente",
+      "trustSecure": "Solicitări securizate pe cont",
+      "previewBadge": "Rută recomandată",
+      "previewMeta": "{{duration}} · de la {{price}}",
+      "badgeCurated": "Ghiduri locale",
+      "badgeSmallGroups": "Grupuri mici",
+      "badgeFlexible": "Plecări flexibile"
     },
     "featured": {
       "title": "Experiențe recomandate în Moldova",
-      "description": "Începe cu rute iubite de oaspeți — crame, cetăți, chei și plimbări urbane.",
+      "description": "Trei rute alese ca să începi rapid — crame, cetăți, chei și plimbări urbane.",
       "viewAll": "Toate excursiile"
     },
     "how": {
       "title": "Cum funcționează IZ Trip",
-      "description": "Trei pași simpli de la inspirație la o solicitare confirmată.",
+      "description": "Trei pași calmi de la inspirație la o solicitare pe care echipa o poate prelua.",
       "step1": {
         "badge": "01",
-        "title": "Răsfoiește excursii curatoriate",
-        "body": "Filtrează după public și stil, compară ce e inclus și citește itinerare realiste."
+        "title": "Alege o excursie curatoriată",
+        "body": "Filtrează după stil și cine călătorește, compară ce e inclus și citește contextul zilei."
       },
       "step2": {
         "badge": "02",
-        "title": "Alege date și detalii",
-        "body": "Selectează o fereastră disponibilă și spune-ne cine călătorește — păstrăm solicitările structurate."
+        "title": "Alege data și mărimea grupului",
+        "body": "Selectează o fereastră listată și spune câți oaspeți sunteți — păstrăm solicitarea structurată."
       },
       "step3": {
         "badge": "03",
-        "title": "Solicită și relaxează-te",
-        "body": "Trimite o solicitare securizată. O salvăm și trimitem o notificare pe e-mail echipei ca să nu rămâi fără răspuns."
+        "title": "Trimite solicitarea — noi confirmăm detaliile",
+        "body": "Trimite din cont o solicitare securizată. O stocăm în siguranță și notificăm coordonatorii."
       }
     },
     "categories": {
       "title": "Explorează după stil",
-      "description": "Intră în catalog dintr-o atingere — filtrele sunt simple pe mobil."
+      "description": "Intră în catalog dintr-o atingere — filtrele sunt prietenoase pe mobil.",
+      "explore": "Vezi excursiile potrivite"
+    },
+    "categoryDescriptions": {
+      "kids": "Ritm jucăuș, indicii tip „vânătoare de indicii” și ghizi obișnuiți cu familii.",
+      "family": "Loc de mișcare, gustări și note sincere despre trepte și mers pe jos.",
+      "adults": "Galerii de vin, arhitectură urbană și povești pentru public matur.",
+      "nature": "Poteci forestiere, belvedere la râu și trasee moderate cu briefing de siguranță.",
+      "culture": "Mănăstiri, cetăți și mese la țară cu context pe care îl simți.",
+      "weekend": "Bucle de două zile cu cazare confortabilă și dimineți liniștite.",
+      "educational": "Context practic pentru școli și grupuri curioase.",
+      "custom": "Spune-ne ideea — o trecem prin același flux structurat de solicitare."
     },
     "trust": {
       "title": "De ce au încredere călătorii",
-      "description": "Proiectăm pentru claritate, siguranță și ospitalitate moldovenească autentică.",
-      "point1": "Parteneri locali verificați pentru calitate și grijă față de oaspeți",
-      "point2": "Dimensiuni de grup și ritm explicite în fiecare itinerar",
-      "point3": "Conturi securizate ca solicitările să rămână legate de tine"
+      "description": "Ne orientăm spre claritate: ce rezervi, cui i se potrivește și ce urmează.",
+      "cards": {
+        "routes": {
+          "title": "Trasee locale curatoriate",
+          "body": "Itinerare lucrate cu ghizi și gazde cunoscute — nu texte anonime."
+        },
+        "pricing": {
+          "title": "Prețuri și grupuri clare",
+          "body": "Fiecare card arată durata, numărul de oaspeți și un „de la” onest."
+        },
+        "requests": {
+          "title": "Solicitări pe cont, organizate",
+          "body": "Cererile rămân în istoricul contului tău — nu se pierd în inboxuri."
+        },
+        "family": {
+          "title": "Opțiuni prietenoase pentru familii",
+          "body": "Pauze, ritm și note sincere despre efort apar în tot catalogul."
+        }
+      }
     },
     "finalCta": {
       "title": "Pregătit pentru următorul weekend în Moldova?",
-      "description": "Creează cont pentru rezervare sau explorează excursiile — fără presiune.",
+      "description": "Explorează catalogul mai întâi sau creează un cont când ești gata să ceri o dată.",
       "primary": "Răsfoiește excursiile",
-      "secondary": "Autentificare"
+      "secondary": "Creează cont"
     }
   },
   "trips": {
     "page": {
-      "title": "Excursii curatoriate",
-      "description": "Filtrează după categorie și public ca să se potrivească stilului tău."
+      "title": "Excursii gândite pentru weekenduri în Moldova",
+      "description": "Filtrează după stil și public — fiecare rută include note sincere de ritm, preț „de la” și plecări viitoare.",
+      "kicker": "Catalog curatoriat",
+      "statTripsLabel": "Excursii curatoriate",
+      "statTripsValue": "6 rute disponibile",
+      "statRoutesLabel": "Acoperire în Moldova",
+      "statRoutesValue": "Nord, Codrii, Chișinău și belvedere Nistru",
+      "statDatesLabel": "Plecări flexibile",
+      "statDatesValue": "Date de weekend pe tot sezonul"
     },
     "backHome": "Înapoi acasă",
     "filters": {
@@ -268,6 +324,13 @@
     "priceFrom": "Preț de la",
     "groupSize": "Grup: {{min}}–{{max}} persoane",
     "bookCta": "Rezervă / solicită excursia",
+    "nextDateLabel": "Următoarea plecare",
+    "bookTrustNote": "Nu se încasează plata încă — confirmăm disponibilitatea și detaliile cu tine mai întâi.",
+    "metaDuration": "{{duration}}",
+    "metaGroup": "{{min}}–{{max}} persoane",
+    "metaNextDate": "Următoarea: {{date}}",
+    "metaNextDateUnknown": "Cere echipei noi plecări",
+    "metaPrice": "De la {{price}}",
     "descriptionTitle": "Despre experiență",
     "highlightsTitle": "Puncte forte",
     "includedTitle": "Ce e inclus",
@@ -277,8 +340,16 @@
   "booking": {
     "page": {
       "title": "Solicită această excursie",
-      "description": "Trimite o solicitare structurată — o salvăm în Firestore și trimitem un e-mail de notificare echipei."
+      "description": "Spune-ne cine călătorește și când — salvăm solicitarea în siguranță și notificăm coordonatorii."
     },
+    "summaryTitle": "Rezumat excursie",
+    "summaryEyebrow": "Cerere pentru",
+    "trustTitle": "Ce se întâmplă după trimitere",
+    "trustPoint1": "Salvăm solicitarea în siguranță în contul tău.",
+    "trustPoint2": "Echipa verifică disponibilitatea pentru data aleasă.",
+    "trustPoint3": "Nu se ia plată până nu confirmăm detaliile cu tine.",
+    "afterSubmitTitle": "Ce urmează",
+    "afterSubmitBody": "Vei vedea o confirmare pe ecran, iar echipa urmărește solicitările noi în spațiul de rezervări.",
     "form": {
       "fullName": "Nume complet",
       "email": "E-mail",
@@ -303,6 +374,10 @@
     "success": {
       "title": "Solicitare primită",
       "description": "Am salvat solicitarea și am trimis un e-mail echipei. Cineva te va contacta în curând.",
+      "nextTitle": "Pași următori sugerați",
+      "next1": "Urmărește inboxul pentru un răspuns personal cu note de disponibilitate.",
+      "next2": "Revino la pagina excursiei dacă vrei să ajustezi numărul de persoane sau data.",
+      "next3": "Răsfoiește catalogul așteptând — putem lega rute apropiate când ajută.",
       "viewTrip": "Înapoi la detalii excursie",
       "exploreMore": "Alte excursii"
     },
@@ -315,22 +390,48 @@
     "submitError": "Nu am putut salva solicitarea. Verifică conexiunea și încearcă din nou."
   },
   "about": {
-    "page": {
+    "hero": {
+      "kicker": "Călătorii curatoriate, axate pe Moldova",
       "title": "Despre IZ Trip",
-      "lead": "Planificare de weekend și cultură cu accent pe Moldova — premium, dar prietenos."
+      "subtitle": "Suntem un desk independent axat pe Moldova — grupuri mici, parteneri locali, prețuri clare și solicitări de rezervare organizate."
     },
     "mission": {
       "title": "Misiunea noastră",
-      "body": "Ajutăm călătorii să descopere Moldova în siguranță și cu încredere — prin itinerare curatoriate și rezervări transparente."
+      "body": "Ajutăm călătorii să exploreze Moldova cu încredere: itinerare clare, note sincere despre ritm și un flux de solicitare care îți respectă timpul."
     },
-    "local": {
-      "title": "Local prin design",
-      "body": "Rutele pornesc de la ghizi, pensiuni și crame pe care le cunoaștem personal. Creștem lent ca să păstrăm calitatea."
+    "pillars": {
+      "title": "Ce face diferit IZ Trip",
+      "lead": "Patru principii ghidează fiecare card de rută, relația cu gazdele și pașii de urmărire."
     },
-    "safety": {
-      "title": "Familii, copii și grupuri",
-      "body": "Contează ritmul, pauzele și comunicarea clară. Fiecare listă arată mărimea realistă a grupului și ce să aștepți pe traseu sau în oraș."
+    "pillar1": {
+      "title": "Planificare locală mai întâi",
+      "body": "Ghidurile, pensiunile și cramele sunt relații — nu furnizori interschimbabili."
     },
-    "cta": "Răsfoiește excursiile"
+    "pillar2": {
+      "title": "Opțiuni pentru familii și copii",
+      "body": "Notăm dificultatea, scările și timpul la volan ca familiile să decidă repede."
+    },
+    "pillar3": {
+      "title": "Indicii transparente de preț",
+      "body": "Prețul „de la”, numărul de oaspeți și ce e inclus sunt vizibile înainte să ceri o dată."
+    },
+    "pillar4": {
+      "title": "Solicitări sigure și structurate",
+      "body": "Cererile pe cont rămân structurate pentru coordonatori și pentru istoricul tău."
+    },
+    "audience": {
+      "title": "Pentru cine este IZ Trip",
+      "lead": "Dacă îți place planificarea calmă și urmărirea umană, ești în locul potrivit.",
+      "families": "Familii care vor ritm realist și zile prietenoase cu gustări",
+      "kids": "Grupuri școlare și cluburi pentru copii care au nevoie de note clare de supraveghere",
+      "friends": "Prieteni și adulți care caută vin, cultură și arhitectură cu profunzime",
+      "weekend": "Exploratori de weekend care vor aer proaspăt fără sport extrem"
+    },
+    "closing": {
+      "title": "Vezi catalogul, apoi cere o dată",
+      "body": "Nu trebuie să rezervi instant — explorează excursiile, împărtășește-le grupului și revino când ești gata."
+    },
+    "ctaPrimary": "Răsfoiește excursiile",
+    "ctaSecondary": "Creează cont"
   }
 }

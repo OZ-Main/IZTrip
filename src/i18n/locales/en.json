@@ -14,6 +14,14 @@
       "ru": "RU"
     }
   },
+  "theme": {
+    "switcherLabel": "Theme",
+    "modes": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "Auto"
+    }
+  },
   "nav": {
     "mainLabel": "Primary",
     "home": "Home",
@@ -25,6 +33,13 @@
     "openMenu": "Open menu"
   },
   "auth": {
+    "marketingTitle": "Plan Moldova trips without guesswork",
+    "marketingLead": "Create an account to send structured booking requests, keep trip context handy, and hear back from a real coordinator.",
+    "marketingPoint1": "Curated catalog with realistic pacing and clear inclusions",
+    "marketingPoint2": "Transparent guest counts and pricing cues on every trip card",
+    "marketingPoint3": "Secure sign-in so your requests stay tied to you",
+    "marketingPoint4": "Family, kids, and mixed-group options across the catalog",
+    "marketingFootnote": "Independent, Moldova-focused travel desk — built for calm planning.",
     "signIn": "Sign in",
     "signInDescription": "Access saved trips and secure booking requests.",
     "registerTitle": "Create your IZ Trip account",
@@ -65,57 +80,98 @@
   "home": {
     "hero": {
       "eyebrow": "Curated Moldova travel",
-      "title": "Discover Moldova with calm, premium weekend planning",
-      "subtitle": "Handpicked routes for families, friends, and curious explorers — transparent pricing, local guides, and booking requests that stay organized.",
+      "title": "Weekend escapes, city walks, and countryside routes — planned with local care",
+      "subtitle": "Browse a Moldova-first catalog of small-group experiences with clear pricing, vetted partners, and booking requests that stay organized from day one.",
       "primaryCta": "Explore trips",
-      "secondaryCta": "Create free account"
+      "secondaryCta": "Create free account",
+      "trustRoutes": "Curated local routes",
+      "trustPricing": "Transparent pricing and group sizes",
+      "trustSecure": "Secure account-based requests",
+      "previewBadge": "Featured route",
+      "previewMeta": "{{duration}} · from {{price}}",
+      "badgeCurated": "Local guides",
+      "badgeSmallGroups": "Small groups",
+      "badgeFlexible": "Flexible departures"
     },
     "featured": {
       "title": "Featured Moldova experiences",
-      "description": "Start with guest-loved routes — wineries, fortresses, gorges, and city walks.",
+      "description": "Three handpicked routes to start fast — wineries, fortresses, gorges, and city walks.",
       "viewAll": "View all trips"
     },
     "how": {
       "title": "How IZ Trip works",
-      "description": "Three simple steps from inspiration to a confirmed request.",
+      "description": "Three calm steps from inspiration to a saved request our team can act on.",
       "step1": {
         "badge": "01",
-        "title": "Browse curated trips",
-        "body": "Filter by audience and style, compare transparent inclusions, and read honest day plans."
+        "title": "Choose a curated trip",
+        "body": "Filter by travel style and who is going, compare inclusions, and read day-by-day context."
       },
       "step2": {
         "badge": "02",
-        "title": "Pick dates & details",
-        "body": "Choose an available departure window and tell us who is traveling — we keep requests structured."
+        "title": "Pick your date and group size",
+        "body": "Select a listed departure window and tell us how many guests — we keep the request structured."
       },
       "step3": {
         "badge": "03",
-        "title": "Request & relax",
-        "body": "Submit a secure booking request. We save it securely and notify our team by email."
+        "title": "Send the request — we confirm details",
+        "body": "Submit a secure request from your account. We store it safely and notify our coordinators."
       }
     },
     "categories": {
       "title": "Explore by travel style",
-      "description": "Jump into the catalog with one tap — filters stay easy on mobile."
+      "description": "Jump into the catalog with one tap — filters stay thumb-friendly on mobile.",
+      "explore": "See matching trips"
+    },
+    "categoryDescriptions": {
+      "kids": "Playful pacing, scavenger-style prompts, and guides who know families.",
+      "family": "Room to roam, snack breaks, and honest notes on stairs and walking time.",
+      "adults": "Wine galleries, city architecture, and grown-up storytelling.",
+      "nature": "Forest trails, river lookouts, and moderate routes with safety briefings.",
+      "culture": "Monasteries, fortresses, and village tables with context you can feel.",
+      "weekend": "Two-day loops with cozy overnight stays and relaxed mornings.",
+      "educational": "Hands-on context for schools and curious groups.",
+      "custom": "Tell us your idea — we route it through the same structured request flow."
     },
     "trust": {
       "title": "Why travelers trust IZ Trip",
-      "description": "We design for clarity, safety, and real Moldovan hospitality.",
-      "point1": "Local partners vetted for quality, insurance readiness, and guest care",
-      "point2": "Clear group sizes and pacing notes on every itinerary",
-      "point3": "Secure accounts so your requests stay tied to you"
+      "description": "We bias toward clarity: what you book, who it suits, and what happens next.",
+      "cards": {
+        "routes": {
+          "title": "Curated local routes",
+          "body": "Itineraries are built with guides and hosts we know — not anonymous copy-paste."
+        },
+        "pricing": {
+          "title": "Clear pricing and group sizes",
+          "body": "Every card shows realistic guest counts, duration, and a transparent “from” price."
+        },
+        "requests": {
+          "title": "Secure account-based requests",
+          "body": "Booking asks live in your account history so nothing gets lost in inboxes."
+        },
+        "family": {
+          "title": "Family and kids-friendly options",
+          "body": "Pacing, rest stops, and honest difficulty notes appear across the catalog."
+        }
+      }
     },
     "finalCta": {
       "title": "Ready to plan your next Moldova weekend?",
-      "description": "Create an account to book, or explore trips first — no pressure.",
+      "description": "Explore the catalog first, or create an account when you are ready to request a date.",
       "primary": "Browse trips",
-      "secondary": "Sign in"
+      "secondary": "Create account"
     }
   },
   "trips": {
     "page": {
-      "title": "Curated trips",
-      "description": "Filter by category and audience to match your travel style."
+      "title": "Trips crafted for Moldova weekends",
+      "description": "Filter by travel style and who is traveling — each route includes honest pacing notes, transparent “from” pricing, and upcoming departures.",
+      "kicker": "Curated catalog",
+      "statTripsLabel": "Curated trips",
+      "statTripsValue": "6 routes live",
+      "statRoutesLabel": "Moldova coverage",
+      "statRoutesValue": "North, Codrii, Chișinău, and Nistru viewpoints",
+      "statDatesLabel": "Flexible departures",
+      "statDatesValue": "Rolling weekend dates through the season"
     },
     "backHome": "Back to home",
     "filters": {
@@ -267,6 +323,13 @@
     "priceFrom": "Price from",
     "groupSize": "Group size: {{min}}–{{max}} guests",
     "bookCta": "Book / request trip",
+    "nextDateLabel": "Next departure",
+    "bookTrustNote": "No payment is taken yet — we confirm availability and details with you first.",
+    "metaDuration": "{{duration}}",
+    "metaGroup": "{{min}}–{{max}} guests",
+    "metaNextDate": "Next: {{date}}",
+    "metaNextDateUnknown": "Ask our team for new departures",
+    "metaPrice": "From {{price}}",
     "descriptionTitle": "About this experience",
     "highlightsTitle": "Highlights",
     "includedTitle": "Included",
@@ -276,8 +339,16 @@
   "booking": {
     "page": {
       "title": "Request this trip",
-      "description": "Submit a structured request — we save it in Firestore and send a notification email to our team."
+      "description": "Tell us who is traveling and when — we save the request securely and notify our coordinators."
     },
+    "summaryTitle": "Trip summary",
+    "summaryEyebrow": "You are requesting",
+    "trustTitle": "What happens after you submit",
+    "trustPoint1": "We save your request securely to your account.",
+    "trustPoint2": "Our team reviews availability for your preferred date.",
+    "trustPoint3": "No payment is taken until details are confirmed with you.",
+    "afterSubmitTitle": "What happens next",
+    "afterSubmitBody": "You will see an on-screen confirmation and our team monitors new requests in the booking workspace.",
     "form": {
       "fullName": "Full name",
       "email": "Email",
@@ -302,6 +373,10 @@
     "success": {
       "title": "Request received",
       "description": "We saved your booking request and emailed our team. Someone will follow up with you soon.",
+      "nextTitle": "Suggested next steps",
+      "next1": "Watch your inbox for a personal reply with availability notes.",
+      "next2": "Review the trip page again if you want to adjust guest counts or dates.",
+      "next3": "Browse the catalog while you wait — we can bundle nearby routes when it helps.",
       "viewTrip": "Back to trip details",
       "exploreMore": "Explore more trips"
     },
@@ -314,22 +389,48 @@
     "submitError": "Could not save your request. Check your connection and try again."
   },
   "about": {
-    "page": {
+    "hero": {
+      "kicker": "Moldova-first curated travel",
       "title": "About IZ Trip",
-      "lead": "Moldova-first weekend and culture planning with a premium-but-friendly touch."
+      "subtitle": "We are an independent travel desk focused on Moldova — pairing small-group routes with transparent pricing, local partners, and organized booking requests."
     },
     "mission": {
       "title": "Our mission",
-      "body": "We help travelers experience Moldova safely, confidently, and without outdated stereotypes — through curated itineraries and transparent booking."
+      "body": "Help travelers explore Moldova with confidence: clear itineraries, honest pacing notes, and a booking flow that respects your time."
     },
-    "local": {
-      "title": "Local by design",
-      "body": "Routes start from real guides, guesthouses, and cellars we know personally. We grow carefully so quality stays high."
+    "pillars": {
+      "title": "What makes IZ Trip different",
+      "lead": "Four principles shape every route card, host relationship, and follow-up workflow."
     },
-    "safety": {
-      "title": "Families, kids, and groups",
-      "body": "Pacing, rest stops, and clear communication matter. Every listing shows realistic group sizes and what to expect on the trail or in the city."
+    "pillar1": {
+      "title": "Local-first planning",
+      "body": "Guides, guesthouses, and cellars are relationships — not interchangeable vendors."
     },
-    "cta": "Browse curated trips"
+    "pillar2": {
+      "title": "Family and kids-friendly options",
+      "body": "We label difficulty, stairs, and driving time so families can decide quickly."
+    },
+    "pillar3": {
+      "title": "Transparent pricing cues",
+      "body": "“From” pricing, guest counts, and inclusions are visible before you request a date."
+    },
+    "pillar4": {
+      "title": "Secure organized requests",
+      "body": "Account-based requests stay structured for our coordinators and for your history."
+    },
+    "audience": {
+      "title": "Who IZ Trip is for",
+      "lead": "If you value calm planning and human follow-up, you are in the right place.",
+      "families": "Families who want realistic pacing and snack-friendly days",
+      "kids": "School groups and kids clubs that need clear supervision notes",
+      "friends": "Friends and adults seeking wine, culture, and architecture depth",
+      "weekend": "Weekend explorers chasing fresh air without extreme sport"
+    },
+    "closing": {
+      "title": "See the catalog, then request a date",
+      "body": "No pressure to book instantly — explore trips, share them with your group, and reach out when the timing feels right."
+    },
+    "ctaPrimary": "Browse curated trips",
+    "ctaSecondary": "Create account"
   }
 }

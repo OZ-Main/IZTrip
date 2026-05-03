@@ -22,4 +22,6 @@ export const headerActionsVariants = cva(
   'flex shrink-0 flex-wrap items-center justify-end gap-tight sm:gap-stack',
 )
 
-export const headerMobileNavVariants = cva('flex flex-wrap items-center justify-end gap-tight md:hidden')
+export const headerMobileNavVariants = cva(
+  'flex flex-wrap items-center justify-end gap-tight md:hidden',
+)

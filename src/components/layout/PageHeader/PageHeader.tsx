@@ -1,4 +1,8 @@
-import { pageHeaderDescriptionVariants, pageHeaderRootVariants, pageHeaderTitleVariants } from '@/components/layout/PageHeader/PageHeader.styles'
+import {
+  pageHeaderDescriptionVariants,
+  pageHeaderRootVariants,
+  pageHeaderTitleVariants,
+} from '@/components/layout/PageHeader/PageHeader.styles'
 import { cn } from '@/shared/utils/cn'
 
 type PageHeaderProps = {

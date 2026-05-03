@@ -55,9 +55,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     return () => mq.removeEventListener('change', handler)
   }, [theme])
 
-  const setThemeStable = useCallback((nextTheme: ThemeMode) => {
-    setTheme(nextTheme)
-  }, [setTheme])
+  const setThemeStable = useCallback(
+    (nextTheme: ThemeMode) => {
+      setTheme(nextTheme)
+    },
+    [setTheme],
+  )
 
   const value = useMemo(
     () => ({

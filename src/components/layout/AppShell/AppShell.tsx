@@ -1,6 +1,5 @@
-import { Outlet } from 'react-router-dom'
-
 import Header from '@/components/layout/Header/Header'
+import PageOutletTransition from '@/components/layout/AppShell/PageOutletTransition'
 import {
   appShellMainInnerVariants,
   appShellMainVariants,
@@ -13,7 +12,7 @@ export default function AppShell() {
       <Header />
       <main className={appShellMainVariants()}>
         <div className={appShellMainInnerVariants()}>
-          <Outlet />
+          <PageOutletTransition />
         </div>
       </main>
     </div>

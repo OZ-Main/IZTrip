@@ -195,7 +195,7 @@ export default function BookingForm({ trip, user, onSuccess }: BookingFormProps)
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full sm:w-auto" disabled={submitting}>
+        <Button type="submit" className="min-h-11 w-full sm:w-auto" disabled={submitting}>
           {submitting ? t('booking.form.submitting') : t('booking.form.submit')}
         </Button>
       </form>

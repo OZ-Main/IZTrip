@@ -14,6 +14,6 @@ export const cardTitleVariants = cva('font-display text-heading-md font-semibold
 
 export const cardDescriptionVariants = cva('text-body-sm text-muted-foreground')
 
-export const cardContentVariants = cva('p-card pt-0')
+export const cardContentVariants = cva('p-card')
 
 export const cardFooterVariants = cva('flex items-center p-card pt-0')

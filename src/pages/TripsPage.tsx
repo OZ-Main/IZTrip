@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next'
 import { Link, useSearchParams } from 'react-router-dom'
 
 import EmptyState from '@/components/feedback/EmptyState/EmptyState'
-import PageHeader from '@/components/layout/PageHeader/PageHeader'
 import FeaturedTrips from '@/features/home/components/FeaturedTrips/FeaturedTrips'
 import TripFilters from '@/features/trips/components/TripFilters/TripFilters'
+import TripsCatalogHero from '@/features/trips/components/TripsCatalogHero/TripsCatalogHero'
 import { MOCK_TRIPS } from '@/features/trips/data/mockTrips'
 import {
   ALL_TRIP_AUDIENCES_FILTER,
@@ -29,8 +29,11 @@ import { APP_ROUTE } from '@/shared/constants/routes.constants'
 export default function TripsPage() {
   const { t } = useTranslation()
   const [searchParams] = useSearchParams()
-  const [categoryFilter, setCategoryFilter] = useState<TripCategoryFilter>(ALL_TRIP_CATEGORIES_FILTER)
-  const [audienceFilter, setAudienceFilter] = useState<TripAudienceFilter>(ALL_TRIP_AUDIENCES_FILTER)
+  const [categoryFilter, setCategoryFilter] = useState<TripCategoryFilter>(
+    ALL_TRIP_CATEGORIES_FILTER,
+  )
+  const [audienceFilter, setAudienceFilter] =
+    useState<TripAudienceFilter>(ALL_TRIP_AUDIENCES_FILTER)
   const [filtersOpen, setFiltersOpen] = useState(false)
 
   useEffect(() => {
@@ -47,7 +50,7 @@ export default function TripsPage() {
 
   return (
     <div className="space-y-section">
-      <PageHeader title={t('trips.page.title')} description={t('trips.page.description')} />
+      <TripsCatalogHero />
 
       <div className="md:hidden">
         <Button
@@ -63,7 +66,7 @@ export default function TripsPage() {
           <SheetContent
             side="bottom"
             closeLabel={t('common.close')}
-            className="max-h-[min(90vh,32rem)] gap-stack overflow-y-auto rounded-t-[1.25rem]"
+            className="max-h-[min(90vh,36rem)] gap-stack overflow-y-auto rounded-t-[1.25rem]"
           >
             <SheetHeader className="pr-10 text-left">
               <SheetTitle>{t('trips.filters.drawerTitle')}</SheetTitle>
@@ -79,7 +82,7 @@ export default function TripsPage() {
         </Sheet>
       </div>
 
-      <div className="hidden md:block">
+      <div className="hidden rounded-[1.25rem] border border-border/80 bg-card/80 p-card shadow-card md:block md:p-form">
         <TripFilters
           categoryFilter={categoryFilter}
           audienceFilter={audienceFilter}
@@ -110,7 +113,7 @@ export default function TripsPage() {
         <FeaturedTrips trips={filteredTrips} />
       )}
       <p className="text-center text-body-sm text-muted-foreground">
-        <Button type="button" variant="link" asChild>
+        <Button type="button" variant="link" className="min-h-11" asChild>
           <Link to={APP_ROUTE.home}>{t('trips.backHome')}</Link>
         </Button>
       </p>

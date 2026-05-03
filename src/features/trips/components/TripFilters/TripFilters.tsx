@@ -1,6 +1,12 @@
 import { useTranslation } from 'react-i18next'
 
-import { tripFiltersFieldVariants, tripFiltersLabelVariants, tripFiltersRootVariants } from '@/features/trips/components/TripFilters/TripFilters.styles'
+import {
+  tripFiltersChipRowVariants,
+  tripFiltersChipVariants,
+  tripFiltersGroupVariants,
+  tripFiltersLabelVariants,
+  tripFiltersRootVariants,
+} from '@/features/trips/components/TripFilters/TripFilters.styles'
 import {
   ALL_TRIP_AUDIENCES_FILTER,
   ALL_TRIP_CATEGORIES_FILTER,
@@ -9,13 +15,27 @@ import {
 } from '@/features/trips/helpers/tripFilters.helpers'
 import { TripAudience, TripCategory } from '@/shared/domain'
 import { cn } from '@/shared/utils/cn'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
+
+const CATEGORY_FILTERS: TripCategoryFilter[] = [
+  ALL_TRIP_CATEGORIES_FILTER,
+  TripCategory.KIDS,
+  TripCategory.FAMILY,
+  TripCategory.ADULTS,
+  TripCategory.NATURE,
+  TripCategory.CULTURE,
+  TripCategory.WEEKEND,
+  TripCategory.EDUCATIONAL,
+  TripCategory.CUSTOM,
+]
+
+const AUDIENCE_FILTERS: TripAudienceFilter[] = [
+  ALL_TRIP_AUDIENCES_FILTER,
+  TripAudience.KIDS,
+  TripAudience.FAMILY,
+  TripAudience.ADULTS,
+  TripAudience.MIXED,
+  TripAudience.GROUP,
+]
 
 type TripFiltersProps = {
   categoryFilter: TripCategoryFilter
@@ -23,6 +43,22 @@ type TripFiltersProps = {
   onCategoryFilterChange: (next: TripCategoryFilter) => void
   onAudienceFilterChange: (next: TripAudienceFilter) => void
   className?: string
+}
+
+function categoryFilterLabel(t: (key: string) => string, value: TripCategoryFilter) {
+  if (value === ALL_TRIP_CATEGORIES_FILTER) {
+    return t('trips.filters.all')
+  }
+
+  return t(`trips.categories.${value}`)
+}
+
+function audienceFilterLabel(t: (key: string) => string, value: TripAudienceFilter) {
+  if (value === ALL_TRIP_AUDIENCES_FILTER) {
+    return t('trips.filters.all')
+  }
+
+  return t(`trips.audiences.${value}`)
 }
 
 export default function TripFilters({
@@ -36,48 +72,49 @@ export default function TripFilters({
 
   return (
     <div className={cn(tripFiltersRootVariants(), className)}>
-      <div className={tripFiltersFieldVariants()}>
-        <span className={tripFiltersLabelVariants()}>{t('trips.filters.category')}</span>
-        <Select
-          value={categoryFilter}
-          onValueChange={(value) => onCategoryFilterChange(value as TripCategoryFilter)}
+      <div className={tripFiltersGroupVariants()}>
+        <p className={tripFiltersLabelVariants()}>{t('trips.filters.category')}</p>
+        <div
+          className={tripFiltersChipRowVariants()}
+          role="group"
+          aria-label={t('trips.filters.category')}
         >
-          <SelectTrigger aria-label={t('trips.filters.category')}>
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value={ALL_TRIP_CATEGORIES_FILTER}>{t('trips.filters.all')}</SelectItem>
-            <SelectItem value={TripCategory.KIDS}>{t('trips.categories.kids')}</SelectItem>
-            <SelectItem value={TripCategory.FAMILY}>{t('trips.categories.family')}</SelectItem>
-            <SelectItem value={TripCategory.ADULTS}>{t('trips.categories.adults')}</SelectItem>
-            <SelectItem value={TripCategory.NATURE}>{t('trips.categories.nature')}</SelectItem>
-            <SelectItem value={TripCategory.CULTURE}>{t('trips.categories.culture')}</SelectItem>
-            <SelectItem value={TripCategory.WEEKEND}>{t('trips.categories.weekend')}</SelectItem>
-            <SelectItem value={TripCategory.EDUCATIONAL}>
-              {t('trips.categories.educational')}
-            </SelectItem>
-            <SelectItem value={TripCategory.CUSTOM}>{t('trips.categories.custom')}</SelectItem>
-          </SelectContent>
-        </Select>
+          {CATEGORY_FILTERS.map((value) => (
+            <button
+              key={value}
+              type="button"
+              className={tripFiltersChipVariants({
+                state: categoryFilter === value ? 'active' : 'idle',
+              })}
+              aria-pressed={categoryFilter === value}
+              onClick={() => onCategoryFilterChange(value)}
+            >
+              {categoryFilterLabel(t, value)}
+            </button>
+          ))}
+        </div>
       </div>
-      <div className={tripFiltersFieldVariants()}>
-        <span className={tripFiltersLabelVariants()}>{t('trips.filters.audience')}</span>
-        <Select
-          value={audienceFilter}
-          onValueChange={(value) => onAudienceFilterChange(value as TripAudienceFilter)}
+      <div className={tripFiltersGroupVariants()}>
+        <p className={tripFiltersLabelVariants()}>{t('trips.filters.audience')}</p>
+        <div
+          className={tripFiltersChipRowVariants()}
+          role="group"
+          aria-label={t('trips.filters.audience')}
         >
-          <SelectTrigger aria-label={t('trips.filters.audience')}>
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value={ALL_TRIP_AUDIENCES_FILTER}>{t('trips.filters.all')}</SelectItem>
-            <SelectItem value={TripAudience.KIDS}>{t('trips.audiences.kids')}</SelectItem>
-            <SelectItem value={TripAudience.FAMILY}>{t('trips.audiences.family')}</SelectItem>
-            <SelectItem value={TripAudience.ADULTS}>{t('trips.audiences.adults')}</SelectItem>
-            <SelectItem value={TripAudience.MIXED}>{t('trips.audiences.mixed')}</SelectItem>
-            <SelectItem value={TripAudience.GROUP}>{t('trips.audiences.group')}</SelectItem>
-          </SelectContent>
-        </Select>
+          {AUDIENCE_FILTERS.map((value) => (
+            <button
+              key={value}
+              type="button"
+              className={tripFiltersChipVariants({
+                state: audienceFilter === value ? 'active' : 'idle',
+              })}
+              aria-pressed={audienceFilter === value}
+              onClick={() => onAudienceFilterChange(value)}
+            >
+              {audienceFilterLabel(t, value)}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   )

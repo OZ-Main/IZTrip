@@ -27,7 +27,7 @@ export default function SectionHeader({
         {description ? <p className={sectionHeaderDescriptionVariants()}>{description}</p> : null}
       </div>
       {actionSlot ? (
-        <div className="w-full shrink-0 md:w-auto [&_a]:block [&_a]:w-full [&_button]:w-full md:[&_a]:inline md:[&_a]:w-auto md:[&_button]:w-auto">
+        <div className="w-full shrink-0 md:w-auto [&_a]:block [&_a]:w-full md:[&_a]:inline md:[&_a]:w-auto [&_button]:w-full md:[&_button]:w-auto">
           {actionSlot}
         </div>
       ) : null}

@@ -127,11 +127,9 @@ const catalogEn = Object.fromEntries([
     included5: 'IZ Trip safety kit and backup weather routing',
     included6: 'Digital photo tips sheet for phone cameras',
     itineraryDay1Title: 'Into the hills & farm table',
-    itineraryDay1Body:
-      'Morning pickup, ridge hike, farm visit, settle into camp/cabins, dinner.',
+    itineraryDay1Body: 'Morning pickup, ridge hike, farm visit, settle into camp/cabins, dinner.',
     itineraryDay2Title: 'Forest loop & return',
-    itineraryDay2Body:
-      'Gentle morning loop, lunch, optional kayak, return to Chișinău.',
+    itineraryDay2Body: 'Gentle morning loop, lunch, optional kayak, return to Chișinău.',
   }),
 ])
 
@@ -141,6 +139,14 @@ const uiEn = {
   language: {
     switcherLabel: 'Language',
     codes: { en: 'EN', ro: 'RO', ru: 'RU' },
+  },
+  theme: {
+    switcherLabel: 'Theme',
+    modes: {
+      light: 'Light',
+      dark: 'Dark',
+      system: 'Auto',
+    },
   },
   nav: {
     mainLabel: 'Primary',
@@ -153,6 +159,14 @@ const uiEn = {
     openMenu: 'Open menu',
   },
   auth: {
+    marketingTitle: 'Plan Moldova trips without guesswork',
+    marketingLead:
+      'Create an account to send structured booking requests, keep trip context handy, and hear back from a real coordinator.',
+    marketingPoint1: 'Curated catalog with realistic pacing and clear inclusions',
+    marketingPoint2: 'Transparent guest counts and pricing cues on every trip card',
+    marketingPoint3: 'Secure sign-in so your requests stay tied to you',
+    marketingPoint4: 'Family, kids, and mixed-group options across the catalog',
+    marketingFootnote: 'Independent, Moldova-focused travel desk — built for calm planning.',
     signIn: 'Sign in',
     signInDescription: 'Access saved trips and secure booking requests.',
     registerTitle: 'Create your IZ Trip account',
@@ -193,58 +207,102 @@ const uiEn = {
   home: {
     hero: {
       eyebrow: 'Curated Moldova travel',
-      title: 'Discover Moldova with calm, premium weekend planning',
+      title: 'Weekend escapes, city walks, and countryside routes — planned with local care',
       subtitle:
-        'Handpicked routes for families, friends, and curious explorers — transparent pricing, local guides, and booking requests that stay organized.',
+        'Browse a Moldova-first catalog of small-group experiences with clear pricing, vetted partners, and booking requests that stay organized from day one.',
       primaryCta: 'Explore trips',
       secondaryCta: 'Create free account',
+      trustRoutes: 'Curated local routes',
+      trustPricing: 'Transparent pricing and group sizes',
+      trustSecure: 'Secure account-based requests',
+      previewBadge: 'Featured route',
+      previewMeta: '{{duration}} · from {{price}}',
+      badgeCurated: 'Local guides',
+      badgeSmallGroups: 'Small groups',
+      badgeFlexible: 'Flexible departures',
     },
     featured: {
       title: 'Featured Moldova experiences',
-      description: 'Start with guest-loved routes — wineries, fortresses, gorges, and city walks.',
+      description:
+        'Three handpicked routes to start fast — wineries, fortresses, gorges, and city walks.',
       viewAll: 'View all trips',
     },
     how: {
       title: 'How IZ Trip works',
-      description: 'Three simple steps from inspiration to a confirmed request.',
+      description: 'Three calm steps from inspiration to a saved request our team can act on.',
       step1: {
         badge: '01',
-        title: 'Browse curated trips',
-        body: 'Filter by audience and style, compare transparent inclusions, and read honest day plans.',
+        title: 'Choose a curated trip',
+        body: 'Filter by travel style and who is going, compare inclusions, and read day-by-day context.',
       },
       step2: {
         badge: '02',
-        title: 'Pick dates & details',
-        body: 'Choose an available departure window and tell us who is traveling — we keep requests structured.',
+        title: 'Pick your date and group size',
+        body: 'Select a listed departure window and tell us how many guests — we keep the request structured.',
       },
       step3: {
         badge: '03',
-        title: 'Request & relax',
-        body: 'Submit a secure booking request. We save it securely and notify our team by email.',
+        title: 'Send the request — we confirm details',
+        body: 'Submit a secure request from your account. We store it safely and notify our coordinators.',
       },
     },
     categories: {
       title: 'Explore by travel style',
-      description: 'Jump into the catalog with one tap — filters stay easy on mobile.',
+      description: 'Jump into the catalog with one tap — filters stay thumb-friendly on mobile.',
+      explore: 'See matching trips',
+    },
+    categoryDescriptions: {
+      kids: 'Playful pacing, scavenger-style prompts, and guides who know families.',
+      family: 'Room to roam, snack breaks, and honest notes on stairs and walking time.',
+      adults: 'Wine galleries, city architecture, and grown-up storytelling.',
+      nature: 'Forest trails, river lookouts, and moderate routes with safety briefings.',
+      culture: 'Monasteries, fortresses, and village tables with context you can feel.',
+      weekend: 'Two-day loops with cozy overnight stays and relaxed mornings.',
+      educational: 'Hands-on context for schools and curious groups.',
+      custom: 'Tell us your idea — we route it through the same structured request flow.',
     },
     trust: {
       title: 'Why travelers trust IZ Trip',
-      description: 'We design for clarity, safety, and real Moldovan hospitality.',
-      point1: 'Local partners vetted for quality, insurance readiness, and guest care',
-      point2: 'Clear group sizes and pacing notes on every itinerary',
-      point3: 'Secure accounts so your requests stay tied to you',
+      description: 'We bias toward clarity: what you book, who it suits, and what happens next.',
+      cards: {
+        routes: {
+          title: 'Curated local routes',
+          body: 'Itineraries are built with guides and hosts we know — not anonymous copy-paste.',
+        },
+        pricing: {
+          title: 'Clear pricing and group sizes',
+          body: 'Every card shows realistic guest counts, duration, and a transparent “from” price.',
+        },
+        requests: {
+          title: 'Secure account-based requests',
+          body: 'Booking asks live in your account history so nothing gets lost in inboxes.',
+        },
+        family: {
+          title: 'Family and kids-friendly options',
+          body: 'Pacing, rest stops, and honest difficulty notes appear across the catalog.',
+        },
+      },
     },
     finalCta: {
       title: 'Ready to plan your next Moldova weekend?',
-      description: 'Create an account to book, or explore trips first — no pressure.',
+      description:
+        'Explore the catalog first, or create an account when you are ready to request a date.',
       primary: 'Browse trips',
-      secondary: 'Sign in',
+      secondary: 'Create account',
     },
   },
   trips: {
     page: {
-      title: 'Curated trips',
-      description: 'Filter by category and audience to match your travel style.',
+      title: 'Trips crafted for Moldova weekends',
+      description:
+        'Filter by travel style and who is traveling — each route includes honest pacing notes, transparent “from” pricing, and upcoming departures.',
+      kicker: 'Curated catalog',
+      statTripsLabel: 'Curated trips',
+      statTripsValue: '6 routes live',
+      statRoutesLabel: 'Moldova coverage',
+      statRoutesValue: 'North, Codrii, Chișinău, and Nistru viewpoints',
+      statDatesLabel: 'Flexible departures',
+      statDatesValue: 'Rolling weekend dates through the season',
     },
     backHome: 'Back to home',
     filters: {
@@ -292,6 +350,13 @@ const uiEn = {
     priceFrom: 'Price from',
     groupSize: 'Group size: {{min}}–{{max}} guests',
     bookCta: 'Book / request trip',
+    nextDateLabel: 'Next departure',
+    bookTrustNote: 'No payment is taken yet — we confirm availability and details with you first.',
+    metaDuration: '{{duration}}',
+    metaGroup: '{{min}}–{{max}} guests',
+    metaNextDate: 'Next: {{date}}',
+    metaNextDateUnknown: 'Ask our team for new departures',
+    metaPrice: 'From {{price}}',
     descriptionTitle: 'About this experience',
     highlightsTitle: 'Highlights',
     includedTitle: 'Included',
@@ -302,8 +367,17 @@ const uiEn = {
     page: {
       title: 'Request this trip',
       description:
-        'Submit a structured request — we save it in Firestore and send a notification email to our team.',
+        'Tell us who is traveling and when — we save the request securely and notify our coordinators.',
     },
+    summaryTitle: 'Trip summary',
+    summaryEyebrow: 'You are requesting',
+    trustTitle: 'What happens after you submit',
+    trustPoint1: 'We save your request securely to your account.',
+    trustPoint2: 'Our team reviews availability for your preferred date.',
+    trustPoint3: 'No payment is taken until details are confirmed with you.',
+    afterSubmitTitle: 'What happens next',
+    afterSubmitBody:
+      'You will see an on-screen confirmation and our team monitors new requests in the booking workspace.',
     form: {
       fullName: 'Full name',
       email: 'Email',
@@ -329,6 +403,10 @@ const uiEn = {
       title: 'Request received',
       description:
         'We saved your booking request and emailed our team. Someone will follow up with you soon.',
+      nextTitle: 'Suggested next steps',
+      next1: 'Watch your inbox for a personal reply with availability notes.',
+      next2: 'Review the trip page again if you want to adjust guest counts or dates.',
+      next3: 'Browse the catalog while you wait — we can bundle nearby routes when it helps.',
       viewTrip: 'Back to trip details',
       exploreMore: 'Explore more trips',
     },
@@ -343,23 +421,50 @@ const uiEn = {
     submitError: 'Could not save your request. Check your connection and try again.',
   },
   about: {
-    page: {
+    hero: {
+      kicker: 'Moldova-first curated travel',
       title: 'About IZ Trip',
-      lead: 'Moldova-first weekend and culture planning with a premium-but-friendly touch.',
+      subtitle:
+        'We are an independent travel desk focused on Moldova — pairing small-group routes with transparent pricing, local partners, and organized booking requests.',
     },
     mission: {
       title: 'Our mission',
-      body: 'We help travelers experience Moldova safely, confidently, and without outdated stereotypes — through curated itineraries and transparent booking.',
+      body: 'Help travelers explore Moldova with confidence: clear itineraries, honest pacing notes, and a booking flow that respects your time.',
     },
-    local: {
-      title: 'Local by design',
-      body: 'Routes start from real guides, guesthouses, and cellars we know personally. We grow carefully so quality stays high.',
+    pillars: {
+      title: 'What makes IZ Trip different',
+      lead: 'Four principles shape every route card, host relationship, and follow-up workflow.',
     },
-    safety: {
-      title: 'Families, kids, and groups',
-      body: 'Pacing, rest stops, and clear communication matter. Every listing shows realistic group sizes and what to expect on the trail or in the city.',
+    pillar1: {
+      title: 'Local-first planning',
+      body: 'Guides, guesthouses, and cellars are relationships — not interchangeable vendors.',
     },
-    cta: 'Browse curated trips',
+    pillar2: {
+      title: 'Family and kids-friendly options',
+      body: 'We label difficulty, stairs, and driving time so families can decide quickly.',
+    },
+    pillar3: {
+      title: 'Transparent pricing cues',
+      body: '“From” pricing, guest counts, and inclusions are visible before you request a date.',
+    },
+    pillar4: {
+      title: 'Secure organized requests',
+      body: 'Account-based requests stay structured for our coordinators and for your history.',
+    },
+    audience: {
+      title: 'Who IZ Trip is for',
+      lead: 'If you value calm planning and human follow-up, you are in the right place.',
+      families: 'Families who want realistic pacing and snack-friendly days',
+      kids: 'School groups and kids clubs that need clear supervision notes',
+      friends: 'Friends and adults seeking wine, culture, and architecture depth',
+      weekend: 'Weekend explorers chasing fresh air without extreme sport',
+    },
+    closing: {
+      title: 'See the catalog, then request a date',
+      body: 'No pressure to book instantly — explore trips, share them with your group, and reach out when the timing feels right.',
+    },
+    ctaPrimary: 'Browse curated trips',
+    ctaSecondary: 'Create account',
   },
 }
 
@@ -459,7 +564,8 @@ const catalogRo = {
     itineraryDay1Title: 'Cascade Saharna și buclă forestieră',
     itineraryDay1Body: 'Deplasare din Chișinău, traseu cascadă, cazare, cină consistentă.',
     itineraryDay2Title: 'Mănăstirea rupestră Țîpova și întoarcere',
-    itineraryDay2Body: 'Transfer dimineața, traseu pe stâncă, prânz, întoarcere spre seară la Chișinău.',
+    itineraryDay2Body:
+      'Transfer dimineața, traseu pe stâncă, prânz, întoarcere spre seară la Chișinău.',
   },
   'weekend-nature-escape': {
     title: 'Weekend în natură (Codrii)',
@@ -479,7 +585,8 @@ const catalogRo = {
     included5: 'Kit siguranță IZ Trip și rută alternativă la vreme rea',
     included6: 'Ghid scurt pentru fotografii cu telefonul',
     itineraryDay1Title: 'În dealuri și masă la fermă',
-    itineraryDay1Body: 'Ridicare dimineața, drumeție pe creastă, fermă, cazare la tabără/cabană, cină.',
+    itineraryDay1Body:
+      'Ridicare dimineața, drumeție pe creastă, fermă, cazare la tabără/cabană, cină.',
     itineraryDay2Title: 'Buclă forestieră și întoarcere',
     itineraryDay2Body: 'Dimineață ușoară, prânz, opțional caiac, întoarcere la Chișinău.',
   },
@@ -611,6 +718,10 @@ const ro = structuredClone(uiEn)
 ro.common.loadingApp = 'Se pregătește spațiul tău de călătorie…'
 ro.common.close = 'Închide'
 ro.language.switcherLabel = 'Limbă'
+ro.theme.switcherLabel = 'Temă'
+ro.theme.modes.light = 'Luminos'
+ro.theme.modes.dark = 'Întunecat'
+ro.theme.modes.system = 'Auto'
 ro.nav.mainLabel = 'Principal'
 ro.nav.home = 'Acasă'
 ro.nav.trips = 'Excursii'
@@ -651,39 +762,92 @@ ro.auth.errors.invalidCredentials = 'E-mail sau parolă incorectă.'
 ro.auth.errors.emailInUse = 'Există deja un cont cu acest e-mail.'
 ro.auth.errors.weakPassword = 'Parola este prea slabă. Folosește cel puțin 8 caractere.'
 ro.auth.errors.tooManyRequests = 'Prea multe încercări. Așteaptă puțin.'
+ro.auth.marketingTitle = 'Planifică în Moldova fără improvizații'
+ro.auth.marketingLead =
+  'Creează un cont ca să trimiți solicitări structurate, să păstrezi contextul excursiei și să primești răspuns de la un coordonator real.'
+ro.auth.marketingPoint1 = 'Catalog curatoriat cu ritm realist și ce e inclus pe înțeles'
+ro.auth.marketingPoint2 = 'Număr de oaspeți și indicii de preț transparente pe fiecare card'
+ro.auth.marketingPoint3 = 'Autentificare securizată ca solicitările să rămână la tine în cont'
+ro.auth.marketingPoint4 = 'Opțiuni pentru familii, copii și grupuri mixte în tot catalogul'
+ro.auth.marketingFootnote = 'Desk independent, axat pe Moldova — gândit pentru planificare calmă.'
 ro.home.hero.eyebrow = 'Călătorii curatoriate în Moldova'
-ro.home.hero.title = 'Descoperă Moldova cu planificare calmă, de weekend, premium'
+ro.home.hero.title = 'Escapade de weekend, plimbări urbane și rute la țară — cu grijă locală'
 ro.home.hero.subtitle =
-  'Rute alese pentru familii, prieteni și exploratori curioși — prețuri transparente, ghizi locali și solicitări de rezervare organizate.'
+  'Răsfoiește un catalog axat pe Moldova: grupuri mici, parteneri verificați, prețuri clare și solicitări de rezervare care rămân organizate.'
 ro.home.hero.primaryCta = 'Vezi excursiile'
 ro.home.hero.secondaryCta = 'Creează cont gratuit'
+ro.home.hero.trustRoutes = 'Trasee locale curatoriate'
+ro.home.hero.trustPricing = 'Prețuri și mărimi de grup transparente'
+ro.home.hero.trustSecure = 'Solicitări securizate pe cont'
+ro.home.hero.previewBadge = 'Rută recomandată'
+ro.home.hero.previewMeta = '{{duration}} · de la {{price}}'
+ro.home.hero.badgeCurated = 'Ghiduri locale'
+ro.home.hero.badgeSmallGroups = 'Grupuri mici'
+ro.home.hero.badgeFlexible = 'Plecări flexibile'
 ro.home.featured.title = 'Experiențe recomandate în Moldova'
-ro.home.featured.description = 'Începe cu rute iubite de oaspeți — crame, cetăți, chei și plimbări urbane.'
+ro.home.featured.description =
+  'Trei rute alese ca să începi rapid — crame, cetăți, chei și plimbări urbane.'
 ro.home.featured.viewAll = 'Toate excursiile'
 ro.home.how.title = 'Cum funcționează IZ Trip'
-ro.home.how.description = 'Trei pași simpli de la inspirație la o solicitare confirmată.'
-ro.home.how.step1.title = 'Răsfoiește excursii curatoriate'
+ro.home.how.description =
+  'Trei pași calmi de la inspirație la o solicitare pe care echipa o poate prelua.'
+ro.home.how.step1.title = 'Alege o excursie curatoriată'
 ro.home.how.step1.body =
-  'Filtrează după public și stil, compară ce e inclus și citește itinerare realiste.'
-ro.home.how.step2.title = 'Alege date și detalii'
+  'Filtrează după stil și cine călătorește, compară ce e inclus și citește contextul zilei.'
+ro.home.how.step2.title = 'Alege data și mărimea grupului'
 ro.home.how.step2.body =
-  'Selectează o fereastră disponibilă și spune-ne cine călătorește — păstrăm solicitările structurate.'
-ro.home.how.step3.title = 'Solicită și relaxează-te'
+  'Selectează o fereastră listată și spune câți oaspeți sunteți — păstrăm solicitarea structurată.'
+ro.home.how.step3.title = 'Trimite solicitarea — noi confirmăm detaliile'
 ro.home.how.step3.body =
-  'Trimite o solicitare securizată. O salvăm și trimitem o notificare pe e-mail echipei ca să nu rămâi fără răspuns.'
+  'Trimite din cont o solicitare securizată. O stocăm în siguranță și notificăm coordonatorii.'
 ro.home.categories.title = 'Explorează după stil'
-ro.home.categories.description = 'Intră în catalog dintr-o atingere — filtrele sunt simple pe mobil.'
+ro.home.categories.description =
+  'Intră în catalog dintr-o atingere — filtrele sunt prietenoase pe mobil.'
+ro.home.categories.explore = 'Vezi excursiile potrivite'
+ro.home.categoryDescriptions.kids =
+  'Ritm jucăuș, indicii tip „vânătoare de indicii” și ghizi obișnuiți cu familii.'
+ro.home.categoryDescriptions.family =
+  'Loc de mișcare, gustări și note sincere despre trepte și mers pe jos.'
+ro.home.categoryDescriptions.adults =
+  'Galerii de vin, arhitectură urbană și povești pentru public matur.'
+ro.home.categoryDescriptions.nature =
+  'Poteci forestiere, belvedere la râu și trasee moderate cu briefing de siguranță.'
+ro.home.categoryDescriptions.culture =
+  'Mănăstiri, cetăți și mese la țară cu context pe care îl simți.'
+ro.home.categoryDescriptions.weekend =
+  'Bucle de două zile cu cazare confortabilă și dimineți liniștite.'
+ro.home.categoryDescriptions.educational = 'Context practic pentru școli și grupuri curioase.'
+ro.home.categoryDescriptions.custom =
+  'Spune-ne ideea — o trecem prin același flux structurat de solicitare.'
 ro.home.trust.title = 'De ce au încredere călătorii'
-ro.home.trust.description = 'Proiectăm pentru claritate, siguranță și ospitalitate moldovenească autentică.'
-ro.home.trust.point1 = 'Parteneri locali verificați pentru calitate și grijă față de oaspeți'
-ro.home.trust.point2 = 'Dimensiuni de grup și ritm explicite în fiecare itinerar'
-ro.home.trust.point3 = 'Conturi securizate ca solicitările să rămână legate de tine'
+ro.home.trust.description =
+  'Ne orientăm spre claritate: ce rezervi, cui i se potrivește și ce urmează.'
+ro.home.trust.cards.routes.title = 'Trasee locale curatoriate'
+ro.home.trust.cards.routes.body =
+  'Itinerare lucrate cu ghizi și gazde cunoscute — nu texte anonime.'
+ro.home.trust.cards.pricing.title = 'Prețuri și grupuri clare'
+ro.home.trust.cards.pricing.body =
+  'Fiecare card arată durata, numărul de oaspeți și un „de la” onest.'
+ro.home.trust.cards.requests.title = 'Solicitări pe cont, organizate'
+ro.home.trust.cards.requests.body =
+  'Cererile rămân în istoricul contului tău — nu se pierd în inboxuri.'
+ro.home.trust.cards.family.title = 'Opțiuni prietenoase pentru familii'
+ro.home.trust.cards.family.body = 'Pauze, ritm și note sincere despre efort apar în tot catalogul.'
 ro.home.finalCta.title = 'Pregătit pentru următorul weekend în Moldova?'
-ro.home.finalCta.description = 'Creează cont pentru rezervare sau explorează excursiile — fără presiune.'
+ro.home.finalCta.description =
+  'Explorează catalogul mai întâi sau creează un cont când ești gata să ceri o dată.'
 ro.home.finalCta.primary = 'Răsfoiește excursiile'
-ro.home.finalCta.secondary = 'Autentificare'
-ro.trips.page.title = 'Excursii curatoriate'
-ro.trips.page.description = 'Filtrează după categorie și public ca să se potrivească stilului tău.'
+ro.home.finalCta.secondary = 'Creează cont'
+ro.trips.page.title = 'Excursii gândite pentru weekenduri în Moldova'
+ro.trips.page.description =
+  'Filtrează după stil și public — fiecare rută include note sincere de ritm, preț „de la” și plecări viitoare.'
+ro.trips.page.kicker = 'Catalog curatoriat'
+ro.trips.page.statTripsLabel = 'Excursii curatoriate'
+ro.trips.page.statTripsValue = '6 rute disponibile'
+ro.trips.page.statRoutesLabel = 'Acoperire în Moldova'
+ro.trips.page.statRoutesValue = 'Nord, Codrii, Chișinău și belvedere Nistru'
+ro.trips.page.statDatesLabel = 'Plecări flexibile'
+ro.trips.page.statDatesValue = 'Date de weekend pe tot sezonul'
 ro.trips.backHome = 'Înapoi acasă'
 ro.trips.filters.all = 'Toate'
 ro.trips.filters.category = 'Categorie'
@@ -720,6 +884,14 @@ ro.tripDetails.backToTrips = 'Înapoi la excursii'
 ro.tripDetails.priceFrom = 'Preț de la'
 ro.tripDetails.groupSize = 'Grup: {{min}}–{{max}} persoane'
 ro.tripDetails.bookCta = 'Rezervă / solicită excursia'
+ro.tripDetails.nextDateLabel = 'Următoarea plecare'
+ro.tripDetails.bookTrustNote =
+  'Nu se încasează plata încă — confirmăm disponibilitatea și detaliile cu tine mai întâi.'
+ro.tripDetails.metaDuration = '{{duration}}'
+ro.tripDetails.metaGroup = '{{min}}–{{max}} persoane'
+ro.tripDetails.metaNextDate = 'Următoarea: {{date}}'
+ro.tripDetails.metaNextDateUnknown = 'Cere echipei noi plecări'
+ro.tripDetails.metaPrice = 'De la {{price}}'
 ro.tripDetails.descriptionTitle = 'Despre experiență'
 ro.tripDetails.highlightsTitle = 'Puncte forte'
 ro.tripDetails.includedTitle = 'Ce e inclus'
@@ -727,7 +899,16 @@ ro.tripDetails.itineraryTitle = 'Itinerar'
 ro.tripDetails.availableDatesTitle = 'Date de plecare disponibile'
 ro.booking.page.title = 'Solicită această excursie'
 ro.booking.page.description =
-  'Trimite o solicitare structurată — o salvăm în Firestore și trimitem un e-mail de notificare echipei.'
+  'Spune-ne cine călătorește și când — salvăm solicitarea în siguranță și notificăm coordonatorii.'
+ro.booking.summaryTitle = 'Rezumat excursie'
+ro.booking.summaryEyebrow = 'Cerere pentru'
+ro.booking.trustTitle = 'Ce se întâmplă după trimitere'
+ro.booking.trustPoint1 = 'Salvăm solicitarea în siguranță în contul tău.'
+ro.booking.trustPoint2 = 'Echipa verifică disponibilitatea pentru data aleasă.'
+ro.booking.trustPoint3 = 'Nu se ia plată până nu confirmăm detaliile cu tine.'
+ro.booking.afterSubmitTitle = 'Ce urmează'
+ro.booking.afterSubmitBody =
+  'Vei vedea o confirmare pe ecran, iar echipa urmărește solicitările noi în spațiul de rezervări.'
 ro.booking.form.fullName = 'Nume complet'
 ro.booking.form.email = 'E-mail'
 ro.booking.form.phone = 'Telefon'
@@ -748,6 +929,12 @@ ro.booking.validation.peopleCountMax = 'Maximum {{max}} persoane pentru această
 ro.booking.success.title = 'Solicitare primită'
 ro.booking.success.description =
   'Am salvat solicitarea și am trimis un e-mail echipei. Cineva te va contacta în curând.'
+ro.booking.success.nextTitle = 'Pași următori sugerați'
+ro.booking.success.next1 =
+  'Urmărește inboxul pentru un răspuns personal cu note de disponibilitate.'
+ro.booking.success.next2 =
+  'Revino la pagina excursiei dacă vrei să ajustezi numărul de persoane sau data.'
+ro.booking.success.next3 = 'Răsfoiește catalogul așteptând — putem lega rute apropiate când ajută.'
 ro.booking.success.viewTrip = 'Înapoi la detalii excursie'
 ro.booking.success.exploreMore = 'Alte excursii'
 ro.booking.successWithWarning.title = 'Solicitare primită'
@@ -757,23 +944,51 @@ ro.booking.successFullToast = 'Salvat și echipa a fost notificată pe e-mail.'
 ro.booking.emailWarningToast =
   'Solicitare salvată. E-mailul de notificare nu a putut fi trimis — echipa poate vedea în continuare solicitarea.'
 ro.booking.submitError = 'Nu am putut salva solicitarea. Verifică conexiunea și încearcă din nou.'
-ro.about.page.title = 'Despre IZ Trip'
-ro.about.page.lead = 'Planificare de weekend și cultură cu accent pe Moldova — premium, dar prietenos.'
+ro.about.hero.kicker = 'Călătorii curatoriate, axate pe Moldova'
+ro.about.hero.title = 'Despre IZ Trip'
+ro.about.hero.subtitle =
+  'Suntem un desk independent axat pe Moldova — grupuri mici, parteneri locali, prețuri clare și solicitări de rezervare organizate.'
 ro.about.mission.title = 'Misiunea noastră'
 ro.about.mission.body =
-  'Ajutăm călătorii să descopere Moldova în siguranță și cu încredere — prin itinerare curatoriate și rezervări transparente.'
-ro.about.local.title = 'Local prin design'
-ro.about.local.body =
-  'Rutele pornesc de la ghizi, pensiuni și crame pe care le cunoaștem personal. Creștem lent ca să păstrăm calitatea.'
-ro.about.safety.title = 'Familii, copii și grupuri'
-ro.about.safety.body =
-  'Contează ritmul, pauzele și comunicarea clară. Fiecare listă arată mărimea realistă a grupului și ce să aștepți pe traseu sau în oraș.'
-ro.about.cta = 'Răsfoiește excursiile'
+  'Ajutăm călătorii să exploreze Moldova cu încredere: itinerare clare, note sincere despre ritm și un flux de solicitare care îți respectă timpul.'
+ro.about.pillars.title = 'Ce face diferit IZ Trip'
+ro.about.pillars.lead =
+  'Patru principii ghidează fiecare card de rută, relația cu gazdele și pașii de urmărire.'
+ro.about.pillar1.title = 'Planificare locală mai întâi'
+ro.about.pillar1.body =
+  'Ghidurile, pensiunile și cramele sunt relații — nu furnizori interschimbabili.'
+ro.about.pillar2.title = 'Opțiuni pentru familii și copii'
+ro.about.pillar2.body =
+  'Notăm dificultatea, scările și timpul la volan ca familiile să decidă repede.'
+ro.about.pillar3.title = 'Indicii transparente de preț'
+ro.about.pillar3.body =
+  'Prețul „de la”, numărul de oaspeți și ce e inclus sunt vizibile înainte să ceri o dată.'
+ro.about.pillar4.title = 'Solicitări sigure și structurate'
+ro.about.pillar4.body =
+  'Cererile pe cont rămân structurate pentru coordonatori și pentru istoricul tău.'
+ro.about.audience.title = 'Pentru cine este IZ Trip'
+ro.about.audience.lead =
+  'Dacă îți place planificarea calmă și urmărirea umană, ești în locul potrivit.'
+ro.about.audience.families = 'Familii care vor ritm realist și zile prietenoase cu gustări'
+ro.about.audience.kids =
+  'Grupuri școlare și cluburi pentru copii care au nevoie de note clare de supraveghere'
+ro.about.audience.friends =
+  'Prieteni și adulți care caută vin, cultură și arhitectură cu profunzime'
+ro.about.audience.weekend = 'Exploratori de weekend care vor aer proaspăt fără sport extrem'
+ro.about.closing.title = 'Vezi catalogul, apoi cere o dată'
+ro.about.closing.body =
+  'Nu trebuie să rezervi instant — explorează excursiile, împărtășește-le grupului și revino când ești gata.'
+ro.about.ctaPrimary = 'Răsfoiește excursiile'
+ro.about.ctaSecondary = 'Creează cont'
 
 const ru = structuredClone(uiEn)
 ru.common.loadingApp = 'Готовим ваше рабочее пространство для путешествий…'
 ru.common.close = 'Закрыть'
 ru.language.switcherLabel = 'Язык'
+ru.theme.switcherLabel = 'Тема'
+ru.theme.modes.light = 'Светлая'
+ru.theme.modes.dark = 'Тёмная'
+ru.theme.modes.system = 'Авто'
 ru.nav.mainLabel = 'Основное'
 ru.nav.home = 'Главная'
 ru.nav.trips = 'Туры'
@@ -814,39 +1029,85 @@ ru.auth.errors.invalidCredentials = 'Неверная почта или паро
 ru.auth.errors.emailInUse = 'Аккаунт с этой почтой уже существует.'
 ru.auth.errors.weakPassword = 'Слабый пароль. Используйте не менее 8 символов.'
 ru.auth.errors.tooManyRequests = 'Слишком много попыток. Подождите немного.'
+ru.auth.marketingTitle = 'Планируйте Молдову без догадок'
+ru.auth.marketingLead =
+  'Создайте аккаунт, чтобы отправлять структурированные заявки, хранить контекст тура и получать ответ координатора.'
+ru.auth.marketingPoint1 = 'Каталог с реалистичным темпом и понятными включениями'
+ru.auth.marketingPoint2 = 'Прозрачные подсказки по числу гостей и цене на каждой карточке'
+ru.auth.marketingPoint3 = 'Безопасный вход, чтобы заявки оставались в вашем аккаунте'
+ru.auth.marketingPoint4 = 'Семьи, дети и смешанные группы — по всему каталогу'
+ru.auth.marketingFootnote =
+  'Независимый деск, сфокусированный на Молдове — для спокойного планирования.'
 ru.home.hero.eyebrow = 'Кураторские путешествия по Молдове'
-ru.home.hero.title = 'Откройте Молдову со спокойным премиальным планированием выходных'
+ru.home.hero.title = 'Уикенды, городские прогулки и загородные маршруты — с местной заботой'
 ru.home.hero.subtitle =
-  'Маршруты для семей, друзей и любознательных путешественников — прозрачные цены, местные гиды и заявки без хаоса.'
+  'Каталог для Молдовы: небольшие группы, проверенные партнёры, ясные цены и заявки, которые остаются в порядке с первого дня.'
 ru.home.hero.primaryCta = 'Смотреть туры'
 ru.home.hero.secondaryCta = 'Создать бесплатный аккаунт'
+ru.home.hero.trustRoutes = 'Локальные маршруты с отбором'
+ru.home.hero.trustPricing = 'Прозрачные цены и размер группы'
+ru.home.hero.trustSecure = 'Заявки из аккаунта, безопасно'
+ru.home.hero.previewBadge = 'Рекомендованный маршрут'
+ru.home.hero.previewMeta = '{{duration}} · от {{price}}'
+ru.home.hero.badgeCurated = 'Местные гиды'
+ru.home.hero.badgeSmallGroups = 'Небольшие группы'
+ru.home.hero.badgeFlexible = 'Гибкие даты выезда'
 ru.home.featured.title = 'Избранные впечатления Молдовы'
-ru.home.featured.description = 'Начните с любимых гостями маршрутов — винодельни, крепости, ущелья и городские прогулки.'
+ru.home.featured.description =
+  'Три маршрута, чтобы начать быстро — винодельни, крепости, лес и город.'
 ru.home.featured.viewAll = 'Все туры'
 ru.home.how.title = 'Как работает IZ Trip'
-ru.home.how.description = 'Три простых шага от идеи до оформленной заявки.'
+ru.home.how.description = 'Три спокойных шага от идеи до заявки, которую команда может обработать.'
 ru.home.how.step1.title = 'Выберите кураторский тур'
 ru.home.how.step1.body =
-  'Фильтруйте по аудитории и стилю, сравнивайте включённые услуги и читайте честные планы дня.'
-ru.home.how.step2.title = 'Выберите даты и детали'
+  'Фильтруйте по стилю и составу группы, сравнивайте включения и читайте контекст дня.'
+ru.home.how.step2.title = 'Выберите дату и размер группы'
 ru.home.how.step2.body =
-  'Укажите доступное окно и состав группы — мы сохраняем заявку в структурированном виде.'
-ru.home.how.step3.title = 'Отправьте заявку и расслабьтесь'
+  'Укажите доступное окно из списка и число гостей — заявка остаётся структурированной.'
+ru.home.how.step3.title = 'Отправьте заявку — мы подтвердим детали'
 ru.home.how.step3.body =
-  'Безопасная заявка: мы сохраняем её и отправляем команде уведомление по электронной почте, чтобы вы не остались без ответа.'
+  'Отправьте заявку из аккаунта. Мы сохраняем её безопасно и уведомляем координаторов.'
 ru.home.categories.title = 'Исследуйте по стилю'
 ru.home.categories.description = 'Перейдите в каталог одним нажатием — фильтры удобны на мобильном.'
+ru.home.categories.explore = 'Смотреть подходящие туры'
+ru.home.categoryDescriptions.kids = 'Игровой темп, задания-наблюдения и гиды, привыкшие к семьям.'
+ru.home.categoryDescriptions.family =
+  'Простор для прогулок, перекусы и честные заметки про лестницы и ходьбу.'
+ru.home.categoryDescriptions.adults = 'Винные галереи, городская архитектура и взрослые истории.'
+ru.home.categoryDescriptions.nature =
+  'Лесные тропы, виды на реку и умеренные маршруты с инструктажем.'
+ru.home.categoryDescriptions.culture =
+  'Монастыри, крепости и деревенские столы с ощутимым контекстом.'
+ru.home.categoryDescriptions.weekend = 'Двухдневные петли с уютной ночёвкой и неспешными утрами.'
+ru.home.categoryDescriptions.educational = 'Практический контекст для школ и любознательных групп.'
+ru.home.categoryDescriptions.custom =
+  'Расскажите идею — проведём через тот же структурированный поток заявки.'
 ru.home.trust.title = 'Почему нам доверяют'
-ru.home.trust.description = 'Мы проектируем ясность, безопасность и настоящее молдавское гостеприимство.'
-ru.home.trust.point1 = 'Проверенные локальные партнёры и забота о гостях'
-ru.home.trust.point2 = 'Реалистичный размер группы и темп в каждом маршруте'
-ru.home.trust.point3 = 'Аккаунты, чтобы заявки оставались привязаны к вам'
+ru.home.trust.description = 'Мы за ясность: что вы бронируете, кому подходит и что будет дальше.'
+ru.home.trust.cards.routes.title = 'Локальные маршруты с отбором'
+ru.home.trust.cards.routes.body =
+  'Планы строятся с гидами и хозяевами, которых мы знаем — не копипаст.'
+ru.home.trust.cards.pricing.title = 'Понятные цены и группы'
+ru.home.trust.cards.pricing.body = 'На карточке видны длительность, число гостей и честное «от».'
+ru.home.trust.cards.requests.title = 'Заявки из аккаунта, по порядку'
+ru.home.trust.cards.requests.body = 'История заявок остаётся в аккаунте — не теряется в почте.'
+ru.home.trust.cards.family.title = 'Удобно для семей'
+ru.home.trust.cards.family.body = 'Паузы, темп и заметки о нагрузке — по всему каталогу.'
 ru.home.finalCta.title = 'Готовы спланировать следующие выходные в Молдове?'
-ru.home.finalCta.description = 'Создайте аккаунт для брони или сначала изучите туры — без давления.'
+ru.home.finalCta.description =
+  'Сначала изучите каталог или создайте аккаунт, когда будете готовы запросить дату.'
 ru.home.finalCta.primary = 'Смотреть туры'
-ru.home.finalCta.secondary = 'Войти'
-ru.trips.page.title = 'Кураторские туры'
-ru.trips.page.description = 'Фильтруйте по категории и аудитории, чтобы совпало со стилем поездки.'
+ru.home.finalCta.secondary = 'Создать аккаунт'
+ru.trips.page.title = 'Туры для молдавских уикендов'
+ru.trips.page.description =
+  'Фильтруйте по стилю и составу группы — у каждого маршрута честные заметки о темпе, цене «от» и ближайших датах.'
+ru.trips.page.kicker = 'Кураторский каталог'
+ru.trips.page.statTripsLabel = 'Кураторские туры'
+ru.trips.page.statTripsValue = '6 маршрутов в ленте'
+ru.trips.page.statRoutesLabel = 'Покрытие Молдовы'
+ru.trips.page.statRoutesValue = 'Север, Кодры, Кишинёв и виды на Днестр'
+ru.trips.page.statDatesLabel = 'Гибкие выезды'
+ru.trips.page.statDatesValue = 'Уикенд-даты на весь сезон'
 ru.trips.backHome = 'На главную'
 ru.trips.filters.all = 'Все'
 ru.trips.filters.category = 'Категория'
@@ -884,6 +1145,14 @@ ru.tripDetails.backToTrips = 'Назад к турам'
 ru.tripDetails.priceFrom = 'Цена от'
 ru.tripDetails.groupSize = 'Размер группы: {{min}}–{{max}} гостей'
 ru.tripDetails.bookCta = 'Забронировать / оставить заявку'
+ru.tripDetails.nextDateLabel = 'Ближайший выезд'
+ru.tripDetails.bookTrustNote =
+  'Оплата пока не списывается — сначала мы подтверждаем доступность и детали с вами.'
+ru.tripDetails.metaDuration = '{{duration}}'
+ru.tripDetails.metaGroup = '{{min}}–{{max}} гостей'
+ru.tripDetails.metaNextDate = 'Ближайший: {{date}}'
+ru.tripDetails.metaNextDateUnknown = 'Запросите новые даты у команды'
+ru.tripDetails.metaPrice = 'От {{price}}'
 ru.tripDetails.descriptionTitle = 'Об этом опыте'
 ru.tripDetails.highlightsTitle = 'Акценты'
 ru.tripDetails.includedTitle = 'Включено'
@@ -891,7 +1160,16 @@ ru.tripDetails.itineraryTitle = 'Маршрут'
 ru.tripDetails.availableDatesTitle = 'Доступные даты выезда'
 ru.booking.page.title = 'Заявка на этот тур'
 ru.booking.page.description =
-  'Отправьте структурированную заявку — мы сохраним её в Firestore и отправим команде письмо-уведомление.'
+  'Расскажите, кто едет и когда — мы сохраним заявку безопасно и уведомим координаторов.'
+ru.booking.summaryTitle = 'Кратко о туре'
+ru.booking.summaryEyebrow = 'Заявка на'
+ru.booking.trustTitle = 'Что происходит после отправки'
+ru.booking.trustPoint1 = 'Мы надёжно сохраняем заявку в вашем аккаунте.'
+ru.booking.trustPoint2 = 'Команда проверяет доступность на выбранную дату.'
+ru.booking.trustPoint3 = 'Оплата не требуется, пока детали не подтверждены с вами.'
+ru.booking.afterSubmitTitle = 'Что дальше'
+ru.booking.afterSubmitBody =
+  'Вы увидите подтверждение на экране, а команда отслеживает новые заявки в рабочем пространстве.'
 ru.booking.form.fullName = 'Полное имя'
 ru.booking.form.email = 'Эл. почта'
 ru.booking.form.phone = 'Телефон'
@@ -912,6 +1190,12 @@ ru.booking.validation.peopleCountMax = 'Максимум {{max}} гостей д
 ru.booking.success.title = 'Заявка получена'
 ru.booking.success.description =
   'Мы сохранили заявку и отправили письмо команде. С вами скоро свяжутся.'
+ru.booking.success.nextTitle = 'Что сделать дальше'
+ru.booking.success.next1 = 'Следите за почтой — придёт персональный ответ с деталями доступности.'
+ru.booking.success.next2 =
+  'При необходимости снова откройте страницу тура, чтобы изменить даты или число гостей.'
+ru.booking.success.next3 =
+  'Пока ждёте, просмотрите каталог — можем связать соседние маршруты, если это удобно.'
 ru.booking.success.viewTrip = 'Назад к туру'
 ru.booking.success.exploreMore = 'Другие туры'
 ru.booking.successWithWarning.title = 'Заявка получена'
@@ -921,18 +1205,40 @@ ru.booking.successFullToast = 'Сохранено, команда уведомл
 ru.booking.emailWarningToast =
   'Заявка сохранена. Письмо-уведомление не отправилось — команда всё равно может видеть вашу заявку.'
 ru.booking.submitError = 'Не удалось сохранить заявку. Проверьте соединение и попробуйте снова.'
-ru.about.page.title = 'Об IZ Trip'
-ru.about.page.lead = 'Планирование выходных и культуры с акцентом на Молдову — современно и по-дружески.'
+ru.about.hero.kicker = 'Кураторские поездки с фокусом на Молдову'
+ru.about.hero.title = 'Об IZ Trip'
+ru.about.hero.subtitle =
+  'Мы независимый travel-деск для Молдовы: небольшие группы, локальные партнёры, ясные цены и организованные заявки.'
 ru.about.mission.title = 'Наша миссия'
 ru.about.mission.body =
-  'Помогаем путешественникам открывать Молдову безопасно и уверенно — через кураторские маршруты и прозрачное бронирование.'
-ru.about.local.title = 'Локальность по замыслу'
-ru.about.local.body =
-  'Маршруты строятся на реальных гидах, гест-хаусах и погребах, которые мы знаем лично. Расти́м аккуратно, чтобы сохранить качество.'
-ru.about.safety.title = 'Семьи, дети и группы'
-ru.about.safety.body =
-  'Важны темп, паузы и ясная коммуникация. В каждой карточке — реалистичный размер группы и ожидания на тропе или в городе.'
-ru.about.cta = 'Смотреть кураторские туры'
+  'Помогаем путешественникам открывать Молдову уверенно: понятные маршруты, честные заметки о темпе и уважение к вашему времени.'
+ru.about.pillars.title = 'Чем IZ Trip отличается'
+ru.about.pillars.lead =
+  'Четыре принципа задают тон каждой карточке, отношениям с хостами и сопровождению заявок.'
+ru.about.pillar1.title = 'Сначала локальное планирование'
+ru.about.pillar1.body =
+  'Гиды, гест-хаусы и погреба — это отношения, а не взаимозаменяемые подрядчики.'
+ru.about.pillar2.title = 'Варианты для семей и детей'
+ru.about.pillar2.body =
+  'Мы отмечаем сложность, лестницы и время в дороге, чтобы семьи решали быстрее.'
+ru.about.pillar3.title = 'Прозрачные ценовые ориентиры'
+ru.about.pillar3.body = '«От», число гостей и включения видны до запроса даты.'
+ru.about.pillar4.title = 'Безопасные структурированные заявки'
+ru.about.pillar4.body =
+  'Заявки в аккаунте остаются структурированными для координаторов и вашей истории.'
+ru.about.audience.title = 'Для кого IZ Trip'
+ru.about.audience.lead =
+  'Если вам близки спокойное планирование и человеческое сопровождение — вы по адресу.'
+ru.about.audience.families = 'Семьи, которым нужен реалистичный темп и дни с перекусами'
+ru.about.audience.kids = 'Школы и детские клубы, которым важны ясные заметки о сопровождении'
+ru.about.audience.friends =
+  'Друзья и взрослые, которым интересны вино, культура и архитектура глубже'
+ru.about.audience.weekend = 'Исследователи уикенда, которым нужен воздух без экстрима'
+ru.about.closing.title = 'Смотрите каталог, затем запросите дату'
+ru.about.closing.body =
+  'Не нужно бронировать мгновенно — изучите туры, поделитесь с группой и вернитесь, когда будете готовы.'
+ru.about.ctaPrimary = 'Смотреть кураторские туры'
+ru.about.ctaSecondary = 'Создать аккаунт'
 
 writeFileSync(join(localesDir, 'en.json'), JSON.stringify(uiEn, null, 2))
 writeFileSync(join(localesDir, 'ro.json'), JSON.stringify(ro, null, 2))

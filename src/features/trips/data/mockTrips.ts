@@ -1,6 +1,6 @@
-import { TripAudience, TripCategory } from '@/shared/domain'
-
+import { MOCK_TRIP_IMAGE_URLS } from '@/features/trips/constants/mockTripImageUrls.constants'
 import type { TripDefinition } from '@/features/trips/types/trip.types'
+import { TripAudience, TripCategory } from '@/shared/domain'
 
 export const MOCK_TRIPS: TripDefinition[] = [
   {
@@ -11,8 +11,7 @@ export const MOCK_TRIPS: TripDefinition[] = [
     durationDays: 1,
     priceEur: 49,
     availableDates: ['2026-06-07', '2026-06-14', '2026-06-21', '2026-07-05'],
-    imageSrc:
-      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80',
+    imageSrc: MOCK_TRIP_IMAGE_URLS.orheiulVechi,
     minPeople: 2,
     maxPeople: 14,
     highlightCount: 4,
@@ -27,8 +26,7 @@ export const MOCK_TRIPS: TripDefinition[] = [
     durationDays: 1,
     priceEur: 65,
     availableDates: ['2026-05-10', '2026-05-17', '2026-05-24', '2026-06-01'],
-    imageSrc:
-      'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1200&q=80',
+    imageSrc: MOCK_TRIP_IMAGE_URLS.cricovaWine,
     minPeople: 2,
     maxPeople: 10,
     highlightCount: 4,
@@ -43,8 +41,7 @@ export const MOCK_TRIPS: TripDefinition[] = [
     durationDays: 1,
     priceEur: 55,
     availableDates: ['2026-05-18', '2026-06-08', '2026-06-22', '2026-07-12'],
-    imageSrc:
-      'https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=1200&q=80',
+    imageSrc: MOCK_TRIP_IMAGE_URLS.sorocaFortress,
     minPeople: 4,
     maxPeople: 16,
     highlightCount: 4,
@@ -59,8 +56,7 @@ export const MOCK_TRIPS: TripDefinition[] = [
     durationDays: 1,
     priceEur: 25,
     availableDates: ['2026-05-09', '2026-05-16', '2026-05-23', '2026-05-30'],
-    imageSrc:
-      'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1200&q=80',
+    imageSrc: MOCK_TRIP_IMAGE_URLS.chisinauWalking,
     minPeople: 2,
     maxPeople: 12,
     highlightCount: 4,
@@ -75,8 +71,7 @@ export const MOCK_TRIPS: TripDefinition[] = [
     durationDays: 2,
     priceEur: 120,
     availableDates: ['2026-06-13', '2026-06-27', '2026-07-11', '2026-07-25'],
-    imageSrc:
-      'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1200&q=80',
+    imageSrc: MOCK_TRIP_IMAGE_URLS.saharnaTipova,
     minPeople: 2,
     maxPeople: 8,
     highlightCount: 4,
@@ -91,8 +86,7 @@ export const MOCK_TRIPS: TripDefinition[] = [
     durationDays: 2,
     priceEur: 145,
     availableDates: ['2026-05-31', '2026-06-14', '2026-06-28', '2026-07-19'],
-    imageSrc:
-      'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80',
+    imageSrc: MOCK_TRIP_IMAGE_URLS.weekendNature,
     minPeople: 2,
     maxPeople: 6,
     highlightCount: 4,

@@ -160,7 +160,8 @@ const config: Config = {
         },
       },
       animation: {
-        'iz-surface-in': 'iz-fade-up var(--motion-duration-slow) var(--motion-ease-decelerate) both',
+        'iz-surface-in':
+          'iz-fade-up var(--motion-duration-slow) var(--motion-ease-decelerate) both',
       },
     },
   },

@@ -5,6 +5,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 import { useAuthStore } from '@/app/store/authStore'
 import LanguageSwitcher from '@/components/layout/LanguageSwitcher/LanguageSwitcher'
+import ThemeSwitcher from '@/components/layout/ThemeSwitcher/ThemeSwitcher'
 import {
   headerActionsVariants,
   headerBrandVariants,
@@ -27,8 +28,8 @@ import { cn } from '@/shared/utils/cn'
 function navLinkClassName(isActive: boolean) {
   return cn(
     headerNavLinkVariants(),
-    'flex min-h-11 items-center rounded-button px-2 py-2 sm:min-h-0 sm:px-0 sm:py-0',
-    isActive && 'text-foreground',
+    'flex min-h-11 items-center rounded-full px-3 py-2 sm:min-h-10 sm:px-3 sm:py-2',
+    isActive && 'bg-primary/10 text-primary',
   )
 }
 
@@ -56,14 +57,28 @@ export default function Header() {
           >
             <Menu className="h-6 w-6" aria-hidden />
           </Button>
-          <Link to={APP_ROUTE.home} className={headerBrandVariants()} onClick={closeMobileNav}>
-            {t('brand.name')}
+          <Link
+            to={APP_ROUTE.home}
+            className="flex min-w-0 items-center gap-tight"
+            onClick={closeMobileNav}
+          >
+            <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary font-display text-caption font-bold text-primary-foreground shadow-sm sm:h-10 sm:w-10">
+              IZ
+            </span>
+            <span className={cn(headerBrandVariants(), 'min-w-0 truncate')}>{t('brand.name')}</span>
           </Link>
           <nav
-            className={cn(headerNavVariants(), 'ml-relaxed hidden flex-1 flex-wrap gap-x-relaxed gap-y-tight lg:flex')}
+            className={cn(
+              headerNavVariants(),
+              'ml-relaxed hidden flex-1 flex-wrap gap-x-relaxed gap-y-tight lg:flex',
+            )}
             aria-label={t('nav.mainLabel')}
           >
-            <NavLink to={APP_ROUTE.home} className={({ isActive }) => navLinkClassName(isActive)} end>
+            <NavLink
+              to={APP_ROUTE.home}
+              className={({ isActive }) => navLinkClassName(isActive)}
+              end
+            >
               {t('nav.home')}
             </NavLink>
             <NavLink to={APP_ROUTE.trips} className={({ isActive }) => navLinkClassName(isActive)}>
@@ -76,13 +91,19 @@ export default function Header() {
         </div>
         <div className={headerActionsVariants()}>
           <LanguageSwitcher />
+          <ThemeSwitcher />
           <div className="hidden items-center gap-tight lg:flex lg:flex-wrap lg:justify-end">
             {user ? (
               <div className="flex flex-col items-stretch gap-tight sm:flex-row sm:items-center">
                 <span className="max-w-[14rem] truncate text-body-sm text-muted-foreground sm:max-w-[12rem] sm:text-left">
                   {user.email}
                 </span>
-                <Button type="button" variant="outline" size="sm" onClick={() => void signOutUser()}>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => void signOutUser()}
+                >
                   {t('nav.signOut')}
                 </Button>
               </div>
@@ -91,7 +112,7 @@ export default function Header() {
                 <Button type="button" variant="ghost" size="sm" asChild>
                   <Link to={APP_ROUTE.login}>{t('nav.signIn')}</Link>
                 </Button>
-                <Button type="button" size="sm" asChild>
+                <Button type="button" size="sm" variant="accent" asChild>
                   <Link to={APP_ROUTE.register}>{t('nav.register')}</Link>
                 </Button>
               </div>
@@ -101,12 +122,19 @@ export default function Header() {
       </div>
 
       <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
-        <SheetContent side="right" closeLabel={t('common.close')} className="gap-stack overflow-y-auto">
+        <SheetContent
+          side="right"
+          closeLabel={t('common.close')}
+          className="gap-stack overflow-y-auto"
+        >
           <SheetHeader className="pr-10">
             <SheetTitle>{t('brand.name')}</SheetTitle>
             <SheetDescription>{t('nav.mainLabel')}</SheetDescription>
           </SheetHeader>
-          <nav className="flex flex-col gap-tight border-t border-border/70 pt-stack" aria-label={t('nav.mainLabel')}>
+          <nav
+            className="flex flex-col gap-tight border-t border-border/70 pt-stack"
+            aria-label={t('nav.mainLabel')}
+          >
             <NavLink
               to={APP_ROUTE.home}
               className={({ isActive }) => navLinkClassName(isActive)}
@@ -134,7 +162,12 @@ export default function Header() {
             {user ? (
               <>
                 <p className="truncate text-body-sm text-muted-foreground">{user.email}</p>
-                <Button type="button" variant="outline" className="w-full" onClick={() => void signOutUser()}>
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => void signOutUser()}
+                >
                   {t('nav.signOut')}
                 </Button>
               </>
@@ -145,7 +178,7 @@ export default function Header() {
                     {t('nav.signIn')}
                   </Link>
                 </Button>
-                <Button type="button" className="w-full" asChild>
+                <Button type="button" variant="accent" className="w-full" asChild>
                   <Link to={APP_ROUTE.register} onClick={closeMobileNav}>
                     {t('nav.register')}
                   </Link>

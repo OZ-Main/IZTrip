@@ -8,7 +8,10 @@ export function createBookingFormSchema(t: TFunction, trip: TripDefinition) {
 
   return z.object({
     fullName: z.string().min(1, t('booking.validation.fullNameRequired')),
-    email: z.string().min(1, t('booking.validation.emailRequired')).email(t('booking.validation.emailInvalid')),
+    email: z
+      .string()
+      .min(1, t('booking.validation.emailRequired'))
+      .email(t('booking.validation.emailInvalid')),
     phone: z.string().min(6, t('booking.validation.phoneRequired')),
     preferredDate: z
       .string()
