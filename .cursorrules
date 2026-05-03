@@ -1,0 +1,991 @@
+############################################################
+
+# IZ TRIP — CURSOR RULES
+
+############################################################
+
+Project:
+IZ Trip is a React.js + TypeScript travel/vacation planning platform focused initially on Moldova.
+
+Core direction:
+
+- travel discovery platform
+- users browse trips, destinations, sights, and curated experiences
+- users can select trip dates and request/book trips
+- supports kids, family, adults, groups, weekend trips, culture, nature, and local experiences
+- Moldova-focused at the beginning
+- local/mock data for now
+- architecture must stay migration-friendly for a real backend/Firebase later
+
+Important:
+
+- Use the same libraries and technical patterns from the attached Swimlytics app where applicable.
+- Reuse Swimlytics patterns for React, TypeScript, Vite, routing, Zustand, translations, forms, validation, styling, and UI conventions.
+- Do NOT blindly copy Swimlytics domain structure. Adapt the architecture to the IZ Trip travel domain.
+
+This is a React.js web app, not React Native.
+
+############################################################
+
+# BUSINESS / DOMAIN MODEL
+
+############################################################
+
+Core entities:
+
+- trip
+- destination
+- sight
+- itinerary
+- trip date
+- booking request
+- traveler/contact
+- category
+- audience type
+- included service
+- highlight
+
+Primary trip categories:
+
+- KIDS
+- FAMILY
+- ADULTS
+- NATURE
+- CULTURE
+- WEEKEND
+- EDUCATIONAL
+- CUSTOM
+
+Primary audience types:
+
+- KIDS
+- FAMILY
+- ADULTS
+- MIXED
+- GROUP
+
+Trip data should support:
+
+- id
+- slug
+- title
+- location
+- category
+- targetAudience
+- duration
+- price
+- shortDescription
+- description
+- highlights
+- included
+- availableDates
+- image
+- itinerary
+- minPeople
+- maxPeople
+
+Booking request data should support:
+
+- id
+- tripId
+- fullName
+- contact
+- preferredDate
+- peopleCount
+- message
+- createdAt
+- status
+
+Keep domain values strongly typed.
+Avoid generic strings when enums or typed constants make sense.
+
+############################################################
+
+# FEATURE-BASED ARCHITECTURE
+
+############################################################
+
+Prefer this structure:
+
+src/
+app/
+components/
+features/
+trips/
+booking/
+destinations/
+home/
+about/
+shared/
+components/
+constants/
+helpers/
+hooks/
+styles/
+types/
+utils/
+lib/
+pages/
+styles/
+
+Feature folders should own their:
+
+- components
+- hooks
+- helpers
+- types
+- validation
+- constants
+- styles where appropriate
+
+Do not place everything directly in pages.
+Pages should orchestrate features, not contain all business/UI logic.
+
+############################################################
+
+# INITIAL MVP PAGES
+
+############################################################
+
+Create and maintain these main pages:
+
+- HomePage
+  - introduce IZ Trip
+  - show value proposition
+  - CTA to explore trips
+  - featured trips section
+
+- TripsPage
+  - display trip cards
+  - support filtering by category/audience
+  - support empty state
+
+- TripDetailsPage
+  - show full trip details
+  - available dates
+  - highlights
+  - included services
+  - itinerary
+  - CTA to request/book trip
+
+- BookingPage
+  - request form
+  - selected trip
+  - preferred date
+  - people count
+  - contact details
+  - success state
+
+- AboutPage
+  - explain IZ Trip
+  - Moldova-focused curated local experiences
+
+############################################################
+
+# REUSE-FIRST PRINCIPLE
+
+############################################################
+
+Before creating any new:
+
+- helper
+- constant
+- hook
+- type/interface
+- formatter
+- validator
+- mapper
+- storage utility
+- filter helper
+- style definition
+- UI component
+
+ALWAYS:
+
+1. Search existing locations first:
+
+- shared/helpers
+- shared/utils
+- shared/constants
+- shared/types
+- shared/hooks
+- shared/styles
+- lib/
+- relevant feature folders
+
+2. If similar logic exists:
+
+- reuse it
+- extend it safely if needed
+- do not duplicate logic
+
+3. Only create new logic when:
+
+- no suitable abstraction exists
+- the logic is truly component-scoped
+- the new abstraction improves clarity
+
+If uncertain, prefer feature-level placement first.
+Move to shared only when reuse is realistic.
+
+############################################################
+
+# STATEFUL vs STATELESS COMPONENT ARCHITECTURE
+
+############################################################
+
+Use a clear stateful/stateless component architecture.
+
+Stateful components:
+
+- manage business logic
+- use routing hooks
+- use Zustand stores
+- orchestrate data flow
+- perform filtering/searching/sorting
+- pass ready-to-render data down to presentational children
+
+Stateless components:
+
+- receive data and callbacks via props
+- focus on rendering and UI behavior
+- do not own business logic
+- may have small local UI state only when justified
+
+Rules:
+
+- trip filtering logic belongs in page/container/hooks/helpers
+- booking form validation belongs in validation files
+- presentational components should stay UI-focused
+- page components should stay readable and not become giant files
+
+############################################################
+
+# COMPONENT FOLDER STRUCTURE
+
+############################################################
+
+Each non-trivial React component must live in its own self-named PascalCase folder:
+
+ComponentName/
+ComponentName.tsx
+ComponentName.types.ts
+ComponentName.constants.ts
+ComponentName.helpers.ts
+ComponentName.styles.ts
+ComponentName.validation.ts
+
+Rules:
+
+- folder name MUST be PascalCase
+- main component file MUST be PascalCase
+- folder name and component file name MUST match exactly
+- React component name MUST match the file name exactly
+- component props interfaces MUST stay in the component TSX file
+- non-prop types may go in `ComponentName.types.ts`
+- validation schemas belong in `ComponentName.validation.ts`
+- component-specific constants belong in `ComponentName.constants.ts`
+- helper logic belongs in `ComponentName.helpers.ts`
+- styling definitions belong in `ComponentName.styles.ts`
+- do not place styles in constants files
+
+Good:
+
+- TripCard/TripCard.tsx
+- TripFilters/TripFilters.tsx
+- BookingForm/BookingForm.tsx
+- PageHeader/PageHeader.tsx
+
+Bad:
+
+- trip-card/TripCard.tsx
+- tripCard.tsx
+- trip-card.tsx
+- Trips/card.tsx
+
+############################################################
+
+# FILE NAMING CONVENTIONS
+
+############################################################
+
+Component files:
+
+- PascalCase
+- file name must match component name
+
+Component folders:
+
+- PascalCase
+- folder name must match main component file name
+
+Page components:
+
+- PascalCase
+
+Hooks:
+
+- camelCase
+- must start with `use`
+
+Helpers / utilities / formatters / mappers:
+
+- camelCase
+
+Constants files:
+
+- camelCase file names
+
+Styles files:
+
+- `ComponentName.styles.ts` for component-scoped styles
+
+Validation files:
+
+- `ComponentName.validation.ts`
+- `featureName.validation.ts`
+
+############################################################
+
+# ORDERING INSIDE TSX FILES
+
+############################################################
+
+Use this top-to-bottom structure:
+
+1. Imports
+
+- external libraries
+- internal shared modules
+- local modules
+
+2. Types / interfaces
+
+- props first
+- local types next
+
+3. Component body
+
+- hooks
+- state
+- derived values
+- component-scoped constants
+- handlers
+- effects
+- async functions
+- render helpers
+- return
+
+Rules:
+
+- exactly one empty line between logical groups
+- do not add structural comments like `// Hooks`, `// State`, `// Handlers`
+- use whitespace instead of decorative comments
+
+############################################################
+
+# COMMENTS RULE
+
+############################################################
+
+Avoid comments by default.
+
+Allowed comments:
+
+- non-obvious business logic
+- subtle domain rules
+- technical caveats that cannot be expressed clearly through naming
+
+Do NOT add:
+
+- structural comments
+- decorative comments
+- obvious comments
+- comments that restate the code
+
+Prefer:
+
+- better naming
+- helper extraction
+- cleaner grouping
+
+############################################################
+
+# NAMING CONVENTIONS
+
+############################################################
+
+Use descriptive, intention-revealing names.
+
+Avoid:
+
+- `data`
+- `item`
+- `obj`
+- `val`
+- `temp`
+- `x`
+- `s`
+- `a`
+
+Good:
+
+- `selectedTrip`
+- `filteredTrips`
+- `bookingRequest`
+- `availableTripDates`
+- `tripCategoryFilter`
+- `buildTripCardViewModel`
+- `formatTripDuration`
+
+Constants:
+
+- module-level and exported constants MUST use UPPER_SNAKE_CASE
+
+Good:
+
+- `TRIP_CATEGORY_OPTIONS`
+- `DEFAULT_TRIP_FILTER`
+- `BOOKING_REQUEST_STATUS`
+- `MOLDOVA_FEATURED_DESTINATIONS`
+
+############################################################
+
+# FUNCTION DECLARATIONS vs ARROW FUNCTIONS
+
+############################################################
+
+Use function declarations for:
+
+- helpers
+- utilities
+- exported functions
+- reusable transformation logic
+- `.helpers.ts`
+- `.utils.ts`
+- `.validation.ts`
+
+Arrow functions are acceptable for:
+
+- component-scoped handlers
+- small inline callbacks
+
+Prefer function declarations for components as well.
+
+############################################################
+
+# CLEAN CODE PRINCIPLES
+
+############################################################
+
+- prioritize readability over cleverness
+- avoid nested ternaries
+- avoid deep nesting
+- prefer early returns
+- use const by default
+- avoid let unless mutation is required
+- keep helpers focused
+- keep files easy to scan
+- avoid premature abstraction
+- keep diffs minimal when modifying existing code
+
+############################################################
+
+# REACT PERFORMANCE RULES
+
+############################################################
+
+Do NOT use:
+
+- useMemo
+- useCallback
+- memo
+
+by default.
+
+Only use memoization when:
+
+- there is a real performance issue
+- it prevents a real rerender problem
+- it clearly improves behavior
+
+Prefer:
+
+- hoisting static values outside components
+- keeping render logic simple
+- clean architecture first
+
+############################################################
+
+# IMPORT / EXPORT RULES
+
+############################################################
+
+Components:
+
+- MUST use default exports
+- MUST be imported directly from their source file
+
+Helpers / hooks / utilities / constants / styles:
+
+- MUST use named exports
+- MUST be imported directly from source files
+- do NOT use barrel exports for helpers/hooks/utils/styles
+
+Good:
+
+- `import TripCard from '@/features/trips/components/TripCard/TripCard'`
+- `import { filterTripsByCategory } from '@/features/trips/helpers/tripFilters.helpers'`
+
+Bad:
+
+- `import { filterTripsByCategory } from '@/features/trips/helpers'`
+
+############################################################
+
+# NO MAGIC VALUES
+
+############################################################
+
+Avoid magic strings and magic numbers.
+
+Do NOT write:
+
+- `trip.category === 'kids'`
+- `audience === 'family'`
+- `status === 'success'`
+
+Instead use enums or typed constants:
+
+- `TripCategory.KIDS`
+- `TripAudience.FAMILY`
+- `BookingRequestStatus.SUBMITTED`
+
+Use enums for:
+
+- stable domain concepts
+- business logic values
+- values used across features
+
+Use `as const` objects for:
+
+- route names
+- filter keys
+- tab identifiers
+- storage keys
+- UI options
+
+############################################################
+
+# FORM RULES
+
+############################################################
+
+Use the same form libraries and patterns as Swimlytics.
+
+Preferred:
+
+- react-hook-form
+- zod
+
+Rules:
+
+- keep schemas near the feature/component that uses them
+- derive form types from zod when useful
+- keep validation messages clear
+- validate realistic numeric ranges
+- avoid mixing validation logic into components
+
+Booking form validation:
+
+- full name required
+- contact required
+- trip required
+- preferred date required
+- people count required
+- people count must be positive
+- message optional
+
+############################################################
+
+# STORAGE RULES
+
+############################################################
+
+Persistence is local-first for now.
+
+Rules:
+
+- use localStorage only through dedicated helpers or Zustand persistence setup
+- do not scatter raw localStorage usage across components/pages
+- keep storage keys centralized
+- structure data so migration to Firebase/backend later is straightforward
+
+Possible local state:
+
+- booking requests
+- selected trip
+- saved/favorite trips
+- user preferences
+- filters
+
+############################################################
+
+# TRANSLATION RULES
+
+############################################################
+
+Use the same i18n/translation setup and conventions as Swimlytics.
+
+Rules:
+
+- all visible UI text must use translation keys
+- avoid hardcoded user-facing strings inside components
+- keep translation keys structured by feature/page
+- default language can be English
+- add Romanian/Russian later if needed, but keep the structure ready
+
+Good key structure examples:
+
+- `home.hero.title`
+- `trips.filters.all`
+- `trips.card.priceFrom`
+- `tripDetails.availableDates.title`
+- `booking.form.fullName.label`
+- `booking.success.title`
+
+############################################################
+
+# STYLING SYSTEM
+
+############################################################
+
+Use the same styling approach and libraries as Swimlytics.
+
+If Swimlytics uses:
+
+- Tailwind CSS
+- shadcn/ui
+- class-variance-authority
+- cn utility
+- lucide-react
+
+then IZ Trip should follow the same approach.
+
+Rules:
+
+- use cva for non-trivial component variants
+- use cn for class merging
+- avoid long inline Tailwind strings in JSX
+- place component-specific styles in `ComponentName.styles.ts`
+- do not place styles in constants files
+- keep visual system cohesive
+
+Design direction:
+
+- modern
+- clean
+- travel-focused
+- premium but friendly
+- Moldova-local but scalable
+- mobile-friendly
+- visually polished enough for demo/business presentation
+
+############################################################
+
+# UI COMPONENT RULES
+
+############################################################
+
+Prefer reusable components:
+
+- TripCard
+- TripFilters
+- TripDetails
+- BookingForm
+- PageHeader
+- EmptyState
+- SectionHeader
+- FeaturedTrips
+- DestinationCard
+- CategoryBadge
+- AudienceBadge
+
+Use accessible and practical UI patterns for:
+
+- forms
+- cards
+- filters
+- tabs
+- dialogs
+- badges
+- toasts
+
+Do not create static cards with clickable hover styling unless they actually navigate or perform an action.
+
+############################################################
+
+# RESPONSIVENESS RULES
+
+############################################################
+
+The app must be responsive and usable on mobile, tablet, and desktop.
+
+Rules:
+
+- build mobile-first
+- use Tailwind breakpoints consistently
+- avoid hardcoded widths/heights that break layout
+- use grid/flex layouts
+- trip cards should adapt from single-column to multi-column
+- forms should become single-column on smaller screens
+- avoid horizontal overflow
+- touch targets must be usable on mobile
+
+############################################################
+
+# INTERACTION AFFORDANCE RULES
+
+############################################################
+
+Visual affordance must match behavior.
+
+If a UI element has:
+
+- hover lift
+- hover shadow
+- pointer cursor
+- active state
+- focus ring
+
+then it must be meaningfully interactive.
+
+Examples:
+
+- navigates to trip details
+- opens booking form
+- applies filter
+- expands itinerary
+- opens dialog
+
+Static elements should not look clickable.
+
+############################################################
+
+# ROUTING RULES
+
+############################################################
+
+Use the same routing pattern as Swimlytics.
+
+Suggested routes:
+
+- `/`
+- `/trips`
+- `/trips/:tripSlug`
+- `/booking`
+- `/booking/:tripSlug`
+- `/about`
+
+Route constants should be centralized.
+Do not hardcode route strings across components.
+
+############################################################
+
+# MOCK DATA RULES
+
+############################################################
+
+Use local mock data for now.
+
+Mock trips should be realistic and Moldova-focused.
+
+Create at least:
+
+- Orheiul Vechi
+- Cricova or Mileștii Mici
+- Soroca Fortress
+- Old Chișinău walking tour
+- Saharna / Țîpova
+- Weekend nature escape
+
+Rules:
+
+- keep mock data isolated in a feature data/mock folder
+- keep mock data typed
+- do not mix mock data directly into components
+- make migration to API data simple later
+
+############################################################
+
+# DOMAIN HELPERS
+
+############################################################
+
+Extract reusable trip logic into helpers.
+
+Examples:
+
+- `filterTripsByCategory`
+- `filterTripsByAudience`
+- `findTripBySlug`
+- `formatTripPrice`
+- `formatTripDuration`
+- `buildTripDateOptions`
+- `createBookingRequest`
+
+Helpers should be pure where possible.
+
+############################################################
+
+# CUSTOM COMMAND: /cleanup
+
+############################################################
+
+When the user types "/cleanup", IMMEDIATELY execute cleanup actions on the current file or folder.
+
+Do NOT:
+
+- create markdown files
+- create documentation
+- ask for confirmation
+- only describe what should be done
+
+INSTEAD:
+
+- run lint/type checks
+- fix safe issues directly
+- refactor code
+- reorder declarations
+- clean formatting and structure
+- update imports if needed
+
+When "/cleanup" is invoked:
+
+1. Run:
+
+- `npm run lint`
+- `npx tsc --noEmit`
+
+2. Fix:
+
+- lint issues
+- type issues
+- broken imports
+- bad naming
+- unnecessary comments
+- structural comments
+- unnecessary `let`
+- duplicated logic
+- long inline className strings where styles should be extracted
+
+3. Align touched files with:
+
+- component folder structure
+- helper/constants/styles placement
+- TSX ordering
+- cva + cn styling
+- descriptive naming
+- no magic values
+
+Do not just explain the cleanup. Execute it.
+
+############################################################
+
+# CUSTOM COMMAND: /align-rules
+
+############################################################
+
+When the user types "/align-rules", perform a full rules-alignment pass on all files touched in the current task.
+
+Do NOT:
+
+- ask for confirmation
+- only review the current file
+- only describe issues
+
+You MUST apply fixes directly.
+
+Steps:
+
+1. Identify all files created/modified/moved/refactored in the current task.
+2. Apply all Cursor rules to touched files.
+3. Fix related files if needed for consistency.
+4. Run:
+
+- `npm run lint`
+- `npx tsc --noEmit`
+
+5. Fix safe issues.
+6. Verify:
+
+- no broken imports
+- no rule violations in touched scope
+- no runtime issues introduced
+
+Expected result:
+
+- naming is clear
+- no magic values remain
+- structure is predictable
+- styling is centralized
+- imports are correct
+- code is readable and production-quality
+
+############################################################
+
+# THINK BEFORE IMPLEMENTING
+
+############################################################
+
+Before making changes:
+
+1. analyze the request carefully
+2. check existing Swimlytics patterns/libraries
+3. adapt the solution to IZ Trip domain
+4. prefer the simplest strong solution
+5. avoid premature abstraction
+6. implement directly when the path is clear
+
+Default mindset:
+
+- think like a senior frontend engineer
+- build for clarity
+- build for business extensibility
+- avoid toy/demo code
+
+############################################################
+
+# CODE GENERATION EXPECTATIONS
+
+############################################################
+
+Generated code MUST:
+
+- follow the project structure
+- be readable and modular
+- be production-style
+- keep components focused
+- keep business logic out of presentational components
+- be easy to explain in a thesis/business presentation
+- avoid unnecessary complexity
+- support backend/Firebase migration later
+- follow grouping, spacing, naming, cleanliness, and low-comment rules
+
+############################################################
+
+# FINAL QUALITY BAR
+
+############################################################
+
+Everything generated for IZ Trip should look like:
+
+- serious frontend engineering
+- clean React + TypeScript architecture
+- polished travel product UI
+- maintainable feature-based code
+- scalable business foundation
+- visually cohesive and modern
+- readable immediately by another developer
+
+The code should look intentional, calm, minimally commented, and aligned with the project style.

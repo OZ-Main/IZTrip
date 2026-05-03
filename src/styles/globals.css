@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 48 40% 97%;
+    --foreground: 222 28% 12%;
+
+    --card: 0 0% 100%;
+    --card-subtle: 46 35% 96%;
+    --card-foreground: 222 28% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 28% 12%;
+
+    --primary: 158 64% 24%;
+    --primary-foreground: 156 45% 98%;
+
+    --secondary: 42 96% 93%;
+    --secondary-foreground: 28 35% 18%;
+
+    --muted: 46 22% 92%;
+    --muted-foreground: 220 12% 38%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 28 40% 12%;
+
+    --destructive: 0 72% 44%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 158 62% 34%;
+    --success-foreground: 156 45% 98%;
+
+    --hero-surface: 158 52% 18%;
+    --hero-foreground: 48 55% 97%;
+
+    --border: 46 18% 88%;
+    --input: 46 20% 88%;
+    --ring: 158 55% 36%;
+
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-button: 0.625rem;
+    --radius-input: 0.5rem;
+    --radius-card: 1rem;
+    --radius-dialog: 1rem;
+
+    --shadow-card:
+      0 1px 0 hsl(var(--border) / 0.95), 0 2px 8px hsl(222 28% 11% / 0.04),
+      0 16px 40px hsl(158 64% 18% / 0.08);
+    --shadow-card-hover:
+      0 1px 0 hsl(var(--border)), 0 8px 24px hsl(222 28% 11% / 0.07),
+      0 22px 48px hsl(158 64% 18% / 0.1);
+    --shadow-card-lift:
+      0 2px 8px hsl(222 28% 11% / 0.05), 0 18px 40px hsl(158 64% 24% / 0.12);
+    --shadow-interactive: 0 4px 18px -2px hsl(var(--primary) / 0.35);
+    --shadow-overlay: 0 28px 56px hsl(222 28% 11% / 0.18);
+
+    --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Fraunces', ui-serif, Georgia, serif;
+
+    --text-display-xl-size: 2.5rem;
+    --text-display-xl-leading: 3rem;
+    --text-display-lg-size: 2.125rem;
+    --text-display-lg-leading: 2.5rem;
+    --text-heading-xl-size: 1.625rem;
+    --text-heading-xl-leading: 2.125rem;
+    --text-heading-lg-size: 1.375rem;
+    --text-heading-lg-leading: 1.875rem;
+    --text-heading-md-size: 1.125rem;
+    --text-heading-md-leading: 1.5rem;
+    --text-heading-sm-size: 1.0625rem;
+    --text-heading-sm-leading: 1.4375rem;
+    --text-body-lg-size: 1.0625rem;
+    --text-body-lg-leading: 1.625rem;
+    --text-body-size: 0.9375rem;
+    --text-body-leading: 1.5rem;
+    --text-body-sm-size: 0.8125rem;
+    --text-body-sm-leading: 1.25rem;
+    --text-label-size: 0.8125rem;
+    --text-label-leading: 1.125rem;
+    --text-label-weight: 600;
+    --text-caption-size: 0.75rem;
+    --text-caption-leading: 1rem;
+
+    --space-section: 2.75rem;
+    --space-section-sm: 1.5rem;
+    --space-card: 1.25rem;
+    --space-form: 1.5rem;
+    --space-form-field: 1rem;
+    --space-list-gap: 0.75rem;
+    --page-padding-x: 1rem;
+    --page-padding-x-sm: 1.25rem;
+    --page-padding-x-lg: 2rem;
+    --page-padding-y: 1.75rem;
+
+    --gap-tight: 0.5rem;
+    --gap-stack: 1rem;
+    --gap-relaxed: 1.5rem;
+
+    --max-page-width: 90rem;
+    --max-content-width: 72rem;
+    --header-height-mobile: 3.5rem;
+    --container-2xl: 90rem;
+
+    --dialog-padding: 1.5rem;
+    --popover-padding: 1rem;
+
+    --form-textarea-min-height: 6.25rem;
+
+    --motion-duration-fast: 150ms;
+    --motion-duration-normal: 220ms;
+    --motion-duration-slow: 300ms;
+    --motion-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+    --motion-ease-emphasized: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-ease-decelerate: cubic-bezier(0, 0, 0.2, 1);
+    --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --motion-duration-fast: 0.01ms;
+      --motion-duration-normal: 0.01ms;
+      --motion-duration-slow: 0.01ms;
+    }
+  }
+
+  .dark {
+    --background: 160 18% 8%;
+    --foreground: 48 40% 96%;
+
+    --card: 158 16% 12%;
+    --card-subtle: 160 14% 10%;
+    --card-foreground: 48 40% 96%;
+
+    --popover: 158 16% 12%;
+    --popover-foreground: 48 40% 96%;
+
+    --primary: 156 52% 42%;
+    --primary-foreground: 160 22% 8%;
+
+    --secondary: 38 40% 18%;
+    --secondary-foreground: 48 55% 95%;
+
+    --muted: 160 12% 18%;
+    --muted-foreground: 46 12% 68%;
+
+    --accent: 38 88% 52%;
+    --accent-foreground: 28 40% 10%;
+
+    --destructive: 0 62% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 158 55% 38%;
+    --success-foreground: 156 45% 98%;
+
+    --hero-surface: 158 45% 14%;
+    --hero-foreground: 48 55% 97%;
+
+    --border: 160 12% 22%;
+    --input: 160 12% 24%;
+    --ring: 156 50% 48%;
+
+    --shadow-card:
+      0 1px 0 hsl(var(--border) / 0.5), 0 2px 8px hsl(0 0% 0% / 0.25),
+      0 16px 40px hsl(0 0% 0% / 0.35);
+    --shadow-card-hover:
+      0 1px 0 hsl(var(--border)), 0 8px 24px hsl(0 0% 0% / 0.3),
+      0 22px 48px hsl(0 0% 0% / 0.4);
+    --shadow-card-lift: 0 2px 8px hsl(0 0% 0% / 0.2), 0 18px 40px hsl(156 52% 30% / 0.2);
+    --shadow-interactive: 0 4px 18px -2px hsl(var(--primary) / 0.45);
+    --shadow-overlay: 0 28px 56px hsl(0 0% 0% / 0.45);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply min-w-0 overflow-x-hidden bg-background font-sans text-body text-foreground antialiased;
+  }
+}

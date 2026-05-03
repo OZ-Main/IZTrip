@@ -1,0 +1,38 @@
+# Dependencies
+node_modules
+
+# Build
+dist
+build
+
+# Environment (keep .env.example tracked)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs & debug
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test / coverage
+coverage
+
+# Tooling & caches
+.eslintcache
+*.tsbuildinfo
+.vite
+
+# Deployment
+.vercel
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea

@@ -1,0 +1,335 @@
+{
+  "brand": {
+    "name": "IZ Trip"
+  },
+  "common": {
+    "loadingApp": "Preparing your trip workspace…",
+    "close": "Close"
+  },
+  "language": {
+    "switcherLabel": "Language",
+    "codes": {
+      "en": "EN",
+      "ro": "RO",
+      "ru": "RU"
+    }
+  },
+  "nav": {
+    "mainLabel": "Primary",
+    "home": "Home",
+    "trips": "Trips",
+    "about": "About",
+    "signIn": "Sign in",
+    "register": "Create account",
+    "signOut": "Sign out",
+    "openMenu": "Open menu"
+  },
+  "auth": {
+    "signIn": "Sign in",
+    "signInDescription": "Access saved trips and secure booking requests.",
+    "registerTitle": "Create your IZ Trip account",
+    "registerDescription": "Save preferences and book curated Moldova experiences.",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "displayName": "Full name",
+    "signingIn": "Signing in…",
+    "registering": "Creating account…",
+    "createAccount": "Create account",
+    "signedIn": "Welcome back!",
+    "registered": "Account created — welcome to IZ Trip!",
+    "noAccount": "New to IZ Trip?",
+    "createOne": "Create an account",
+    "haveAccount": "Already have an account?",
+    "signInInstead": "Sign in instead",
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Enter a valid email address",
+      "passwordRequired": "Password is required",
+      "passwordMin": "Use at least 8 characters",
+      "displayNameRequired": "Name is required",
+      "confirmPasswordRequired": "Confirm your password",
+      "passwordsMismatch": "Passwords do not match"
+    },
+    "errors": {
+      "generic": "Something went wrong. Please try again.",
+      "network": "Network error. Check your connection and try again.",
+      "invalidEmail": "That email address is not valid.",
+      "userDisabled": "This account has been disabled.",
+      "invalidCredentials": "Email or password is incorrect.",
+      "emailInUse": "An account with this email already exists.",
+      "weakPassword": "Password is too weak. Use at least 8 characters.",
+      "tooManyRequests": "Too many attempts. Wait a moment and try again."
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Curated Moldova travel",
+      "title": "Discover Moldova with calm, premium weekend planning",
+      "subtitle": "Handpicked routes for families, friends, and curious explorers — transparent pricing, local guides, and booking requests that stay organized.",
+      "primaryCta": "Explore trips",
+      "secondaryCta": "Create free account"
+    },
+    "featured": {
+      "title": "Featured Moldova experiences",
+      "description": "Start with guest-loved routes — wineries, fortresses, gorges, and city walks.",
+      "viewAll": "View all trips"
+    },
+    "how": {
+      "title": "How IZ Trip works",
+      "description": "Three simple steps from inspiration to a confirmed request.",
+      "step1": {
+        "badge": "01",
+        "title": "Browse curated trips",
+        "body": "Filter by audience and style, compare transparent inclusions, and read honest day plans."
+      },
+      "step2": {
+        "badge": "02",
+        "title": "Pick dates & details",
+        "body": "Choose an available departure window and tell us who is traveling — we keep requests structured."
+      },
+      "step3": {
+        "badge": "03",
+        "title": "Request & relax",
+        "body": "Submit a secure booking request. We save it securely and notify our team by email."
+      }
+    },
+    "categories": {
+      "title": "Explore by travel style",
+      "description": "Jump into the catalog with one tap — filters stay easy on mobile."
+    },
+    "trust": {
+      "title": "Why travelers trust IZ Trip",
+      "description": "We design for clarity, safety, and real Moldovan hospitality.",
+      "point1": "Local partners vetted for quality, insurance readiness, and guest care",
+      "point2": "Clear group sizes and pacing notes on every itinerary",
+      "point3": "Secure accounts so your requests stay tied to you"
+    },
+    "finalCta": {
+      "title": "Ready to plan your next Moldova weekend?",
+      "description": "Create an account to book, or explore trips first — no pressure.",
+      "primary": "Browse trips",
+      "secondary": "Sign in"
+    }
+  },
+  "trips": {
+    "page": {
+      "title": "Curated trips",
+      "description": "Filter by category and audience to match your travel style."
+    },
+    "backHome": "Back to home",
+    "filters": {
+      "all": "All",
+      "category": "Category",
+      "audience": "Audience",
+      "drawerTitle": "Filter trips",
+      "drawerDescription": "Choose category and audience. Results update when you close this panel.",
+      "openButton": "Filters"
+    },
+    "categories": {
+      "kids": "Kids",
+      "family": "Family",
+      "adults": "Adults",
+      "nature": "Nature",
+      "culture": "Culture",
+      "weekend": "Weekend",
+      "educational": "Educational",
+      "custom": "Custom"
+    },
+    "audiences": {
+      "kids": "Kids",
+      "family": "Family",
+      "adults": "Adults",
+      "mixed": "Mixed",
+      "group": "Group"
+    },
+    "card": {
+      "durationLabel_one": "{{count}} day",
+      "durationLabel_other": "{{count}} days",
+      "nextDate": "Next available",
+      "noUpcomingDates": "Ask for new dates",
+      "from": "From",
+      "viewDetails": "View details"
+    },
+    "empty": {
+      "title": "No trips match these filters",
+      "description": "Try widening your filters to see more curated experiences.",
+      "resetFilters": "Reset filters"
+    },
+    "catalog": {
+      "orheiul-vechi": {
+        "title": "Orheiul Vechi & Râul Răut viewpoints",
+        "location": "Butuceni, Orhei district",
+        "shortDescription": "Cliff-top monastery complex, scenic gorges, and village hospitality — Moldova’s signature cultural landscape in one relaxed day.",
+        "description": "Walk cobbled paths above the Răut River, visit the cliff monastery, and hear how centuries of monastic life shaped this region. We pace the day for photos, local food, and unhurried storytelling so you leave with context, not just snapshots.",
+        "highlight1": "Guided cliff-edge viewpoints with safe pacing and clear meeting points",
+        "highlight2": "Traditional lunch featuring seasonal Moldovan dishes",
+        "highlight3": "Small-group storytelling focused on history, faith, and daily village life",
+        "highlight4": "Comfortable transport with bottled water and rain backup plan",
+        "included1": "Licensed local guide and curated route",
+        "included2": "Round-trip transport from Chișinău meeting point",
+        "included3": "Lunch at a trusted guesthouse or restaurant partner",
+        "included4": "Museum and protected-area access fees where applicable",
+        "included5": "IZ Trip coordination and day-of guest support",
+        "itineraryDay1Title": "Chișinău → Orheiul Vechi loop",
+        "itineraryDay1Body": "Morning pickup, guided walk through the archaeological complex, lunch in Butuceni, optional cellar visit add-on when schedules allow, return by early evening."
+      },
+      "cricova-wine": {
+        "title": "Cricova underground wine galleries",
+        "location": "Cricova, Chișinău district",
+        "shortDescription": "Drive through limestone cellars on guided electric trains, taste sparkling and still wines, and learn why Moldova is an underrated wine destination.",
+        "description": "This adults-focused experience pairs geology with gastronomy: kilometers of underground roads, constant cool climate, and cellars lined with bottles from decades of craft. Your guide connects history, Soviet-era anecdotes, and modern boutique labels.",
+        "highlight1": "Gallery train ride through limestone cellars with curated commentary",
+        "highlight2": "Structured tasting flight with local cheeses and bread",
+        "highlight3": "Photography-friendly stops in iconic “streets” named after grapes",
+        "highlight4": "Optional upgrade: extended vintage tasting (on request, age 18+)",
+        "included1": "Private IZ Trip host and winery gallery tickets",
+        "included2": "Round-trip transport from central Chișinău",
+        "included3": "Guided tasting with spittoons and pacing for comfort",
+        "included4": "Still and sparkling pours selected with the cellar team",
+        "itineraryDay1Title": "Cellars, tasting, and free time in the boutique shop",
+        "itineraryDay1Body": "Late-morning departure, underground tour, seated tasting, time to purchase bottles at cellar prices, return before dinner."
+      },
+      "soroca-fortress": {
+        "title": "Soroca Fortress & Nistru viewpoint",
+        "location": "Soroca, north Moldova",
+        "shortDescription": "A family-friendly day at Moldova’s circular fortress, with river stories, picnic energy, and room to roam the ramparts.",
+        "description": "Kids love the wide stairs and panoramic views; adults appreciate the layered history where trade routes met empires. We include breaks, snacks, and a guide who knows how to keep young travelers engaged.",
+        "highlight1": "Kid-paced storytelling with scavenger-style prompts",
+        "highlight2": "Photo stops along the Dniester/Nistru river panorama",
+        "highlight3": "Picnic-style snack pack included (dietary notes on booking)",
+        "highlight4": "Comfortable minibus with booster seats on request",
+        "included1": "Family-oriented guide and fortress entry",
+        "included2": "Transport from Chișinău with rest stops",
+        "included3": "Snack pack and bottled water",
+        "included4": "IZ Trip emergency contact for the travel day",
+        "itineraryDay1Title": "Fortress walk, river lookout, relaxed return",
+        "itineraryDay1Body": "Morning departure, guided rampart loop, lunch break in Soroca town (meal not included unless selected add-on), riverside viewpoint, return by evening."
+      },
+      "chisinau-walking-tour": {
+        "title": "Old Chișinău walking tour",
+        "location": "Chișinău city center",
+        "shortDescription": "Architecture, parks, and neighborhood cafés — a friendly intro to the capital with a local guide and a flexible pace.",
+        "description": "Trace Art Nouveau fragments, Soviet modernism, and today’s creative corners. We keep groups small so you can ask about daily life, language, and where locals actually eat after the tour.",
+        "highlight1": "Small groups with audio-friendly stops",
+        "highlight2": "Coffee break recommendation map (digital handout)",
+        "highlight3": "Architecture cards to spot motifs as you walk",
+        "highlight4": "Rain-friendly indoor alternates pre-planned",
+        "included1": "Licensed city guide",
+        "included2": "Printed/digital route with translated glossary",
+        "included3": "IZ Trip concierge tip sheet for dinner reservations",
+        "itineraryDay1Title": "Central loop with park detours",
+        "itineraryDay1Body": "Meet at the Cathedral Park area, weave through historic streets, pause for stories, optional café stop, finish near independent restaurants."
+      },
+      "saharna-tipova": {
+        "title": "Saharna & Țîpova monastery trail",
+        "location": "Rezina district, Nistru cliffs",
+        "shortDescription": "Two days of forest trails, waterfall viewpoints, and cliff monasteries overlooking the river — balanced hiking with cozy overnight.",
+        "description": "Day one focuses on Saharna’s waterfall circuit; day two explores Țîpova’s rock-hewn cells. Evenings are unhurried: local dinner, early rest, and optional stargazing when skies cooperate.",
+        "highlight1": "Graded hiking options for different fitness levels",
+        "highlight2": "River cliff lookouts with safety briefings",
+        "highlight3": "One night in a vetted guesthouse (twin rooms)",
+        "highlight4": "Support vehicle for the longer transfer segments",
+        "included1": "Mountain guide and monastery access coordination",
+        "included2": "One breakfast, two lunches, one dinner (set menus)",
+        "included3": "Overnight in partner guesthouse",
+        "included4": "Park and protected-area fees",
+        "included5": "Transport from Chișinău with trailhead drop-offs",
+        "itineraryDay1Title": "Saharna waterfalls & forest loop",
+        "itineraryDay1Body": "Drive from Chișinău, hike the waterfall circuit, guesthouse check-in, hearty dinner.",
+        "itineraryDay2Title": "Țîpova rock monastery & return",
+        "itineraryDay2Body": "Morning transfer, cliff trail with monastery visit, lunch, return to Chișinău by evening."
+      },
+      "weekend-nature-escape": {
+        "title": "Weekend nature escape (Codrii forest)",
+        "location": "Central Moldova hills",
+        "shortDescription": "A soft-adventure weekend with ridge views, foraging stories, farm visits, and slow evenings around the fire.",
+        "description": "Designed for families or small friend groups who want fresh air without extreme sport. Trails are moderate; guides carry first aid and adjust timing for kids.",
+        "highlight1": "Ridge viewpoints with picnic lunch",
+        "highlight2": "Farm visit with seasonal tasting (cheese, fruit, or honey)",
+        "highlight3": "Optional easy kayak add-on when water levels allow",
+        "highlight4": "One night glamping-style tents or cabins (partner site)",
+        "included1": "Nature guide and weekend route plan",
+        "included2": "Two lunches, one dinner, one breakfast",
+        "included3": "Overnight accommodation (family rooms on request)",
+        "included4": "Transport from Chișinău with trail snacks",
+        "included5": "IZ Trip safety kit and backup weather routing",
+        "included6": "Digital photo tips sheet for phone cameras",
+        "itineraryDay1Title": "Into the hills & farm table",
+        "itineraryDay1Body": "Morning pickup, ridge hike, farm visit, settle into camp/cabins, dinner.",
+        "itineraryDay2Title": "Forest loop & return",
+        "itineraryDay2Body": "Gentle morning loop, lunch, optional kayak, return to Chișinău."
+      }
+    }
+  },
+  "tripDetails": {
+    "backToTrips": "Back to trips",
+    "priceFrom": "Price from",
+    "groupSize": "Group size: {{min}}–{{max}} guests",
+    "bookCta": "Book / request trip",
+    "descriptionTitle": "About this experience",
+    "highlightsTitle": "Highlights",
+    "includedTitle": "Included",
+    "itineraryTitle": "Itinerary",
+    "availableDatesTitle": "Available departure dates"
+  },
+  "booking": {
+    "page": {
+      "title": "Request this trip",
+      "description": "Submit a structured request — we save it in Firestore and send a notification email to our team."
+    },
+    "form": {
+      "fullName": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "preferredDate": "Preferred date",
+      "peopleCount": "Number of guests",
+      "message": "Message (optional)",
+      "submit": "Submit request",
+      "submitting": "Sending…"
+    },
+    "validation": {
+      "fullNameRequired": "Full name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Enter a valid email",
+      "phoneRequired": "Phone is required (at least 6 characters)",
+      "preferredDateRequired": "Choose a date",
+      "preferredDateInvalid": "Pick one of the listed departures",
+      "peopleCountInvalid": "Enter a valid number of guests",
+      "peopleCountMin": "At least one guest is required",
+      "peopleCountMax": "Maximum {{max}} guests for this trip"
+    },
+    "success": {
+      "title": "Request received",
+      "description": "We saved your booking request and emailed our team. Someone will follow up with you soon.",
+      "viewTrip": "Back to trip details",
+      "exploreMore": "Explore more trips"
+    },
+    "successWithWarning": {
+      "title": "Request received",
+      "description": "Your booking request was saved. We could not send the notification email automatically, but our team can still see it in the system and will follow up."
+    },
+    "successFullToast": "Booking saved and team notified by email.",
+    "emailWarningToast": "Booking saved. The notification email could not be sent — our team can still see your request.",
+    "submitError": "Could not save your request. Check your connection and try again."
+  },
+  "about": {
+    "page": {
+      "title": "About IZ Trip",
+      "lead": "Moldova-first weekend and culture planning with a premium-but-friendly touch."
+    },
+    "mission": {
+      "title": "Our mission",
+      "body": "We help travelers experience Moldova safely, confidently, and without outdated stereotypes — through curated itineraries and transparent booking."
+    },
+    "local": {
+      "title": "Local by design",
+      "body": "Routes start from real guides, guesthouses, and cellars we know personally. We grow carefully so quality stays high."
+    },
+    "safety": {
+      "title": "Families, kids, and groups",
+      "body": "Pacing, rest stops, and clear communication matter. Every listing shows realistic group sizes and what to expect on the trail or in the city."
+    },
+    "cta": "Browse curated trips"
+  }
+}

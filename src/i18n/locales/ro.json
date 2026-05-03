@@ -1,0 +1,336 @@
+{
+  "brand": {
+    "name": "IZ Trip"
+  },
+  "common": {
+    "loadingApp": "Se pregătește spațiul tău de călătorie…",
+    "close": "Închide"
+  },
+  "language": {
+    "switcherLabel": "Limbă",
+    "codes": {
+      "en": "EN",
+      "ro": "RO",
+      "ru": "RU"
+    }
+  },
+  "nav": {
+    "mainLabel": "Principal",
+    "home": "Acasă",
+    "trips": "Excursii",
+    "about": "Despre",
+    "signIn": "Autentificare",
+    "register": "Creează cont",
+    "signOut": "Deconectare",
+    "openMenu": "Deschide meniul"
+  },
+  "auth": {
+    "signIn": "Autentificare",
+    "signInDescription": "Accesează excursiile salvate și solicitări de rezervare securizate.",
+    "registerTitle": "Creează contul IZ Trip",
+    "registerDescription": "Salvează preferințe și rezervă experiențe curatoriate în Moldova.",
+    "email": "E-mail",
+    "password": "Parolă",
+    "confirmPassword": "Confirmă parola",
+    "displayName": "Nume complet",
+    "signingIn": "Se conectează…",
+    "registering": "Se creează contul…",
+    "createAccount": "Creează cont",
+    "signedIn": "Bine ai revenit!",
+    "registered": "Cont creat — bine ai venit la IZ Trip!",
+    "noAccount": "Ești nou la IZ Trip?",
+    "createOne": "Creează un cont",
+    "haveAccount": "Ai deja cont?",
+    "signInInstead": "Autentifică-te",
+    "validation": {
+      "emailRequired": "E-mailul este obligatoriu",
+      "emailInvalid": "Introdu o adresă de e-mail validă",
+      "passwordRequired": "Parola este obligatorie",
+      "passwordMin": "Folosește cel puțin 8 caractere",
+      "displayNameRequired": "Numele este obligatoriu",
+      "confirmPasswordRequired": "Confirmă parola",
+      "passwordsMismatch": "Parolele nu coincid"
+    },
+    "errors": {
+      "generic": "A apărut o problemă. Încearcă din nou.",
+      "network": "Eroare de rețea. Verifică conexiunea.",
+      "invalidEmail": "Adresa de e-mail nu este validă.",
+      "userDisabled": "Acest cont a fost dezactivat.",
+      "invalidCredentials": "E-mail sau parolă incorectă.",
+      "emailInUse": "Există deja un cont cu acest e-mail.",
+      "weakPassword": "Parola este prea slabă. Folosește cel puțin 8 caractere.",
+      "tooManyRequests": "Prea multe încercări. Așteaptă puțin."
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Călătorii curatoriate în Moldova",
+      "title": "Descoperă Moldova cu planificare calmă, de weekend, premium",
+      "subtitle": "Rute alese pentru familii, prieteni și exploratori curioși — prețuri transparente, ghizi locali și solicitări de rezervare organizate.",
+      "primaryCta": "Vezi excursiile",
+      "secondaryCta": "Creează cont gratuit"
+    },
+    "featured": {
+      "title": "Experiențe recomandate în Moldova",
+      "description": "Începe cu rute iubite de oaspeți — crame, cetăți, chei și plimbări urbane.",
+      "viewAll": "Toate excursiile"
+    },
+    "how": {
+      "title": "Cum funcționează IZ Trip",
+      "description": "Trei pași simpli de la inspirație la o solicitare confirmată.",
+      "step1": {
+        "badge": "01",
+        "title": "Răsfoiește excursii curatoriate",
+        "body": "Filtrează după public și stil, compară ce e inclus și citește itinerare realiste."
+      },
+      "step2": {
+        "badge": "02",
+        "title": "Alege date și detalii",
+        "body": "Selectează o fereastră disponibilă și spune-ne cine călătorește — păstrăm solicitările structurate."
+      },
+      "step3": {
+        "badge": "03",
+        "title": "Solicită și relaxează-te",
+        "body": "Trimite o solicitare securizată. O salvăm și trimitem o notificare pe e-mail echipei ca să nu rămâi fără răspuns."
+      }
+    },
+    "categories": {
+      "title": "Explorează după stil",
+      "description": "Intră în catalog dintr-o atingere — filtrele sunt simple pe mobil."
+    },
+    "trust": {
+      "title": "De ce au încredere călătorii",
+      "description": "Proiectăm pentru claritate, siguranță și ospitalitate moldovenească autentică.",
+      "point1": "Parteneri locali verificați pentru calitate și grijă față de oaspeți",
+      "point2": "Dimensiuni de grup și ritm explicite în fiecare itinerar",
+      "point3": "Conturi securizate ca solicitările să rămână legate de tine"
+    },
+    "finalCta": {
+      "title": "Pregătit pentru următorul weekend în Moldova?",
+      "description": "Creează cont pentru rezervare sau explorează excursiile — fără presiune.",
+      "primary": "Răsfoiește excursiile",
+      "secondary": "Autentificare"
+    }
+  },
+  "trips": {
+    "page": {
+      "title": "Excursii curatoriate",
+      "description": "Filtrează după categorie și public ca să se potrivească stilului tău."
+    },
+    "backHome": "Înapoi acasă",
+    "filters": {
+      "all": "Toate",
+      "category": "Categorie",
+      "audience": "Public",
+      "drawerTitle": "Filtrează excursiile",
+      "drawerDescription": "Alege categoria și publicul. Lista se actualizează când închizi acest panou.",
+      "openButton": "Filtre"
+    },
+    "categories": {
+      "kids": "Copii",
+      "family": "Familie",
+      "adults": "Adulți",
+      "nature": "Natură",
+      "culture": "Cultură",
+      "weekend": "Weekend",
+      "educational": "Educațional",
+      "custom": "Personalizat"
+    },
+    "audiences": {
+      "kids": "Copii",
+      "family": "Familie",
+      "adults": "Adulți",
+      "mixed": "Mixt",
+      "group": "Grup"
+    },
+    "card": {
+      "durationLabel_one": "{{count}} zi",
+      "durationLabel_other": "{{count}} de zile",
+      "nextDate": "Următoarea dată",
+      "noUpcomingDates": "Solicită alte date",
+      "from": "De la",
+      "viewDetails": "Vezi detalii",
+      "durationLabel_few": "{{count}} zile"
+    },
+    "empty": {
+      "title": "Nicio excursie nu se potrivește filtrelor",
+      "description": "Încearcă să lărgești filtrele pentru mai multe experiențe.",
+      "resetFilters": "Resetează filtrele"
+    },
+    "catalog": {
+      "orheiul-vechi": {
+        "title": "Orheiul Vechi și panoramă peste Râul Răut",
+        "location": "Butuceni, raionul Orhei",
+        "shortDescription": "Mănăstire pe stâncă, chei line, ospitalitate rurală — peisajul cultural emblematic al Moldovei într-o zi relaxată.",
+        "description": "Urci poteci de piatră deasupra Răutului, vizitezi mănăstirea suspendată și înțelegi cum secole de viață monahală au modelat regiunea. Ritmul zilei lasă loc pentru fotografii, bucate locale și povești fără grabă.",
+        "highlight1": "Puncte de belvedere sigure, cu briefing și puncte de întâlnire clare",
+        "highlight2": "Prânz tradițional cu preparate moldovenești de sezon",
+        "highlight3": "Ghidare pentru grupuri mici: istorie, credință, viață de zi cu zi în sat",
+        "highlight4": "Transport confortabil, apă îmbuteliată și plan alternativ la ploaie",
+        "included1": "Ghid local autorizat și traseu curatoriat",
+        "included2": "Transport dus-întors din punctul de întâlnire din Chișinău",
+        "included3": "Prânz la partener verificat (pensiune sau restaurant)",
+        "included4": "Taxe de acces la muzeu și arii protejate, unde e cazul",
+        "included5": "Coordonare IZ Trip și suport în ziua excursiei",
+        "itineraryDay1Title": "Circuit Chișinău → Orheiul Vechi",
+        "itineraryDay1Body": "Plecare dimineața, tur arheologic ghidat, prânz în Butuceni, opțional vizită la crame dacă permite orarul, întoarcere spre seară."
+      },
+      "cricova-wine": {
+        "title": "Galeriile subterane de vin Cricova",
+        "location": "Cricova, raionul Chișinău",
+        "shortDescription": "Plimbare cu trenulețul electric prin galeriile de calcar, degustare de spumante și vinuri liniștite — Moldova ca destinație viticolă.",
+        "description": "Experiență pentru adulți: geologie, temperaturi constante și kilometri de „străzi” subterane. Ghidul leagă istoria, anecdote din epoca sovietică și etichete boutique actuale.",
+        "highlight1": "Tur cu trenuleț prin galerii, cu explicații curatoriate",
+        "highlight2": "Degustare structurată cu brânzeturi locale și pâine",
+        "highlight3": "Opriri prietenoase pentru fotografii pe „străzi” numite după soiuri",
+        "highlight4": "Upgrade opțional: degustare de vintage (la cerere, 18+)",
+        "included1": "Host IZ Trip privat și bilete la galerii",
+        "included2": "Transport dus-întors din Chișinău central",
+        "included3": "Degustare ghidată, cu ritm confortabil",
+        "included4": "Seleție de vinuri liniștite și spumante cu echipa cramei",
+        "itineraryDay1Title": "Galerii, degustare, timp în shop",
+        "itineraryDay1Body": "Plecare spre prânz, tur subteran, degustare la masă, timp pentru cumpărături la preț de cramă, întoarcere înainte de cină."
+      },
+      "soroca-fortress": {
+        "title": "Cetatea Sorocii și panorama Nistrului",
+        "location": "Soroca, nordul Moldovei",
+        "shortDescription": "Zi prietenoasă pentru familii la fortăreața circulară, cu povești despre râu, energie de picnic și loc pe metereze.",
+        "description": "Copiii iubesc treptele largi și panoramele; adulții apreciază istoriile rutelor comerciale. Includem pauze, gustări și un ghid care știe să țină ritmul pentru cei mici.",
+        "highlight1": "Povești adaptate copiilor, cu „misiuni” de observare",
+        "highlight2": "Opriri foto pe panorama Nistrului",
+        "highlight3": "Pachet de gustări tip picnic (mențiuni dietetice la rezervare)",
+        "highlight4": "Microbuz confortabil; scaune înălțătoare la cerere",
+        "included1": "Ghid orientat spre familii și acces la cetate",
+        "included2": "Transport din Chișinău cu pauze de odihnă",
+        "included3": "Apă și pachet de gustări",
+        "included4": "Contact de urgență IZ Trip în ziua excursiei",
+        "itineraryDay1Title": "Cetate, belvedere, întoarcere relaxată",
+        "itineraryDay1Body": "Plecare dimineața, tur pe metereze, pauză de prânz în Soroca (masa nu e inclusă decât dacă alegi add-on), belvedere la râu, întoarcere seara."
+      },
+      "chisinau-walking-tour": {
+        "title": "Tur pietonal Chișinăul vechi",
+        "location": "Centrul Chișinăului",
+        "shortDescription": "Arhitectură, parcuri și cafenele de cartier — intro prietenoasă în capitală, cu ghid local și ritm flexibil.",
+        "description": "Fragmente Art Nouveau, modernism sovietic și colțuri creative de azi. Grupuri mici ca să poți întreba despre viața de zi cu zi, limbă și restaurante după tur.",
+        "highlight1": "Grupuri mici, opriri ușor de ascultat",
+        "highlight2": "Hartă digitală cu recomandări pentru cafea",
+        "highlight3": "Fișe cu detalii arhitecturale de recunoscut pe traseu",
+        "highlight4": "Variante interioare la ploaie, planificate din timp",
+        "included1": "Ghid autorizat al orașului",
+        "included2": "Traseu tipărit/digital cu mini-glosar",
+        "included3": "Fișă IZ Trip cu tips pentru rezervări la cină",
+        "itineraryDay1Title": "Circuit central cu detour prin parcuri",
+        "itineraryDay1Body": "Întâlnire lângă Parcul Catedralei, străzi istorice, povești, opțional popas la cafea, final lângă restaurante independente."
+      },
+      "saharna-tipova": {
+        "title": "Saharna și Țîpova — traseu de mănăstiri",
+        "location": "Rezina, versanți pe Nistru",
+        "shortDescription": "Două zile de poteci forestiere, cascade și mănăstiri rupestre deasupra râului — drumeție echilibrată cu noapte liniștită.",
+        "description": "Prima zi: circuitul cascadelor din Saharna. A doua zi: celulele săpate în stâncă la Țîpova. Seara fără grabă: cină locală, odihnă și stele, când cerul permite.",
+        "highlight1": "Variante de drumeție pentru niveluri diferite de formă",
+        "highlight2": "Belvedere pe versant, cu instrucțiuni de siguranță",
+        "highlight3": "O noapte la pensiune verificată (camere twin)",
+        "highlight4": "Mașină de sprijin pentru segmentele lungi de transfer",
+        "included1": "Ghid montan și acces coordonat la mănăstiri",
+        "included2": "Un mic dejun, două prânzuri, o cină (meniuri set)",
+        "included3": "O noapte la pensiune parteneră",
+        "included4": "Taxe pentru parcuri și arii protejate",
+        "included5": "Transport din Chișinău cu transfer la punctele de start",
+        "itineraryDay1Title": "Cascade Saharna și buclă forestieră",
+        "itineraryDay1Body": "Deplasare din Chișinău, traseu cascadă, cazare, cină consistentă.",
+        "itineraryDay2Title": "Mănăstirea rupestră Țîpova și întoarcere",
+        "itineraryDay2Body": "Transfer dimineața, traseu pe stâncă, prânz, întoarcere spre seară la Chișinău."
+      },
+      "weekend-nature-escape": {
+        "title": "Weekend în natură (Codrii)",
+        "location": "Dealurile Moldovei centrale",
+        "shortDescription": "Weekend soft-adventure: crestă, povești despre plante, fermă și seri lângă foc, fără sport extrem.",
+        "description": "Pentru familii sau grupuri mici de prieteni. Trasee moderate; ghizi au trusă de prim-ajutor și adaptează ritmul pentru copii.",
+        "highlight1": "Belvedere pe creastă cu prânz picnic",
+        "highlight2": "Vizită la fermă cu degustare sezonieră (brânză/fructe/miere)",
+        "highlight3": "Add-on ușor cu caiac, când nivelul apei permite",
+        "highlight4": "O noapte în corturi glamping sau cabane (loc partener)",
+        "included1": "Ghid natură și plan de weekend",
+        "included2": "Două prânzuri, o cină, un mic dejun",
+        "included3": "Cazare o noapte (camere pentru familii la cerere)",
+        "included4": "Transport din Chișinău cu gustări pe traseu",
+        "included5": "Kit siguranță IZ Trip și rută alternativă la vreme rea",
+        "included6": "Ghid scurt pentru fotografii cu telefonul",
+        "itineraryDay1Title": "În dealuri și masă la fermă",
+        "itineraryDay1Body": "Ridicare dimineața, drumeție pe creastă, fermă, cazare la tabără/cabană, cină.",
+        "itineraryDay2Title": "Buclă forestieră și întoarcere",
+        "itineraryDay2Body": "Dimineață ușoară, prânz, opțional caiac, întoarcere la Chișinău."
+      }
+    }
+  },
+  "tripDetails": {
+    "backToTrips": "Înapoi la excursii",
+    "priceFrom": "Preț de la",
+    "groupSize": "Grup: {{min}}–{{max}} persoane",
+    "bookCta": "Rezervă / solicită excursia",
+    "descriptionTitle": "Despre experiență",
+    "highlightsTitle": "Puncte forte",
+    "includedTitle": "Ce e inclus",
+    "itineraryTitle": "Itinerar",
+    "availableDatesTitle": "Date de plecare disponibile"
+  },
+  "booking": {
+    "page": {
+      "title": "Solicită această excursie",
+      "description": "Trimite o solicitare structurată — o salvăm în Firestore și trimitem un e-mail de notificare echipei."
+    },
+    "form": {
+      "fullName": "Nume complet",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "preferredDate": "Data preferată",
+      "peopleCount": "Număr de persoane",
+      "message": "Mesaj (opțional)",
+      "submit": "Trimite solicitarea",
+      "submitting": "Se trimite…"
+    },
+    "validation": {
+      "fullNameRequired": "Numele complet este obligatoriu",
+      "emailRequired": "E-mailul este obligatoriu",
+      "emailInvalid": "Introdu un e-mail valid",
+      "phoneRequired": "Telefonul este obligatoriu (minim 6 caractere)",
+      "preferredDateRequired": "Alege o dată",
+      "preferredDateInvalid": "Alege una dintre datele listate",
+      "peopleCountInvalid": "Introdu un număr valid de persoane",
+      "peopleCountMin": "Cel puțin o persoană",
+      "peopleCountMax": "Maximum {{max}} persoane pentru această excursie"
+    },
+    "success": {
+      "title": "Solicitare primită",
+      "description": "Am salvat solicitarea și am trimis un e-mail echipei. Cineva te va contacta în curând.",
+      "viewTrip": "Înapoi la detalii excursie",
+      "exploreMore": "Alte excursii"
+    },
+    "successWithWarning": {
+      "title": "Solicitare primită",
+      "description": "Solicitarea ta a fost salvată. Nu am putut trimite automat e-mailul de notificare, dar echipa o poate vedea în sistem și te va contacta."
+    },
+    "successFullToast": "Salvat și echipa a fost notificată pe e-mail.",
+    "emailWarningToast": "Solicitare salvată. E-mailul de notificare nu a putut fi trimis — echipa poate vedea în continuare solicitarea.",
+    "submitError": "Nu am putut salva solicitarea. Verifică conexiunea și încearcă din nou."
+  },
+  "about": {
+    "page": {
+      "title": "Despre IZ Trip",
+      "lead": "Planificare de weekend și cultură cu accent pe Moldova — premium, dar prietenos."
+    },
+    "mission": {
+      "title": "Misiunea noastră",
+      "body": "Ajutăm călătorii să descopere Moldova în siguranță și cu încredere — prin itinerare curatoriate și rezervări transparente."
+    },
+    "local": {
+      "title": "Local prin design",
+      "body": "Rutele pornesc de la ghizi, pensiuni și crame pe care le cunoaștem personal. Creștem lent ca să păstrăm calitatea."
+    },
+    "safety": {
+      "title": "Familii, copii și grupuri",
+      "body": "Contează ritmul, pauzele și comunicarea clară. Fiecare listă arată mărimea realistă a grupului și ce să aștepți pe traseu sau în oraș."
+    },
+    "cta": "Răsfoiește excursiile"
+  }
+}
