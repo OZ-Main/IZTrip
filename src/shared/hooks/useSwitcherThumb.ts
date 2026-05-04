@@ -13,14 +13,14 @@ export function useSwitcherThumb(activeSegmentId: string, layoutDependency?: unk
   const [thumb, setThumb] = useState<SwitcherThumbMetrics>(INITIAL_THUMB)
 
   useLayoutEffect(() => {
-    const container = containerRef.current
-
     function measure() {
-      if (!container) {
+      const root = containerRef.current
+
+      if (!root) {
         return
       }
 
-      const activeEl = container.querySelector<HTMLElement>(
+      const activeEl = root.querySelector<HTMLElement>(
         `[data-switcher-segment="${CSS.escape(activeSegmentId)}"]`,
       )
 
@@ -28,7 +28,7 @@ export function useSwitcherThumb(activeSegmentId: string, layoutDependency?: unk
         return
       }
 
-      const containerRect = container.getBoundingClientRect()
+      const containerRect = root.getBoundingClientRect()
       const activeRect = activeEl.getBoundingClientRect()
       const x = activeRect.left - containerRect.left
       const width = activeRect.width
@@ -44,11 +44,17 @@ export function useSwitcherThumb(activeSegmentId: string, layoutDependency?: unk
 
     measure()
 
+    const rootForObserve = containerRef.current
+
+    if (!rootForObserve) {
+      return
+    }
+
     const resizeObserver = new ResizeObserver(() => {
       measure()
     })
 
-    resizeObserver.observe(container)
+    resizeObserver.observe(rootForObserve)
     window.addEventListener('resize', measure)
 
     return () => {
