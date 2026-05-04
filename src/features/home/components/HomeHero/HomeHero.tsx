@@ -52,6 +52,13 @@ export default function HomeHero({ previewTrip, className }: HomeHeroProps) {
     price: formatTripPriceEur(previewTrip.priceEur),
   })
   const previewTripLinkLabel = t('home.hero.previewTripLinkLabel', { title: previewTripTitle })
+  const trustNoPaymentLabel = t(isNarrowViewport ? 'trust.heroNoPaymentShort' : 'trust.heroNoPayment')
+  const trustCuratedRoutesLabel = t(
+    isNarrowViewport ? 'trust.heroCuratedRoutesShort' : 'trust.heroCuratedRoutes',
+  )
+  const trustSmallGroupsLabel = t(
+    isNarrowViewport ? 'trust.heroSmallGroupsShort' : 'trust.heroSmallGroups',
+  )
 
   return (
     <section className={cn(homeHeroRootVariants(), 'animate-iz-surface-in', className)}>
@@ -69,7 +76,7 @@ export default function HomeHero({ previewTrip, className }: HomeHeroProps) {
             {heroTitle}
           </h1>
           <p className="max-w-2xl text-body text-hero-foreground/90 sm:text-body-lg">{heroSubtitle}</p>
-          <div className="flex flex-col gap-tight sm:flex-row sm:items-center">
+          <div className="mb-relaxed flex flex-col gap-tight sm:flex-row sm:items-center">
             <Button
               type="button"
               size="lg"
@@ -93,16 +100,22 @@ export default function HomeHero({ previewTrip, className }: HomeHeroProps) {
           </div>
           <ul className={homeHeroTrustListVariants()}>
             <li className={homeHeroTrustItemVariants()}>
-              <Wallet className="h-3.5 w-3.5 shrink-0 text-accent sm:h-4 sm:w-4" aria-hidden />
-              <span>{t('trust.heroNoPayment')}</span>
+              <Wallet className="h-3 w-3 shrink-0 text-accent sm:h-4 sm:w-4" aria-hidden />
+              <span className="min-w-0 truncate sm:overflow-visible sm:whitespace-normal">
+                {trustNoPaymentLabel}
+              </span>
             </li>
-            <li className={cn(homeHeroTrustItemVariants(), 'hidden sm:inline-flex')}>
-              <MapPin className="h-3.5 w-3.5 shrink-0 text-accent sm:h-4 sm:w-4" aria-hidden />
-              <span>{t('trust.heroCuratedRoutes')}</span>
+            <li className={homeHeroTrustItemVariants()}>
+              <MapPin className="h-3 w-3 shrink-0 text-accent sm:h-4 sm:w-4" aria-hidden />
+              <span className="min-w-0 truncate sm:overflow-visible sm:whitespace-normal">
+                {trustCuratedRoutesLabel}
+              </span>
             </li>
-            <li className={cn(homeHeroTrustItemVariants(), 'hidden sm:inline-flex')}>
-              <Users className="h-3.5 w-3.5 shrink-0 text-accent sm:h-4 sm:w-4" aria-hidden />
-              <span>{t('trust.heroSmallGroups')}</span>
+            <li className={homeHeroTrustItemVariants()}>
+              <Users className="h-3 w-3 shrink-0 text-accent sm:h-4 sm:w-4" aria-hidden />
+              <span className="min-w-0 truncate sm:overflow-visible sm:whitespace-normal">
+                {trustSmallGroupsLabel}
+              </span>
             </li>
           </ul>
         </div>

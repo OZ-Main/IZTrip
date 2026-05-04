@@ -137,8 +137,11 @@ const uiEn = {
   brand: { name: 'IZ Trip' },
   trust: {
     heroNoPayment: 'No upfront payment',
+    heroNoPaymentShort: 'No prepayment',
     heroCuratedRoutes: 'Curated local routes',
+    heroCuratedRoutesShort: 'Curated routes',
     heroSmallGroups: 'Small groups',
+    heroSmallGroupsShort: 'Small groups',
     badge: {
       flexibleDates: 'Flexible dates',
       smallGroup: 'Small group',
@@ -837,8 +840,11 @@ ro.home.hero.subtitle =
 ro.home.hero.primaryCta = 'Vezi excursiile'
 ro.home.hero.secondaryCta = 'Creează cont gratuit'
 ro.trust.heroNoPayment = 'Fără plată în avans'
+ro.trust.heroNoPaymentShort = 'Fără avans'
 ro.trust.heroCuratedRoutes = 'Trasee locale curatoriate'
+ro.trust.heroCuratedRoutesShort = 'Trasee locale'
 ro.trust.heroSmallGroups = 'Grupuri mici'
+ro.trust.heroSmallGroupsShort = 'Grup mic'
 ro.trust.badge.flexibleDates = 'Date flexibile'
 ro.trust.badge.smallGroup = 'Grup mic'
 ro.trust.badge.localGuide = 'Ghid local'
@@ -1151,8 +1157,11 @@ ru.home.hero.subtitle =
 ru.home.hero.primaryCta = 'Смотреть туры'
 ru.home.hero.secondaryCta = 'Создать бесплатный аккаунт'
 ru.trust.heroNoPayment = 'Без предоплаты'
+ru.trust.heroNoPaymentShort = 'Без предоплаты'
 ru.trust.heroCuratedRoutes = 'Кураторские локальные маршруты'
+ru.trust.heroCuratedRoutesShort = 'Локальные маршруты'
 ru.trust.heroSmallGroups = 'Небольшие группы'
+ru.trust.heroSmallGroupsShort = 'Малые группы'
 ru.trust.badge.flexibleDates = 'Гибкие даты'
 ru.trust.badge.smallGroup = 'Небольшая группа'
 ru.trust.badge.localGuide = 'Местный гид'

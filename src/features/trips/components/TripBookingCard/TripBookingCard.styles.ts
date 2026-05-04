@@ -11,7 +11,7 @@ export const tripBookingDockMetaVariants = cva(
 )
 
 export const tripBookingCardRootVariants = cva(
-  'animate-iz-surface-in rounded-[1.1rem] border border-primary/20 bg-gradient-to-br from-card via-card to-primary/5 p-card shadow-card ring-1 ring-primary/10 sm:p-form',
+  'animate-iz-surface-in rounded-[1.1rem] border border-primary/20 bg-gradient-to-br from-card via-card to-primary/5 px-card pb-card pt-0 shadow-card ring-1 ring-primary/10 sm:px-form sm:pb-form sm:pt-tight',
 )
 
 export const tripBookingCardEyebrowVariants = cva(

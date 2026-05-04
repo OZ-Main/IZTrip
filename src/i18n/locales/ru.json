@@ -41,8 +41,11 @@
   },
   "trust": {
     "heroNoPayment": "Без предоплаты",
+    "heroNoPaymentShort": "Без предоплаты",
     "heroCuratedRoutes": "Кураторские локальные маршруты",
+    "heroCuratedRoutesShort": "Локальные маршруты",
     "heroSmallGroups": "Небольшие группы",
+    "heroSmallGroupsShort": "Малые группы",
     "badge": {
       "flexibleDates": "Гибкие даты",
       "smallGroup": "Небольшая группа",

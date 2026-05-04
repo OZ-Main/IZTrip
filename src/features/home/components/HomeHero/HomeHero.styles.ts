@@ -21,15 +21,15 @@ export const homeHeroGridVariants = cva(
 )
 
 export const homeHeroTrustListVariants = cva(
-  'mt-stack flex flex-col gap-tight text-caption text-hero-foreground/85 sm:mt-relaxed sm:flex-row sm:flex-wrap sm:gap-x-relaxed sm:text-body-sm',
+  'flex w-full min-w-0 flex-row flex-nowrap items-stretch gap-1 text-caption text-hero-foreground/85 sm:flex-wrap sm:items-center sm:gap-x-relaxed sm:text-body-sm',
 )
 
 export const homeHeroTrustItemVariants = cva(
-  'inline-flex items-center gap-tight rounded-full border border-hero-foreground/15 bg-hero-foreground/10 px-2.5 py-1.5 backdrop-blur-sm sm:px-3 sm:py-2',
+  'flex min-w-0 flex-1 basis-0 items-center justify-center gap-0.5 overflow-hidden rounded-full border border-hero-foreground/15 bg-hero-foreground/10 px-1.5 py-1.5 text-center backdrop-blur-sm sm:inline-flex sm:w-auto sm:flex-none sm:basis-auto sm:justify-start sm:gap-tight sm:overflow-visible sm:px-3 sm:py-2 sm:text-left',
 )
 
 export const homeHeroPreviewVariants = cva(
-  'relative mt-stack rounded-xl border border-hero-foreground/15 bg-hero-foreground/10 p-3 shadow-none backdrop-blur-md sm:mt-relaxed sm:rounded-card sm:p-card lg:mt-0',
+  'relative mt-0 rounded-xl border border-hero-foreground/15 bg-hero-foreground/10 p-3 shadow-none backdrop-blur-md sm:rounded-card sm:p-card lg:mt-0',
 )
 
 export const homeHeroPreviewImageVariants = cva(

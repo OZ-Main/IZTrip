@@ -41,8 +41,11 @@
   },
   "trust": {
     "heroNoPayment": "Fără plată în avans",
+    "heroNoPaymentShort": "Fără avans",
     "heroCuratedRoutes": "Trasee locale curatoriate",
+    "heroCuratedRoutesShort": "Trasee locale",
     "heroSmallGroups": "Grupuri mici",
+    "heroSmallGroupsShort": "Grup mic",
     "badge": {
       "flexibleDates": "Date flexibile",
       "smallGroup": "Grup mic",

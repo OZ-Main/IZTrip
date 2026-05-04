@@ -41,8 +41,11 @@
   },
   "trust": {
     "heroNoPayment": "No upfront payment",
+    "heroNoPaymentShort": "No prepayment",
     "heroCuratedRoutes": "Curated local routes",
+    "heroCuratedRoutesShort": "Curated routes",
     "heroSmallGroups": "Small groups",
+    "heroSmallGroupsShort": "Small groups",
     "badge": {
       "flexibleDates": "Flexible dates",
       "smallGroup": "Small group",
