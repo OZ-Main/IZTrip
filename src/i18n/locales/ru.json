@@ -461,8 +461,8 @@
     "metaNextDate": "Ближайший: {{date}}",
     "metaNextDateUnknown": "Запросите новые даты у команды",
     "metaPrice": "От {{price}}",
-    "descriptionTitle": "Об этом опыте",
-    "highlightsTitle": "Акценты",
+    "descriptionTitle": "О туре",
+    "highlightsTitle": "Особенности",
     "includedTitle": "Включено",
     "itineraryTitle": "Маршрут",
     "availableDatesTitle": "Доступные даты выезда"

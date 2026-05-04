@@ -1,5 +1,8 @@
 import { cva } from 'class-variance-authority'
 
+export const homeHeroCtaSharedClassName =
+  'min-h-10 w-full px-6 py-2.5 text-sm font-semibold leading-snug sm:min-h-12 sm:w-auto sm:px-8 sm:py-3 sm:text-base'
+
 export const homeHeroRootVariants = cva(
   'relative isolate rounded-xl border border-primary/15 bg-gradient-to-br from-hero via-primary to-[hsl(158_48%_14%)] px-card py-6 text-hero-foreground shadow-overlay ring-1 ring-inset ring-black/10 dark:ring-white/10 sm:rounded-[1.25rem] sm:px-form sm:py-[2.75rem] lg:py-section',
 )
@@ -29,19 +32,19 @@ export const homeHeroTrustItemVariants = cva(
 )
 
 export const homeHeroPreviewVariants = cva(
-  'relative mt-0 rounded-xl border border-hero-foreground/15 bg-hero-foreground/10 p-3 shadow-none backdrop-blur-md sm:rounded-card sm:p-card lg:mt-0',
+  'relative mt-0 overflow-visible rounded-xl border border-hero-foreground/15 bg-hero-foreground/10 p-3 shadow-none backdrop-blur-md sm:rounded-card sm:p-card lg:mt-0',
 )
 
 export const homeHeroPreviewImageVariants = cva(
-  'block aspect-[4/3] w-full overflow-hidden rounded-[0.75rem] object-cover sm:aspect-[16/10]',
+  'block aspect-[4/3] w-full object-cover sm:aspect-[16/10]',
 )
 
 export const homeHeroPreviewImageFigureVariants = cva(
-  'relative overflow-hidden rounded-[0.75rem]',
+  'relative isolate block overflow-hidden motion-safe:transition-transform motion-safe:duration-motion-slow motion-safe:ease-motion-out motion-safe:group-hover:scale-[1.02]',
 )
 
 export const homeHeroPreviewImageMobileCaptionVariants = cva(
-  'pointer-events-none absolute inset-x-0 bottom-0 z-[1] bg-gradient-to-t from-black/78 via-black/40 to-transparent px-3 pb-3 pt-12 text-left sm:hidden',
+  'pointer-events-none absolute inset-x-0 bottom-0 z-[1] overflow-hidden rounded-b-lg bg-gradient-to-t from-black/78 via-black/40 to-transparent px-3 pb-3 pt-12 text-left sm:hidden',
 )
 
 export const homeHeroPreviewImageMobileCaptionEyebrowVariants = cva(
@@ -57,11 +60,21 @@ export const homeHeroPreviewImageMobileCaptionMetaVariants = cva(
 )
 
 export const homeHeroPreviewStackVariants = cva(
-  'absolute -left-3 top-4 z-20 hidden max-w-[11rem] rounded-card border border-border/70 bg-card/95 p-tight text-card-foreground shadow-card backdrop-blur-md sm:block lg:-left-6 lg:top-8',
+  'pointer-events-none absolute left-3 top-3 z-[2] hidden max-w-[min(20rem,calc(100%-1.5rem))] flex flex-col gap-1.5 rounded-xl border border-white/15 bg-black/52 p-3 shadow-lg ring-1 ring-inset ring-white/10 backdrop-blur-md sm:flex sm:max-w-[min(22rem,calc(100%-2rem))] sm:rounded-2xl sm:p-3.5 lg:left-4 lg:top-4 lg:max-w-[min(26rem,calc(100%-2.5rem))] lg:p-4',
 )
 
+export const homeHeroPreviewDesktopOverlayEyebrowVariants = cva(
+  'text-caption font-semibold uppercase tracking-[0.14em] text-accent',
+)
+
+export const homeHeroPreviewDesktopOverlayTitleVariants = cva(
+  'line-clamp-2 text-sm font-semibold leading-snug text-white sm:text-base lg:line-clamp-3',
+)
+
+export const homeHeroPreviewDesktopOverlayMetaVariants = cva('text-caption leading-snug text-white/78')
+
 export const homeHeroPreviewImageLinkVariants = cva(
-  'relative z-0 block min-h-[44px] rounded-[0.75rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+  'group relative z-0 block min-h-[44px] w-full overflow-hidden rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:rounded-xl',
 )
 
 export const homeHeroBadgeRowVariants = cva(

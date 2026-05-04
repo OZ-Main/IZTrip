@@ -50,7 +50,7 @@ export default function TripDetailsContent({ trip }: TripDetailsContentProps) {
             {highlights.map((line, index) => (
               <div key={`${trip.id}-highlight-${index}`} className={tripDetailsFeatureRowVariants()}>
                 <span className={tripDetailsFeatureIconVariants()}>
-                  <Check className="h-4 w-4" aria-hidden />
+                  <Check className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden />
                 </span>
                 <p className={tripDetailsFeatureTextVariants()}>{line}</p>
               </div>
@@ -70,7 +70,7 @@ export default function TripDetailsContent({ trip }: TripDetailsContentProps) {
             {included.map((line, index) => (
               <div key={`${trip.id}-included-${index}`} className={tripDetailsFeatureRowVariants()}>
                 <span className={tripDetailsFeatureIconVariants()}>
-                  <Check className="h-4 w-4" aria-hidden />
+                  <Check className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden />
                 </span>
                 <p className={tripDetailsFeatureTextVariants()}>{line}</p>
               </div>

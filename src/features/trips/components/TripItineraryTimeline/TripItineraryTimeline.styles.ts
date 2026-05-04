@@ -5,7 +5,7 @@ export const tripItineraryTimelineRootVariants = cva('flex flex-col gap-relaxed'
 export const tripItineraryTimelineRowVariants = cva('flex gap-tight')
 
 export const tripItineraryTimelineRailVariants = cva(
-  'relative flex w-10 shrink-0 flex-col items-center self-stretch',
+  'relative flex w-8 shrink-0 flex-col items-center self-stretch sm:w-10',
 )
 
 export const tripItineraryTimelineConnectorVariants = cva(
@@ -13,9 +13,9 @@ export const tripItineraryTimelineConnectorVariants = cva(
 )
 
 export const tripItineraryTimelineDotVariants = cva(
-  'relative z-[1] flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-primary/45 bg-card text-caption font-bold text-primary shadow-sm',
+  'relative z-[1] flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-primary/45 bg-card text-caption font-bold leading-none text-primary shadow-sm sm:h-8 sm:w-8',
 )
 
 export const tripItineraryTimelineCardVariants = cva(
-  'min-w-0 flex-1 space-y-tight rounded-[1rem] border border-border/70 bg-gradient-to-br from-card to-muted/20 p-card shadow-sm',
+  'min-w-0 flex-1 space-y-tight rounded-[1rem] border border-border/70 bg-gradient-to-br from-card to-muted/20 p-tight shadow-sm sm:space-y-tight sm:p-card',
 )

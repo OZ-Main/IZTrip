@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import {
   homeHeroBadgeRowVariants,
   homeHeroBadgeVariants,
+  homeHeroCtaSharedClassName,
   homeHeroGlowSecondaryVariants,
   homeHeroGlowVariants,
   homeHeroGridVariants,
@@ -17,6 +18,9 @@ import {
   homeHeroPreviewImageMobileCaptionMetaVariants,
   homeHeroPreviewImageMobileCaptionTitleVariants,
   homeHeroPreviewImageMobileCaptionVariants,
+  homeHeroPreviewDesktopOverlayEyebrowVariants,
+  homeHeroPreviewDesktopOverlayMetaVariants,
+  homeHeroPreviewDesktopOverlayTitleVariants,
   homeHeroPreviewImageVariants,
   homeHeroPreviewStackVariants,
   homeHeroPreviewVariants,
@@ -72,7 +76,7 @@ export default function HomeHero({ previewTrip, className }: HomeHeroProps) {
           <p className="text-caption font-semibold uppercase tracking-[0.12em] text-hero-foreground/75 sm:text-label">
             {t('home.hero.eyebrow')}
           </p>
-          <h1 className="text-balance font-display text-heading-lg font-semibold tracking-tight sm:text-display-xl">
+          <h1 className="text-balance font-display text-heading-md font-semibold tracking-tight max-sm:leading-snug sm:text-heading-lg lg:text-display-xl">
             {heroTitle}
           </h1>
           <p className="max-w-2xl text-body text-hero-foreground/90 sm:text-body-lg">{heroSubtitle}</p>
@@ -81,7 +85,7 @@ export default function HomeHero({ previewTrip, className }: HomeHeroProps) {
               type="button"
               size="lg"
               variant="accent"
-              className="min-h-10 w-full px-6 py-2.5 text-caption sm:min-h-12 sm:w-auto sm:px-8 sm:py-3 sm:text-label"
+              className={homeHeroCtaSharedClassName}
               asChild
             >
               <Link to={APP_ROUTE.trips}>{t('home.hero.primaryCta')}</Link>
@@ -91,7 +95,10 @@ export default function HomeHero({ previewTrip, className }: HomeHeroProps) {
                 type="button"
                 size="lg"
                 variant="secondary"
-                className="min-h-10 w-full border-2 border-hero-foreground/45 bg-hero-foreground/18 px-6 py-2.5 text-caption text-hero-foreground shadow-sm hover:bg-hero-foreground/28 sm:min-h-12 sm:w-auto sm:px-8 sm:py-3 sm:text-label"
+                className={cn(
+                  homeHeroCtaSharedClassName,
+                  'border-2 border-hero-foreground/45 bg-hero-foreground/18 text-hero-foreground shadow-sm hover:bg-hero-foreground/28',
+                )}
                 asChild
               >
                 <Link to={APP_ROUTE.register}>{t('home.hero.secondaryCta')}</Link>
@@ -120,29 +127,14 @@ export default function HomeHero({ previewTrip, className }: HomeHeroProps) {
           </ul>
         </div>
         <div className={homeHeroPreviewVariants()}>
-          <div className={homeHeroPreviewStackVariants()}>
-            <p className="text-caption font-semibold uppercase tracking-wide text-primary">
-              {t('home.hero.previewBadge')}
-            </p>
-            <p className="mt-tight line-clamp-2 text-body-sm font-semibold text-card-foreground">
-              {previewTripTitle}
-            </p>
-            <p className="mt-tight text-caption text-muted-foreground">{previewMetaLine}</p>
-          </div>
-          <Link
-            to={detailsPath}
-            aria-label={previewTripLinkLabel}
-            className={cn(homeHeroPreviewImageLinkVariants(), 'group')}
-          >
+          <Link to={detailsPath} aria-label={previewTripLinkLabel} className={homeHeroPreviewImageLinkVariants()}>
             <span className={homeHeroPreviewImageFigureVariants()}>
-              <img
-                src={previewTrip.imageSrc}
-                alt=""
-                className={cn(
-                  homeHeroPreviewImageVariants(),
-                  'transition-transform duration-motion-slow ease-motion-out motion-safe:group-hover:scale-[1.02]',
-                )}
-              />
+              <img src={previewTrip.imageSrc} alt="" className={homeHeroPreviewImageVariants()} />
+              <div className={homeHeroPreviewStackVariants()}>
+                <p className={homeHeroPreviewDesktopOverlayEyebrowVariants()}>{t('home.hero.previewBadge')}</p>
+                <p className={homeHeroPreviewDesktopOverlayTitleVariants()}>{previewTripTitle}</p>
+                <p className={homeHeroPreviewDesktopOverlayMetaVariants()}>{previewMetaLine}</p>
+              </div>
               <span className={homeHeroPreviewImageMobileCaptionVariants()}>
                 <span className={homeHeroPreviewImageMobileCaptionEyebrowVariants()}>
                   {t('home.hero.previewBadge')}

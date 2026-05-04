@@ -4,7 +4,10 @@ import { useTranslation } from 'react-i18next'
 import EmptyState from '@/components/feedback/EmptyState/EmptyState'
 import FeaturedTrips from '@/features/home/components/FeaturedTrips/FeaturedTrips'
 import TripFilters from '@/features/trips/components/TripFilters/TripFilters'
-import { tripFiltersChipVariants } from '@/features/trips/components/TripFilters/TripFilters.styles'
+import {
+  TRIP_FILTERS_LAYOUT,
+  tripFiltersChipVariants,
+} from '@/features/trips/components/TripFilters/TripFilters.styles'
 import TripsCatalogHero from '@/features/trips/components/TripsCatalogHero/TripsCatalogHero'
 import TripsPaginationBar from '@/features/trips/components/TripsPaginationBar/TripsPaginationBar'
 import {
@@ -82,6 +85,7 @@ type TripsResultsMetaProps = {
   className?: string
   compact?: boolean
   showResetButton?: boolean
+  variant?: 'default' | 'drawer'
 }
 
 function TripsResultsMeta({
@@ -95,13 +99,23 @@ function TripsResultsMeta({
   className,
   compact,
   showResetButton = true,
+  variant = 'default',
 }: TripsResultsMetaProps) {
+  const isDrawerVariant = variant === 'drawer'
+  const chipDensity = isDrawerVariant ? 'drawer' : 'default'
+
   return (
-    <div className={cn('border-t border-border/60', compact ? 'pt-3' : 'pt-form-field', className)}>
+    <div
+      className={cn(
+        'border-t border-border/60',
+        compact ? (isDrawerVariant ? 'pt-2' : 'pt-3') : 'pt-form-field',
+        className,
+      )}
+    >
       <div
         className={cn(
           'flex flex-wrap items-start sm:items-center sm:justify-between',
-          compact ? 'gap-x-2 gap-y-1.5' : 'gap-x-3 gap-y-2',
+          compact ? 'gap-x-2 gap-y-1' : 'gap-x-3 gap-y-2',
         )}
       >
         <div
@@ -113,7 +127,9 @@ function TripsResultsMeta({
           <p
             className={cn(
               'shrink-0 font-semibold tabular-nums text-foreground',
-              compact ? 'text-caption' : 'text-body-sm sm:text-body',
+              compact && isDrawerVariant && 'text-sm leading-tight',
+              compact && !isDrawerVariant && 'text-caption',
+              !compact && 'text-body-sm sm:text-body',
             )}
           >
             {t('trips.results.available', { count })}
@@ -129,7 +145,7 @@ function TripsResultsMeta({
               {categoryFilter !== ALL_TRIP_CATEGORIES_FILTER ? (
                 <span
                   className={cn(
-                    tripFiltersChipVariants({ state: 'active' }),
+                    tripFiltersChipVariants({ state: 'active', density: chipDensity }),
                     'pointer-events-none cursor-default',
                   )}
                 >
@@ -139,7 +155,7 @@ function TripsResultsMeta({
               {audienceFilter !== ALL_TRIP_AUDIENCES_FILTER ? (
                 <span
                   className={cn(
-                    tripFiltersChipVariants({ state: 'active' }),
+                    tripFiltersChipVariants({ state: 'active', density: chipDensity }),
                     'pointer-events-none cursor-default',
                   )}
                 >
@@ -149,7 +165,7 @@ function TripsResultsMeta({
               {durationFilter !== TRIP_DURATION_FILTER.ALL ? (
                 <span
                   className={cn(
-                    tripFiltersChipVariants({ state: 'active' }),
+                    tripFiltersChipVariants({ state: 'active', density: chipDensity }),
                     'pointer-events-none cursor-default',
                   )}
                 >
@@ -166,7 +182,9 @@ function TripsResultsMeta({
             size="sm"
             className={cn(
               'shrink-0',
-              compact ? 'h-8 gap-1 px-2 text-caption' : 'h-9 gap-1.5',
+              compact && isDrawerVariant && 'h-8 gap-1 px-2.5 text-sm',
+              compact && !isDrawerVariant && 'h-8 gap-1 px-2 text-caption',
+              !compact && 'h-9 gap-1.5',
             )}
             onClick={onResetFilters}
           >
@@ -271,7 +289,7 @@ export default function TripsPage() {
         <Button
           type="button"
           variant="outline"
-          className="h-11 w-full justify-center gap-2 text-caption sm:h-12 sm:text-body"
+          className="h-11 w-full justify-center gap-2 text-sm font-semibold sm:h-12 sm:text-body"
           onClick={() => setFiltersOpen(true)}
         >
           <Filter className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" aria-hidden />
@@ -283,16 +301,17 @@ export default function TripsPage() {
             closeLabel={t('common.close')}
             className="flex max-h-[min(92vh,42rem)] flex-col gap-0 overflow-hidden rounded-t-[1.25rem] p-0 sm:max-h-[min(90vh,38rem)]"
           >
-            <SheetHeader className="border-b border-border/70 px-4 pb-3 pt-4 text-left sm:px-6">
-              <SheetTitle className="font-display text-heading-md font-semibold sm:text-heading-lg">
+            <SheetHeader className="border-b border-border/70 px-4 pb-2 pt-3 text-left sm:px-6 sm:pb-3 sm:pt-4">
+              <SheetTitle className="font-display text-lg font-semibold leading-tight tracking-tight sm:text-heading-sm md:text-heading-md">
                 {t('trips.filters.drawerTitle')}
               </SheetTitle>
-              <SheetDescription className="text-caption leading-snug sm:text-body-sm">
+              <SheetDescription className="mt-1 text-sm leading-snug text-muted-foreground sm:mt-1.5 sm:text-body-sm">
                 {t('trips.filters.drawerDescription')}
               </SheetDescription>
             </SheetHeader>
-            <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4 pt-3 sm:px-6">
+            <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-3 pt-1 sm:px-6 sm:pb-4 sm:pt-3">
               <TripFilters
+                layout={TRIP_FILTERS_LAYOUT.DRAWER}
                 categoryFilter={categoryFilter}
                 audienceFilter={audienceFilter}
                 durationFilter={durationFilter}
@@ -307,6 +326,7 @@ export default function TripsPage() {
               />
               <TripsResultsMeta
                 compact
+                variant="drawer"
                 count={filteredTrips.length}
                 hasActiveFilters={hasActiveFilters}
                 categoryFilter={categoryFilter}
@@ -314,15 +334,15 @@ export default function TripsPage() {
                 durationFilter={durationFilter}
                 t={t}
                 showResetButton={false}
-                className="mt-4 border-border/50"
+                className="mt-2 border-border/50 sm:mt-4"
               />
             </div>
-            <div className="flex shrink-0 items-stretch gap-2 border-t border-border/70 bg-background px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 shadow-[0_-10px_30px_-12px_rgba(0,0,0,0.12)] sm:px-6">
+            <div className="flex shrink-0 items-stretch gap-2 border-t border-border/70 bg-background px-4 pb-[max(0.625rem,env(safe-area-inset-bottom))] pt-2 shadow-[0_-10px_30px_-12px_rgba(0,0,0,0.12)] sm:px-6 sm:pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:pt-3">
               {hasActiveFilters ? (
                 <Button
                   type="button"
                   variant="ghost"
-                  className="h-11 shrink-0 px-3 text-caption font-medium text-muted-foreground hover:text-foreground"
+                  className="h-10 shrink-0 px-2 text-sm font-medium text-muted-foreground hover:text-foreground sm:h-11 sm:px-3 sm:text-caption"
                   onClick={resetTripListFilters}
                 >
                   {t('trips.filters.sheetReset')}
@@ -331,7 +351,10 @@ export default function TripsPage() {
               <Button
                 type="button"
                 variant="accent"
-                className={cn('min-h-11', hasActiveFilters ? 'flex-1' : 'w-full')}
+                className={cn(
+                  'min-h-10 text-sm font-semibold sm:min-h-11 sm:text-label',
+                  hasActiveFilters ? 'flex-1' : 'w-full',
+                )}
                 onClick={() => setFiltersOpen(false)}
               >
                 {t('trips.filters.apply')}

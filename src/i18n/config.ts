@@ -1,7 +1,7 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
-import { buildExtraTripCatalogEn } from '@/features/trips/data/mockTripsExtra'
+import { buildExtraTripCatalog } from '@/features/trips/data/buildExtraTripCatalog'
 import { AppLanguage } from '@/shared/domain'
 import { readStoredAppLanguage } from '@/shared/helpers/storedLanguage.helpers'
 
@@ -11,7 +11,17 @@ import ru from './locales/ru.json'
 
 const englishCatalog = {
   ...en.trips.catalog,
-  ...buildExtraTripCatalogEn(),
+  ...buildExtraTripCatalog(AppLanguage.English),
+}
+
+const romanianCatalog = {
+  ...ro.trips.catalog,
+  ...buildExtraTripCatalog(AppLanguage.Romanian),
+}
+
+const russianCatalog = {
+  ...ru.trips.catalog,
+  ...buildExtraTripCatalog(AppLanguage.Russian),
 }
 
 const englishResources = {
@@ -22,11 +32,27 @@ const englishResources = {
   },
 }
 
+const romanianResources = {
+  ...ro,
+  trips: {
+    ...ro.trips,
+    catalog: romanianCatalog,
+  },
+}
+
+const russianResources = {
+  ...ru,
+  trips: {
+    ...ru.trips,
+    catalog: russianCatalog,
+  },
+}
+
 void i18n.use(initReactI18next).init({
   resources: {
     [AppLanguage.English]: { translation: englishResources },
-    [AppLanguage.Romanian]: { translation: ro },
-    [AppLanguage.Russian]: { translation: ru },
+    [AppLanguage.Romanian]: { translation: romanianResources },
+    [AppLanguage.Russian]: { translation: russianResources },
   },
   lng: readStoredAppLanguage(),
   fallbackLng: AppLanguage.English,

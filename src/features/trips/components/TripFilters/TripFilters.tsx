@@ -8,11 +8,13 @@ import {
 } from '@/features/trips/constants/tripDurationFilter.constants'
 import { TRIP_SORT_OPTION, type TripSortOption } from '@/features/trips/constants/tripSort.constants'
 import {
+  TRIP_FILTERS_LAYOUT,
   tripFiltersFieldLabelVariants,
   tripFiltersRootVariants,
   tripFiltersSelectTriggerVariants,
   tripFiltersToolbarSegmentVariants,
   tripFiltersToolbarVariants,
+  type TripFiltersLayout,
 } from '@/features/trips/components/TripFilters/TripFilters.styles'
 import {
   ALL_TRIP_AUDIENCES_FILTER,
@@ -80,6 +82,7 @@ type TripFiltersProps = {
   availableAudienceFilters?: TripAudienceFilter[]
   availableDurationFilters?: TripDurationFilter[]
   className?: string
+  layout?: TripFiltersLayout
 }
 
 function categoryFilterLabel(t: (key: string) => string, value: TripCategoryFilter) {
@@ -139,6 +142,7 @@ export default function TripFilters({
   availableAudienceFilters,
   availableDurationFilters,
   className,
+  layout = TRIP_FILTERS_LAYOUT.DEFAULT,
 }: TripFiltersProps) {
   const { t } = useTranslation()
   const fieldId = useId()
@@ -180,15 +184,15 @@ export default function TripFilters({
 
   return (
     <div className={cn(tripFiltersRootVariants(), className)}>
-      <div className={tripFiltersToolbarVariants()}>
-        <div className={tripFiltersToolbarSegmentVariants()}>
-          <Label htmlFor={categoryFieldId} className={tripFiltersFieldLabelVariants()}>
+      <div className={tripFiltersToolbarVariants({ layout })}>
+        <div className={tripFiltersToolbarSegmentVariants({ layout })}>
+          <Label htmlFor={categoryFieldId} className={tripFiltersFieldLabelVariants({ layout })}>
             {t('trips.filters.category')}
           </Label>
           <Select value={categoryFilter} onValueChange={handleCategoryValueChange}>
             <SelectTrigger
               id={categoryFieldId}
-              className={tripFiltersSelectTriggerVariants()}
+              className={tripFiltersSelectTriggerVariants({ layout })}
               aria-label={t('trips.filters.category')}
             >
               <SelectValue />
@@ -202,14 +206,14 @@ export default function TripFilters({
             </SelectContent>
           </Select>
         </div>
-        <div className={tripFiltersToolbarSegmentVariants()}>
-          <Label htmlFor={audienceFieldId} className={tripFiltersFieldLabelVariants()}>
+        <div className={tripFiltersToolbarSegmentVariants({ layout })}>
+          <Label htmlFor={audienceFieldId} className={tripFiltersFieldLabelVariants({ layout })}>
             {t('trips.filters.audience')}
           </Label>
           <Select value={audienceFilter} onValueChange={handleAudienceValueChange}>
             <SelectTrigger
               id={audienceFieldId}
-              className={tripFiltersSelectTriggerVariants()}
+              className={tripFiltersSelectTriggerVariants({ layout })}
               aria-label={t('trips.filters.audience')}
             >
               <SelectValue />
@@ -223,14 +227,14 @@ export default function TripFilters({
             </SelectContent>
           </Select>
         </div>
-        <div className={tripFiltersToolbarSegmentVariants()}>
-          <Label htmlFor={durationFieldId} className={tripFiltersFieldLabelVariants()}>
+        <div className={tripFiltersToolbarSegmentVariants({ layout })}>
+          <Label htmlFor={durationFieldId} className={tripFiltersFieldLabelVariants({ layout })}>
             {t('trips.filters.duration')}
           </Label>
           <Select value={durationFilter} onValueChange={handleDurationValueChange}>
             <SelectTrigger
               id={durationFieldId}
-              className={tripFiltersSelectTriggerVariants()}
+              className={tripFiltersSelectTriggerVariants({ layout })}
               aria-label={t('trips.filters.duration')}
             >
               <SelectValue />
@@ -244,14 +248,14 @@ export default function TripFilters({
             </SelectContent>
           </Select>
         </div>
-        <div className={tripFiltersToolbarSegmentVariants()}>
-          <Label htmlFor={sortFieldId} className={tripFiltersFieldLabelVariants()}>
+        <div className={tripFiltersToolbarSegmentVariants({ layout })}>
+          <Label htmlFor={sortFieldId} className={tripFiltersFieldLabelVariants({ layout })}>
             {t('trips.sort.label')}
           </Label>
           <Select value={sortBy} onValueChange={handleSortValueChange}>
             <SelectTrigger
               id={sortFieldId}
-              className={tripFiltersSelectTriggerVariants()}
+              className={tripFiltersSelectTriggerVariants({ layout })}
               aria-label={t('trips.sort.label')}
             >
               <SelectValue />

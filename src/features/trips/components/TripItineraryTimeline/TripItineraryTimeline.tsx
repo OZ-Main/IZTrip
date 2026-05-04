@@ -33,10 +33,12 @@ export default function TripItineraryTimeline({ days }: TripItineraryTimelinePro
               </span>
             </div>
             <div className={tripItineraryTimelineCardVariants()}>
-              <h3 className="font-display text-heading-sm font-semibold leading-snug text-foreground">
+              <h3 className="font-display text-body font-semibold leading-snug text-foreground sm:text-heading-sm">
                 {dayItem.title}
               </h3>
-              <p className="text-body leading-relaxed text-muted-foreground">{dayItem.body}</p>
+              <p className="text-caption leading-snug text-muted-foreground sm:text-body sm:leading-relaxed">
+                {dayItem.body}
+              </p>
             </div>
           </div>
         )

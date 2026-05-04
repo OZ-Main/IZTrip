@@ -19,7 +19,7 @@ type ExtraTripSpec = {
   itineraryDayCount: number
 }
 
-const EXTRA_TRIP_SPECS: ExtraTripSpec[] = [
+export const EXTRA_TRIP_SPECS: ExtraTripSpec[] = [
   {
     slug: 'balti-food-market-day',
     title: 'Bălți market & northern flavors',
@@ -390,50 +390,3 @@ export function buildExtraMockTrips(): TripDefinition[] {
   }))
 }
 
-export function buildExtraTripCatalogEn(): Record<string, Record<string, string>> {
-  const entries: Record<string, Record<string, string>> = {}
-
-  for (const spec of EXTRA_TRIP_SPECS) {
-    const included: Record<string, string> = {}
-    for (let includedIndex = 1; includedIndex <= spec.includedCount; includedIndex += 1) {
-      included[`included${includedIndex}`] =
-        includedIndex === 1
-          ? 'Licensed guide and curated route plan'
-          : includedIndex === 2
-            ? 'Round-trip transport from Chișinău meeting point'
-            : includedIndex === 3
-              ? 'Coordinated access fees where applicable'
-              : includedIndex === 4
-                ? 'YZ Trip coordination and day-of guest support'
-                : includedIndex === 5
-                  ? 'Overnight stay at a vetted partner property'
-                  : 'Breakfast on multi-day departures'
-    }
-
-    const itinerary: Record<string, string> = {}
-    for (let day = 1; day <= spec.itineraryDayCount; day += 1) {
-      itinerary[`itineraryDay${day}Title`] = `${spec.title} — day ${day}`
-      itinerary[`itineraryDay${day}Body`] =
-        day === 1
-          ? 'Morning pickup, guided core route, paced meals, and coordinated return or check-in.'
-          : day === spec.itineraryDayCount
-            ? 'Final sights, lunch window, and return to Chișinău by evening.'
-            : 'Mid-trip loop with flexible afternoon pacing and local dinner window.'
-    }
-
-    entries[spec.slug] = {
-      title: spec.title,
-      location: spec.location,
-      shortDescription: spec.shortDescription,
-      description: spec.description,
-      highlight1: 'Small-group pacing with clear meeting points and rest windows.',
-      highlight2: 'Local guide partner vetted by the YZ Trip coordination team.',
-      highlight3: 'Transparent “from” pricing with realistic guest counts.',
-      highlight4: 'Weather backup notes and a day-of guest support contact.',
-      ...included,
-      ...itinerary,
-    }
-  }
-
-  return entries
-}

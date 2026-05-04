@@ -33,7 +33,7 @@ export default function TripDetailsSection({
       <div className={tripDetailsSectionInnerVariants()}>
         <div className={tripDetailsSectionHeaderVariants()}>
           <span className={tripDetailsSectionIconWrapVariants()}>
-            <Icon className="h-5 w-5" aria-hidden />
+            <Icon className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden />
           </span>
           <h2 className={tripDetailsSectionTitleVariants()}>{title}</h2>
         </div>
