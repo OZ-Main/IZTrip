@@ -4,8 +4,8 @@ import { Resend } from 'resend'
 
 import { bookingEmailApiPayloadSchema } from '../src/shared/validation/bookingEmailApiPayload.validation.ts'
 
-const BOOKING_EMAIL_FROM = 'IZ Trip <onboarding@resend.dev>'
-const BOOKING_EMAIL_SUBJECT = 'New IZ Trip booking request'
+const BOOKING_EMAIL_FROM = 'YZ Trip <onboarding@resend.dev>'
+const BOOKING_EMAIL_SUBJECT = 'New YZ Trip booking request'
 
 function escapeHtml(raw: string): string {
   return raw
@@ -43,7 +43,7 @@ function buildBookingEmailHtml(payload: {
       ? `<p><strong>Message:</strong> ${escapeHtml(payload.message)}</p>`
       : '<p><strong>Message:</strong> (none)</p>'
   return `
-    <h1>New IZ Trip booking request</h1>
+    <h1>New YZ Trip booking request</h1>
     <p><strong>Booking request id (Firestore):</strong> ${escapeHtml(payload.bookingRequestId)}</p>
     <p><strong>Created (submitted):</strong> ${escapeHtml(payload.createdAtIso)}</p>
     <hr />

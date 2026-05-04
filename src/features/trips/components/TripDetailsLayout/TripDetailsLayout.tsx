@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 
 import TripBookingCard from '@/features/trips/components/TripBookingCard/TripBookingCard'
 import {
+  tripDetailsLayoutAsideStickyVariants,
   tripDetailsLayoutAsideVariants,
   tripDetailsLayoutMainVariants,
   tripDetailsLayoutMobileBookingVariants,
@@ -25,7 +26,9 @@ export default function TripDetailsLayout({ trip, bookingPath, children }: TripD
         {children}
       </div>
       <aside className={tripDetailsLayoutAsideVariants()}>
-        <TripBookingCard trip={trip} bookingPath={bookingPath} />
+        <div className={tripDetailsLayoutAsideStickyVariants()}>
+          <TripBookingCard trip={trip} bookingPath={bookingPath} />
+        </div>
       </aside>
     </div>
   )

@@ -32,5 +32,5 @@ export const homeStyleCategoryCardTitleVariants = cva(
 export const homeStyleCategoryCardBodyVariants = cva('text-body-sm text-muted-foreground')
 
 export const homeStyleCategoryCardArrowVariants = cva(
-  'mt-auto text-label font-semibold text-primary transition-transform duration-motion-fast ease-motion-out group-hover:translate-x-0.5',
+  'mt-auto text-label font-semibold text-primary transition-transform duration-motion-fast ease-motion-out group-hover:translate-x-0.5 group-hover:text-accent dark:text-accent dark:group-hover:text-accent',
 )

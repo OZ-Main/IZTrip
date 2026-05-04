@@ -5,7 +5,7 @@ export const headerRootVariants = cva(
 )
 
 export const headerInnerVariants = cva(
-  'container flex min-h-[3.5rem] flex-wrap items-center justify-between gap-x-tight gap-y-tight py-3 sm:min-h-[4rem] sm:flex-nowrap sm:gap-stack',
+  'container flex min-h-[3.5rem] flex-nowrap items-center justify-between gap-x-tight gap-y-tight overflow-x-auto py-3 [scrollbar-width:none] sm:min-h-[4rem] sm:gap-stack [&::-webkit-scrollbar]:hidden',
 )
 
 export const headerBrandVariants = cva(
@@ -19,7 +19,7 @@ export const headerNavLinkVariants = cva(
 )
 
 export const headerActionsVariants = cva(
-  'flex shrink-0 flex-wrap items-center justify-end gap-tight sm:gap-stack',
+  'flex shrink-0 flex-wrap items-center justify-end gap-1 sm:gap-tight md:gap-stack',
 )
 
 export const headerMobileNavVariants = cva(

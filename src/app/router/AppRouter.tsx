@@ -10,6 +10,7 @@ import BookingPage from '@/pages/BookingPage'
 import HomePage from '@/pages/HomePage'
 import LoginPage from '@/pages/LoginPage'
 import RegisterPage from '@/pages/RegisterPage'
+import SavedTripsPage from '@/pages/SavedTripsPage'
 import TripDetailsPage from '@/pages/TripDetailsPage'
 import TripsPage from '@/pages/TripsPage'
 import { APP_ROUTE, ROUTE_SEGMENT } from '@/shared/constants/routes.constants'
@@ -26,6 +27,7 @@ export default function AppRouter() {
             path={`${ROUTE_SEGMENT.trips}/${ROUTE_SEGMENT.tripSlugParam}`}
             element={<TripDetailsPage />}
           />
+          <Route path={ROUTE_SEGMENT.saved} element={<SavedTripsPage />} />
           <Route path={ROUTE_SEGMENT.about} element={<AboutPage />} />
           <Route
             path={ROUTE_SEGMENT.login}

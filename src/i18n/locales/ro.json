@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "IZ Trip"
+    "name": "YZ Trip"
   },
   "trust": {
     "heroNoPayment": "Fără plată în avans",
@@ -15,6 +15,22 @@
   "common": {
     "loadingApp": "Se pregătește spațiul tău de călătorie…",
     "close": "Închide"
+  },
+  "savedTrips": {
+    "page": {
+      "title": "Excursii salvate",
+      "description": "Excursiile pe care le-ai salvat cu inima pe fiecare card. Deschide una pentru detalii sau o dată preferată.",
+      "browseTrips": "Vezi catalogul"
+    },
+    "guest": {
+      "title": "Autentifică-te pentru excursii salvate",
+      "description": "Creează un cont sau autentifică-te ca să salvezi tururi și să le găsești aici oricând.",
+      "signIn": "Autentificare"
+    },
+    "empty": {
+      "title": "Încă nu ai excursii salvate",
+      "description": "Răsfoiește catalogul și apasă inima pe o excursie ca să o adaugi în această listă."
+    }
   },
   "language": {
     "switcherLabel": "Limbă",
@@ -36,6 +52,7 @@
     "mainLabel": "Principal",
     "home": "Acasă",
     "trips": "Excursii",
+    "saved": "Salvate",
     "about": "Despre",
     "signIn": "Autentificare",
     "register": "Creează cont",
@@ -52,7 +69,7 @@
     "marketingFootnote": "Desk independent, axat pe Moldova — gândit pentru planificare calmă.",
     "signIn": "Autentificare",
     "signInDescription": "Accesează excursiile salvate și solicitări de rezervare securizate.",
-    "registerTitle": "Creează contul IZ Trip",
+    "registerTitle": "Creează contul YZ Trip",
     "registerDescription": "Salvează preferințe și rezervă experiențe curatoriate în Moldova.",
     "email": "E-mail",
     "password": "Parolă",
@@ -62,8 +79,8 @@
     "registering": "Se creează contul…",
     "createAccount": "Creează cont",
     "signedIn": "Bine ai revenit!",
-    "registered": "Cont creat — bine ai venit la IZ Trip!",
-    "noAccount": "Ești nou la IZ Trip?",
+    "registered": "Cont creat — bine ai venit la YZ Trip!",
+    "noAccount": "Ești nou la YZ Trip?",
     "createOne": "Creează un cont",
     "haveAccount": "Ai deja cont?",
     "signInInstead": "Autentifică-te",
@@ -106,7 +123,7 @@
       "viewAll": "Toate excursiile"
     },
     "how": {
-      "title": "Cum funcționează IZ Trip",
+      "title": "Cum funcționează YZ Trip",
       "description": "Trei pași calmi de la inspirație la o solicitare pe care echipa o poate prelua.",
       "step1": {
         "badge": "01",
@@ -174,7 +191,7 @@
       "description": "Filtrează după stil și public — fiecare rută include note sincere de ritm, preț „de la” și plecări viitoare.",
       "kicker": "Catalog curatoriat",
       "statTripsLabel": "Excursii curatoriate",
-      "statTripsValue": "6 rute disponibile",
+      "statTripsValue": "{{count}} rute disponibile",
       "statRoutesLabel": "Acoperire în Moldova",
       "statRoutesValue": "Nord, Codrii, Chișinău și belvedere Nistru",
       "statDatesLabel": "Plecări flexibile",
@@ -241,6 +258,18 @@
       "description": "Încearcă să lărgești filtrele pentru mai multe experiențe.",
       "resetFilters": "Resetează filtrele"
     },
+    "pagination": {
+      "label": "Pagini listă excursii",
+      "prev": "Înapoi",
+      "next": "Înainte",
+      "pageStatus": "Pagina {{page}} din {{pageCount}}"
+    },
+    "save": {
+      "add": "Salvează excursia",
+      "remove": "Elimină din salvate",
+      "loginTooltip": "Autentifică-te pentru a salva excursii în cont",
+      "loginRequired": "Autentifică-te pentru a salva excursii și a le păstra între dispozitive."
+    },
     "catalog": {
       "orheiul-vechi": {
         "title": "Orheiul Vechi și panoramă peste Râul Răut",
@@ -255,7 +284,7 @@
         "included2": "Transport dus-întors din punctul de întâlnire din Chișinău",
         "included3": "Prânz la partener verificat (pensiune sau restaurant)",
         "included4": "Taxe de acces la muzeu și arii protejate, unde e cazul",
-        "included5": "Coordonare IZ Trip și suport în ziua excursiei",
+        "included5": "Coordonare YZ Trip și suport în ziua excursiei",
         "itineraryDay1Title": "Circuit Chișinău → Orheiul Vechi",
         "itineraryDay1Body": "Plecare dimineața, tur arheologic ghidat, prânz în Butuceni, opțional vizită la crame dacă permite orarul, întoarcere spre seară."
       },
@@ -268,7 +297,7 @@
         "highlight2": "Degustare structurată cu brânzeturi locale și pâine",
         "highlight3": "Opriri prietenoase pentru fotografii pe „străzi” numite după soiuri",
         "highlight4": "Upgrade opțional: degustare de vintage (la cerere, 18+)",
-        "included1": "Host IZ Trip privat și bilete la galerii",
+        "included1": "Host YZ Trip privat și bilete la galerii",
         "included2": "Transport dus-întors din Chișinău central",
         "included3": "Degustare ghidată, cu ritm confortabil",
         "included4": "Seleție de vinuri liniștite și spumante cu echipa cramei",
@@ -287,7 +316,7 @@
         "included1": "Ghid orientat spre familii și acces la cetate",
         "included2": "Transport din Chișinău cu pauze de odihnă",
         "included3": "Apă și pachet de gustări",
-        "included4": "Contact de urgență IZ Trip în ziua excursiei",
+        "included4": "Contact de urgență YZ Trip în ziua excursiei",
         "itineraryDay1Title": "Cetate, belvedere, întoarcere relaxată",
         "itineraryDay1Body": "Plecare dimineața, tur pe metereze, pauză de prânz în Soroca (masa nu e inclusă decât dacă alegi add-on), belvedere la râu, întoarcere seara."
       },
@@ -302,7 +331,7 @@
         "highlight4": "Variante interioare la ploaie, planificate din timp",
         "included1": "Ghid autorizat al orașului",
         "included2": "Traseu tipărit/digital cu mini-glosar",
-        "included3": "Fișă IZ Trip cu tips pentru rezervări la cină",
+        "included3": "Fișă YZ Trip cu tips pentru rezervări la cină",
         "itineraryDay1Title": "Circuit central cu detour prin parcuri",
         "itineraryDay1Body": "Întâlnire lângă Parcul Catedralei, străzi istorice, povești, opțional popas la cafea, final lângă restaurante independente."
       },
@@ -338,7 +367,7 @@
         "included2": "Două prânzuri, o cină, un mic dejun",
         "included3": "Cazare o noapte (camere pentru familii la cerere)",
         "included4": "Transport din Chișinău cu gustări pe traseu",
-        "included5": "Kit siguranță IZ Trip și rută alternativă la vreme rea",
+        "included5": "Kit siguranță YZ Trip și rută alternativă la vreme rea",
         "included6": "Ghid scurt pentru fotografii cu telefonul",
         "itineraryDay1Title": "În dealuri și masă la fermă",
         "itineraryDay1Body": "Ridicare dimineața, drumeție pe creastă, fermă, cazare la tabără/cabană, cină.",
@@ -450,7 +479,7 @@
   "about": {
     "hero": {
       "kicker": "Călătorii curatoriate, axate pe Moldova",
-      "title": "Despre IZ Trip",
+      "title": "Despre YZ Trip",
       "subtitle": "Suntem un desk independent axat pe Moldova — grupuri mici, parteneri locali, prețuri clare și solicitări de rezervare organizate."
     },
     "mission": {
@@ -458,7 +487,7 @@
       "body": "Ajutăm călătorii să exploreze Moldova cu încredere: itinerare clare, note sincere despre ritm și un flux de solicitare care îți respectă timpul."
     },
     "pillars": {
-      "title": "Ce face diferit IZ Trip",
+      "title": "Ce face diferit YZ Trip",
       "lead": "Patru principii ghidează fiecare card de rută, relația cu gazdele și pașii de urmărire."
     },
     "pillar1": {
@@ -478,7 +507,7 @@
       "body": "Cererile pe cont rămân structurate pentru coordonatori și pentru istoricul tău."
     },
     "audience": {
-      "title": "Pentru cine este IZ Trip",
+      "title": "Pentru cine este YZ Trip",
       "lead": "Dacă îți place planificarea calmă și urmărirea umană, ești în locul potrivit.",
       "families": "Familii care vor ritm realist și zile prietenoase cu gustări",
       "kids": "Grupuri școlare și cluburi pentru copii care au nevoie de note clare de supraveghere",

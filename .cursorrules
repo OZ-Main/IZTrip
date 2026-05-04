@@ -1,11 +1,11 @@
 ############################################################
 
-# IZ TRIP — CURSOR RULES
+# YZ TRIP — CURSOR RULES
 
 ############################################################
 
 Project:
-IZ Trip is a React.js + TypeScript travel/vacation planning platform focused initially on Moldova.
+YZ Trip is a React.js + TypeScript travel/vacation planning platform focused initially on Moldova.
 
 Core direction:
 
@@ -21,7 +21,7 @@ Important:
 
 - Use the same libraries and technical patterns from the attached Swimlytics app where applicable.
 - Reuse Swimlytics patterns for React, TypeScript, Vite, routing, Zustand, translations, forms, validation, styling, and UI conventions.
-- Do NOT blindly copy Swimlytics domain structure. Adapt the architecture to the IZ Trip travel domain.
+- Do NOT blindly copy Swimlytics domain structure. Adapt the architecture to the YZ Trip travel domain.
 
 This is a React.js web app, not React Native.
 
@@ -150,7 +150,7 @@ Pages should orchestrate features, not contain all business/UI logic.
 Create and maintain these main pages:
 
 - HomePage
-  - introduce IZ Trip
+  - introduce YZ Trip
   - show value proposition
   - CTA to explore trips
   - featured trips section
@@ -177,7 +177,7 @@ Create and maintain these main pages:
   - success state
 
 - AboutPage
-  - explain IZ Trip
+  - explain YZ Trip
   - Moldova-focused curated local experiences
 
 ############################################################
@@ -670,7 +670,7 @@ If Swimlytics uses:
 - cn utility
 - lucide-react
 
-then IZ Trip should follow the same approach.
+then YZ Trip should follow the same approach.
 
 Rules:
 
@@ -942,7 +942,7 @@ Before making changes:
 
 1. analyze the request carefully
 2. check existing Swimlytics patterns/libraries
-3. adapt the solution to IZ Trip domain
+3. adapt the solution to YZ Trip domain
 4. prefer the simplest strong solution
 5. avoid premature abstraction
 6. implement directly when the path is clear
@@ -978,7 +978,7 @@ Generated code MUST:
 
 ############################################################
 
-Everything generated for IZ Trip should look like:
+Everything generated for YZ Trip should look like:
 
 - serious frontend engineering
 - clean React + TypeScript architecture

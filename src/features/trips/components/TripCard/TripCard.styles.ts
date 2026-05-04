@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 
 export const tripCardRootVariants = cva(
-  'group flex h-full w-full max-w-full flex-col overflow-hidden rounded-[1.05rem] border border-border/80 bg-card text-card-foreground shadow-card transition-[transform,box-shadow] duration-[220ms] ease-motion-out',
+  'group flex h-full w-full max-w-full flex-col overflow-hidden rounded-[1.05rem] border border-border/80 bg-card text-card-foreground shadow-card transition-[transform,box-shadow] duration-[220ms] ease-motion-out [&:visited]:text-card-foreground',
 )
 
 export const tripCardInteractiveVariants = cva(
@@ -17,7 +17,7 @@ export const tripCardImageVariants = cva(
 )
 
 export const tripCardImageOverlayVariants = cva(
-  'pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent opacity-95',
+  'pointer-events-none absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-transparent opacity-80',
 )
 
 export const tripCardImageTopVariants = cva(
@@ -53,5 +53,5 @@ export const tripCardFooterTopVariants = cva(
 export const tripCardPriceVariants = cva('text-heading-md font-semibold text-primary')
 
 export const tripCardCtaVariants = cva(
-  'inline-flex min-h-11 w-full items-center justify-center rounded-button border border-accent/35 bg-accent/12 px-4 text-label font-semibold text-accent-foreground shadow-sm transition-[background-color,color,transform,border-color,box-shadow] duration-motion-fast ease-motion-out group-hover:border-accent/50 group-hover:bg-accent/18 group-hover:shadow-sm sm:justify-start',
+  'relative z-10 inline-flex min-h-11 w-full items-center justify-center rounded-button border border-border/80 bg-muted/40 px-4 text-label font-semibold text-foreground shadow-sm transition-[background-color,color,transform,border-color,box-shadow] duration-motion-fast ease-motion-out visited:text-foreground group-hover:border-primary/35 group-hover:bg-muted/60 group-hover:text-foreground sm:justify-start',
 )

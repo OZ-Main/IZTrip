@@ -75,8 +75,14 @@ export default function TripDetailsHero({ trip }: TripDetailsHeroProps) {
         <div className={tripDetailsHeroBottomVariants()}>
           <div className={tripDetailsHeroCopyVariants()} style={{ animationDelay: '40ms' }}>
             <div className={tripDetailsHeroBadgeRowVariants()}>
-              <CategoryBadge category={trip.category} />
-              <AudienceBadge audience={trip.targetAudience} />
+              <CategoryBadge
+                category={trip.category}
+                className="border-white/40 bg-black/45 text-white shadow-md ring-1 ring-black/20 backdrop-blur-md dark:border-white/35 dark:bg-black/50"
+              />
+              <AudienceBadge
+                audience={trip.targetAudience}
+                className="border-white/40 bg-black/45 text-white shadow-md ring-1 ring-black/20 backdrop-blur-md dark:border-white/35 dark:bg-black/50"
+              />
             </div>
             <p className={tripDetailsHeroLocationVariants()}>
               <MapPin className="h-4 w-4 shrink-0" aria-hidden />

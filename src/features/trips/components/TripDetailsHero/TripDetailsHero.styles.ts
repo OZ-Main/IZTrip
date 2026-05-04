@@ -5,7 +5,7 @@ export const tripDetailsHeroRootVariants = cva(
 )
 
 export const tripDetailsHeroMediaVariants = cva(
-  'relative isolate min-h-[280px] max-h-[340px] w-full sm:min-h-[360px] sm:max-h-[420px] lg:min-h-[420px] lg:max-h-[520px]',
+  'relative isolate min-h-[280px] max-h-[340px] w-full overflow-hidden sm:min-h-[360px] sm:max-h-[420px] lg:min-h-[420px] lg:max-h-[520px]',
 )
 
 export const tripDetailsHeroImageVariants = cva('absolute inset-0 h-full w-full object-cover')
@@ -31,14 +31,16 @@ export const tripDetailsHeroCopyVariants = cva('min-w-0 max-w-3xl space-y-tight 
 export const tripDetailsHeroBadgeRowVariants = cva('flex flex-wrap gap-tight')
 
 export const tripDetailsHeroLocationVariants = cva(
-  'inline-flex items-center gap-1 text-body font-semibold text-primary',
+  'inline-flex items-center gap-1 text-body font-semibold text-white drop-shadow-[0_1px_4px_rgba(0,0,0,0.85)]',
 )
 
 export const tripDetailsHeroTitleVariants = cva(
   'font-display text-balance text-display-lg font-semibold tracking-tight text-foreground sm:text-display-xl',
 )
 
-export const tripDetailsHeroLeadVariants = cva('max-w-2xl text-body-lg text-muted-foreground')
+export const tripDetailsHeroLeadVariants = cva(
+  'max-w-full text-pretty text-body-lg font-medium leading-relaxed text-foreground/90 line-clamp-4 min-w-0 sm:max-w-2xl sm:line-clamp-none',
+)
 
 export const tripDetailsHeroFactsDesktopVariants = cva(
   'hidden w-full max-w-sm shrink-0 animate-iz-surface-in rounded-[1rem] border border-border/70 bg-card/90 p-card shadow-card backdrop-blur-md lg:block',

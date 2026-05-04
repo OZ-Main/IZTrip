@@ -1,15 +1,19 @@
 import { cva } from 'class-variance-authority'
 
 export const languageSwitcherRootVariants = cva(
-  'inline-flex items-center gap-0.5 rounded-full border border-border/70 bg-card/90 p-0.5 shadow-sm backdrop-blur-sm',
+  'relative inline-block rounded-full border border-border/70 bg-card/90 p-0.5 shadow-sm backdrop-blur-sm max-md:p-[1px] max-md:shadow-none',
+)
+
+export const languageSwitcherTrackVariants = cva(
+  'relative z-[1] grid min-h-7 min-w-[6.5rem] grid-cols-3 gap-0 sm:min-h-8 sm:min-w-[8.75rem] sm:gap-0.5 md:min-w-[9.25rem]',
 )
 
 export const languageSwitcherButtonVariants = cva(
-  'min-h-9 min-w-[2.5rem] rounded-full px-2.5 py-1.5 text-caption font-semibold transition-colors duration-motion-fast ease-motion-out sm:min-h-8 sm:min-w-[2.25rem] sm:px-2 sm:py-1',
+  'flex w-full min-w-0 items-center justify-center rounded-full bg-transparent px-0.5 py-1 text-[0.65rem] font-semibold leading-none transition-colors duration-motion-fast ease-motion-out sm:px-1 sm:py-1 sm:text-caption md:px-1',
   {
     variants: {
       state: {
-        active: 'bg-primary text-primary-foreground shadow-sm',
+        active: 'text-primary-foreground',
         idle: 'text-muted-foreground hover:text-foreground',
       },
     },

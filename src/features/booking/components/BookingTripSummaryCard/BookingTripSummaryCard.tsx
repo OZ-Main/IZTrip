@@ -14,7 +14,10 @@ import {
 } from '@/features/booking/components/BookingTripSummaryCard/BookingTripSummaryCard.styles'
 import { formatTripDateDisplay } from '@/features/trips/helpers/tripDates.helpers'
 import { formatTripGroupSizeRange } from '@/features/trips/helpers/tripDetailsView.helpers'
-import { formatTripDurationDays, formatTripPriceEur } from '@/features/trips/helpers/tripFormat.helpers'
+import {
+  formatTripDurationDays,
+  formatTripPriceEur,
+} from '@/features/trips/helpers/tripFormat.helpers'
 import type { TripDefinition } from '@/features/trips/types/trip.types'
 
 type BookingTripSummaryCardProps = {
@@ -22,13 +25,21 @@ type BookingTripSummaryCardProps = {
   preferredDateIso: string
 }
 
-export default function BookingTripSummaryCard({ trip, preferredDateIso }: BookingTripSummaryCardProps) {
+export default function BookingTripSummaryCard({
+  trip,
+  preferredDateIso,
+}: BookingTripSummaryCardProps) {
   const { t, i18n } = useTranslation()
   const tripTitle = t(`trips.catalog.${trip.slug}.title`)
 
   return (
     <section className={bookingTripSummaryRootVariants()} aria-label={t('booking.summaryTitle')}>
-      <img src={trip.imageSrc} alt={tripTitle} className={bookingTripSummaryMediaVariants()} loading="lazy" />
+      <img
+        src={trip.imageSrc}
+        alt={tripTitle}
+        className={bookingTripSummaryMediaVariants()}
+        loading="lazy"
+      />
       <div className={bookingTripSummaryBodyVariants()}>
         <p className={bookingTripSummaryEyebrowVariants()}>{t('booking.summaryEyebrow')}</p>
         <h2 className={bookingTripSummaryTitleVariants()}>{tripTitle}</h2>
@@ -38,23 +49,33 @@ export default function BookingTripSummaryCard({ trip, preferredDateIso }: Booki
         </p>
         <div className={bookingTripSummaryMetaVariants()}>
           <div className={bookingTripSummaryMetaCellVariants()}>
-            <p className={bookingTripSummaryMetaLabelVariants()}>{t('booking.summary.durationLabel')}</p>
+            <p className={bookingTripSummaryMetaLabelVariants()}>
+              {t('booking.summary.durationLabel')}
+            </p>
             <p className={bookingTripSummaryMetaValueVariants()}>
               {formatTripDurationDays(trip.durationDays, t)}
             </p>
           </div>
           <div className={bookingTripSummaryMetaCellVariants()}>
-            <p className={bookingTripSummaryMetaLabelVariants()}>{t('booking.summary.priceFromLabel')}</p>
-            <p className={bookingTripSummaryMetaValueVariants()}>{formatTripPriceEur(trip.priceEur)}</p>
+            <p className={bookingTripSummaryMetaLabelVariants()}>
+              {t('booking.summary.priceFromLabel')}
+            </p>
+            <p className={bookingTripSummaryMetaValueVariants()}>
+              {formatTripPriceEur(trip.priceEur)}
+            </p>
           </div>
           <div className={bookingTripSummaryMetaCellVariants()}>
-            <p className={bookingTripSummaryMetaLabelVariants()}>{t('booking.summary.groupLabel')}</p>
+            <p className={bookingTripSummaryMetaLabelVariants()}>
+              {t('booking.summary.groupLabel')}
+            </p>
             <p className={bookingTripSummaryMetaValueVariants()}>
               {formatTripGroupSizeRange(t, trip.minPeople, trip.maxPeople)}
             </p>
           </div>
           <div className={bookingTripSummaryMetaCellVariants()}>
-            <p className={bookingTripSummaryMetaLabelVariants()}>{t('booking.summary.preferredDateLabel')}</p>
+            <p className={bookingTripSummaryMetaLabelVariants()}>
+              {t('booking.summary.preferredDateLabel')}
+            </p>
             <p className={bookingTripSummaryMetaValueVariants()}>
               {preferredDateIso
                 ? formatTripDateDisplay(preferredDateIso, i18n.language)

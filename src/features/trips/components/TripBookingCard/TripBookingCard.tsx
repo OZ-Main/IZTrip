@@ -17,7 +17,10 @@ import {
   getNextAvailableTripDateIso,
 } from '@/features/trips/helpers/tripDates.helpers'
 import { formatTripGroupSizeRange } from '@/features/trips/helpers/tripDetailsView.helpers'
-import { formatTripDurationDays, formatTripPriceEur } from '@/features/trips/helpers/tripFormat.helpers'
+import {
+  formatTripDurationDays,
+  formatTripPriceEur,
+} from '@/features/trips/helpers/tripFormat.helpers'
 import type { TripDefinition } from '@/features/trips/types/trip.types'
 import { Button } from '@/components/ui/button'
 
@@ -39,19 +42,25 @@ export default function TripBookingCard({ trip, bookingPath }: TripBookingCardPr
       <p className={tripBookingCardPriceVariants()}>{formatTripPriceEur(trip.priceEur)}</p>
       <div className={tripBookingCardMetaVariants()}>
         <div className={tripBookingCardMetaRowVariants()}>
-          <span className={tripBookingCardMetaLabelVariants()}>{t('tripDetails.bookingDurationLabel')}</span>
+          <span className={tripBookingCardMetaLabelVariants()}>
+            {t('tripDetails.bookingDurationLabel')}
+          </span>
           <span className={tripBookingCardMetaValueVariants()}>
             {formatTripDurationDays(trip.durationDays, t)}
           </span>
         </div>
         <div className={tripBookingCardMetaRowVariants()}>
-          <span className={tripBookingCardMetaLabelVariants()}>{t('tripDetails.bookingGroupLabel')}</span>
+          <span className={tripBookingCardMetaLabelVariants()}>
+            {t('tripDetails.bookingGroupLabel')}
+          </span>
           <span className={tripBookingCardMetaValueVariants()}>
             {formatTripGroupSizeRange(t, trip.minPeople, trip.maxPeople)}
           </span>
         </div>
         <div className={tripBookingCardMetaRowVariants()}>
-          <span className={tripBookingCardMetaLabelVariants()}>{t('tripDetails.nextDateLabel')}</span>
+          <span className={tripBookingCardMetaLabelVariants()}>
+            {t('tripDetails.nextDateLabel')}
+          </span>
           <span className={tripBookingCardMetaValueVariants()}>
             {nextDateIso
               ? formatTripDateDisplay(nextDateIso, i18n.language)

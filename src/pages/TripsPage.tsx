@@ -1,29 +1,32 @@
 import { Filter, X } from 'lucide-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link, useSearchParams } from 'react-router-dom'
-
 import EmptyState from '@/components/feedback/EmptyState/EmptyState'
 import FeaturedTrips from '@/features/home/components/FeaturedTrips/FeaturedTrips'
 import TripFilters from '@/features/trips/components/TripFilters/TripFilters'
+import { tripFiltersChipVariants } from '@/features/trips/components/TripFilters/TripFilters.styles'
 import TripsCatalogHero from '@/features/trips/components/TripsCatalogHero/TripsCatalogHero'
+import TripsPaginationBar from '@/features/trips/components/TripsPaginationBar/TripsPaginationBar'
 import {
   TRIP_DURATION_FILTER,
   type TripDurationFilter,
 } from '@/features/trips/constants/tripDurationFilter.constants'
-import { TRIP_SORT_OPTION, type TripSortOption } from '@/features/trips/constants/tripSort.constants'
+import { TRIPS_CATALOG_PAGE_SIZE } from '@/features/trips/constants/tripPagination.constants'
+import type { TripSortOption } from '@/features/trips/constants/tripSort.constants'
 import { MOCK_TRIPS } from '@/features/trips/data/mockTrips'
 import {
   ALL_TRIP_AUDIENCES_FILTER,
   ALL_TRIP_CATEGORIES_FILTER,
+  buildAvailableAudienceFilters,
+  buildAvailableCategoryFilters,
+  buildAvailableDurationFilters,
   filterTripsByCategoryAndAudience,
   filterTripsByDuration,
-  isTripCategory,
   type TripAudienceFilter,
   type TripCategoryFilter,
 } from '@/features/trips/helpers/tripFilters.helpers'
 import { sortTrips } from '@/features/trips/helpers/tripSort.helpers'
-import { tripFiltersChipVariants } from '@/features/trips/components/TripFilters/TripFilters.styles'
+import { useTripsCatalogUrl } from '@/features/trips/hooks/useTripsCatalogUrl'
 import { Button } from '@/components/ui/button'
 import {
   Sheet,
@@ -32,7 +35,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/components/ui/sheet'
-import { APP_ROUTE } from '@/shared/constants/routes.constants'
+import { useNavigateBack } from '@/shared/hooks/useNavigateBack'
 import { cn } from '@/shared/utils/cn'
 
 function categoryFilterLabel(t: (key: string) => string, value: TripCategoryFilter) {
@@ -152,22 +155,54 @@ function TripsResultsMeta({
 
 export default function TripsPage() {
   const { t } = useTranslation()
-  const [searchParams] = useSearchParams()
-  const [categoryFilter, setCategoryFilter] = useState<TripCategoryFilter>(
-    ALL_TRIP_CATEGORIES_FILTER,
-  )
-  const [audienceFilter, setAudienceFilter] =
-    useState<TripAudienceFilter>(ALL_TRIP_AUDIENCES_FILTER)
-  const [durationFilter, setDurationFilter] = useState<TripDurationFilter>(TRIP_DURATION_FILTER.ALL)
+  const navigateBack = useNavigateBack()
   const [filtersOpen, setFiltersOpen] = useState(false)
-  const [sortBy, setSortBy] = useState<TripSortOption>(TRIP_SORT_OPTION.DATE_ASC)
+  const {
+    categoryFilter,
+    audienceFilter,
+    durationFilter,
+    sortBy,
+    pageFromUrl,
+    setCategoryFilter,
+    setAudienceFilter,
+    setDurationFilter,
+    setSortBy,
+    setPage,
+    resetTripListFilters,
+  } = useTripsCatalogUrl()
+
+  const availableCategoryFilters = useMemo(
+    () => buildAvailableCategoryFilters(MOCK_TRIPS, audienceFilter, durationFilter),
+    [audienceFilter, durationFilter],
+  )
+
+  const availableAudienceFilters = useMemo(
+    () => buildAvailableAudienceFilters(MOCK_TRIPS, categoryFilter, durationFilter),
+    [categoryFilter, durationFilter],
+  )
+
+  const availableDurationFilters = useMemo(
+    () => buildAvailableDurationFilters(MOCK_TRIPS, categoryFilter, audienceFilter),
+    [categoryFilter, audienceFilter],
+  )
 
   useEffect(() => {
-    const rawCategory = searchParams.get('category')
-    if (rawCategory && isTripCategory(rawCategory)) {
-      setCategoryFilter(rawCategory)
+    if (!availableCategoryFilters.includes(categoryFilter)) {
+      setCategoryFilter(ALL_TRIP_CATEGORIES_FILTER)
     }
-  }, [searchParams])
+  }, [availableCategoryFilters, categoryFilter, setCategoryFilter])
+
+  useEffect(() => {
+    if (!availableAudienceFilters.includes(audienceFilter)) {
+      setAudienceFilter(ALL_TRIP_AUDIENCES_FILTER)
+    }
+  }, [availableAudienceFilters, audienceFilter, setAudienceFilter])
+
+  useEffect(() => {
+    if (!availableDurationFilters.includes(durationFilter)) {
+      setDurationFilter(TRIP_DURATION_FILTER.ALL)
+    }
+  }, [availableDurationFilters, durationFilter, setDurationFilter])
 
   const filteredTrips = useMemo(() => {
     const byCategoryAndAudience = filterTripsByCategoryAndAudience(
@@ -180,15 +215,27 @@ export default function TripsPage() {
 
   const sortedTrips = useMemo(() => sortTrips(filteredTrips, sortBy), [filteredTrips, sortBy])
 
+  const pageCount = Math.max(1, Math.ceil(sortedTrips.length / TRIPS_CATALOG_PAGE_SIZE))
+
+  useEffect(() => {
+    if (pageFromUrl > pageCount) {
+      setPage(Math.min(pageFromUrl, pageCount))
+    }
+  }, [pageCount, pageFromUrl, setPage])
+
+  const currentPage = Math.min(pageFromUrl, pageCount)
+  const paginatedTrips = sortedTrips.slice(
+    (currentPage - 1) * TRIPS_CATALOG_PAGE_SIZE,
+    currentPage * TRIPS_CATALOG_PAGE_SIZE,
+  )
+
   const hasActiveFilters =
     categoryFilter !== ALL_TRIP_CATEGORIES_FILTER ||
     audienceFilter !== ALL_TRIP_AUDIENCES_FILTER ||
     durationFilter !== TRIP_DURATION_FILTER.ALL
 
-  function resetTripListFilters() {
-    setCategoryFilter(ALL_TRIP_CATEGORIES_FILTER)
-    setAudienceFilter(ALL_TRIP_AUDIENCES_FILTER)
-    setDurationFilter(TRIP_DURATION_FILTER.ALL)
+  function handleSortChange(nextSort: TripSortOption) {
+    setSortBy(nextSort)
   }
 
   return (
@@ -223,7 +270,10 @@ export default function TripsPage() {
               onAudienceFilterChange={setAudienceFilter}
               onDurationFilterChange={setDurationFilter}
               sortBy={sortBy}
-              onSortChange={setSortBy}
+              onSortChange={handleSortChange}
+              availableCategoryFilters={availableCategoryFilters}
+              availableAudienceFilters={availableAudienceFilters}
+              availableDurationFilters={availableDurationFilters}
             />
             <TripsResultsMeta
               count={filteredTrips.length}
@@ -249,7 +299,10 @@ export default function TripsPage() {
               onAudienceFilterChange={setAudienceFilter}
               onDurationFilterChange={setDurationFilter}
               sortBy={sortBy}
-              onSortChange={setSortBy}
+              onSortChange={handleSortChange}
+              availableCategoryFilters={availableCategoryFilters}
+              availableAudienceFilters={availableAudienceFilters}
+              availableDurationFilters={availableDurationFilters}
             />
             <TripsResultsMeta
               count={filteredTrips.length}
@@ -281,14 +334,13 @@ export default function TripsPage() {
         />
       ) : (
         <>
-          <div key={`${categoryFilter}-${audienceFilter}-${durationFilter}-${sortBy}`}>
-            <FeaturedTrips trips={sortedTrips} />
-          </div>
+          <FeaturedTrips trips={paginatedTrips} />
+          <TripsPaginationBar page={currentPage} pageCount={pageCount} onPageChange={setPage} />
         </>
       )}
       <p className="text-center text-body-sm text-muted-foreground">
-        <Button type="button" variant="link" className="min-h-11" asChild>
-          <Link to={APP_ROUTE.home}>{t('trips.backHome')}</Link>
+        <Button type="button" variant="link" className="min-h-11" onClick={() => navigateBack()}>
+          {t('trips.backHome')}
         </Button>
       </p>
     </div>

@@ -1,0 +1,1 @@
+export const TRIPS_CATALOG_PAGE_SIZE = 9

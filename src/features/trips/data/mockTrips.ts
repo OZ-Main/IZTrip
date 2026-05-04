@@ -1,8 +1,9 @@
 import { MOCK_TRIP_IMAGE_URLS } from '@/features/trips/constants/mockTripImageUrls.constants'
+import { buildExtraMockTrips } from '@/features/trips/data/mockTripsExtra'
 import type { TripDefinition } from '@/features/trips/types/trip.types'
 import { TripAudience, TripCategory } from '@/shared/domain'
 
-export const MOCK_TRIPS: TripDefinition[] = [
+const BASE_MOCK_TRIPS: TripDefinition[] = [
   {
     id: 'trip-orhei',
     slug: 'orheiul-vechi',
@@ -94,3 +95,5 @@ export const MOCK_TRIPS: TripDefinition[] = [
     itineraryDayCount: 2,
   },
 ]
+
+export const MOCK_TRIPS: TripDefinition[] = [...BASE_MOCK_TRIPS, ...buildExtraMockTrips()]

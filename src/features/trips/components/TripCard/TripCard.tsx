@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 import AudienceBadge from '@/features/trips/components/AudienceBadge/AudienceBadge'
 import CategoryBadge from '@/features/trips/components/CategoryBadge/CategoryBadge'
+import TripCardSaveButton from '@/features/trips/components/TripCardSaveButton/TripCardSaveButton'
 import {
   tripCardBodyVariants,
   tripCardCtaVariants,
@@ -46,42 +47,59 @@ export default function TripCard({ trip }: TripCardProps) {
   const detailsPath = APP_ROUTE.tripDetails(trip.slug)
   const trustKeys = getTripCardTrustBadgeKeys(trip)
   const imageSrc = imageFailed ? TRIP_IMAGE_PLACEHOLDER_SRC : trip.imageSrc
+  const tripTitle = t(`trips.catalog.${trip.slug}.title`)
 
   return (
-    <Link to={detailsPath} className={cn(tripCardRootVariants(), tripCardInteractiveVariants())}>
-      <div className={tripCardImageWrapVariants()}>
-        <img
-          src={imageSrc}
-          alt={t(`trips.catalog.${trip.slug}.title`)}
-          className={tripCardImageVariants()}
-          loading="lazy"
-          onError={() => setImageFailed(true)}
-        />
-        <div className={tripCardImageOverlayVariants()} aria-hidden />
-        <div className={tripCardImageTopVariants()}>
-          <div className="flex flex-wrap gap-tight">
-            <CategoryBadge
-              category={trip.category}
-              className="border border-border/70 bg-card/95 text-foreground shadow-md ring-1 ring-black/10 backdrop-blur-md dark:bg-card/90 dark:ring-white/10"
+    <div className={cn(tripCardRootVariants(), tripCardInteractiveVariants())}>
+      <div className="relative">
+        <Link
+          to={detailsPath}
+          className="block min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          aria-label={tripTitle}
+        >
+          <div className={tripCardImageWrapVariants()}>
+            <img
+              src={imageSrc}
+              alt={tripTitle}
+              className={tripCardImageVariants()}
+              loading="lazy"
+              onError={() => setImageFailed(true)}
             />
-            <AudienceBadge
-              audience={trip.targetAudience}
-              className="border border-border/70 bg-card/95 text-foreground shadow-md ring-1 ring-black/10 backdrop-blur-md dark:bg-card/90 dark:ring-white/10"
-            />
+            <div className={tripCardImageOverlayVariants()} aria-hidden />
+            <div className={tripCardImageTopVariants()}>
+              <div className="flex flex-wrap gap-tight">
+                <CategoryBadge
+                  category={trip.category}
+                  className="border border-border/70 bg-card/95 text-foreground shadow-md ring-1 ring-black/10 backdrop-blur-md dark:bg-card/90 dark:ring-white/10"
+                />
+                <AudienceBadge
+                  audience={trip.targetAudience}
+                  className="border border-border/70 bg-card/95 text-foreground shadow-md ring-1 ring-black/10 backdrop-blur-md dark:bg-card/90 dark:ring-white/10"
+                />
+              </div>
+            </div>
+            <div className={tripCardImageBottomMetaVariants()}>
+              <span className="inline-flex items-center gap-1.5 text-white">
+                <MapPin className="h-3.5 w-3.5 shrink-0 text-white/90" aria-hidden />
+                {t(`trips.catalog.${trip.slug}.location`)}
+              </span>
+            </div>
           </div>
-        </div>
-        <div className={tripCardImageBottomMetaVariants()}>
-          <span className="inline-flex items-center gap-1.5 text-white">
-            <MapPin className="h-3.5 w-3.5 shrink-0 text-white/90" aria-hidden />
-            {t(`trips.catalog.${trip.slug}.location`)}
-          </span>
-        </div>
+        </Link>
+        <TripCardSaveButton trip={trip} className="absolute right-card top-card z-20" />
       </div>
-      <div className={tripCardBodyVariants()}>
+      <Link
+        to={detailsPath}
+        className={cn(
+          tripCardBodyVariants(),
+          'mt-tight flex flex-1 flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+        )}
+        aria-label={tripTitle}
+      >
         <p className={tripCardMetaRowVariants()}>
           <span>{t('trips.card.durationLabel', { count: trip.durationDays })}</span>
         </p>
-        <h3 className={tripCardTitleVariants()}>{t(`trips.catalog.${trip.slug}.title`)}</h3>
+        <h3 className={tripCardTitleVariants()}>{tripTitle}</h3>
         <p className={tripCardDescriptionVariants()}>
           {t(`trips.catalog.${trip.slug}.shortDescription`)}
         </p>
@@ -107,7 +125,7 @@ export default function TripCard({ trip }: TripCardProps) {
           </div>
           <span className={tripCardCtaVariants()}>{t('trips.card.exploreTrip')}</span>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   )
 }

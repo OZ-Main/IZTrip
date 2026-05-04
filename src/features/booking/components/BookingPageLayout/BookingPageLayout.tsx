@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 
 import {
   bookingPageLayoutAsideColumnVariants,
+  bookingPageLayoutAsideStickyVariants,
   bookingPageLayoutFormColumnVariants,
   bookingPageLayoutRootVariants,
 } from '@/features/booking/components/BookingPageLayout/BookingPageLayout.styles'
@@ -15,7 +16,9 @@ export default function BookingPageLayout({ formSlot, asideSlot }: BookingPageLa
   return (
     <div className={bookingPageLayoutRootVariants()}>
       <div className={bookingPageLayoutFormColumnVariants()}>{formSlot}</div>
-      <aside className={bookingPageLayoutAsideColumnVariants()}>{asideSlot}</aside>
+      <aside className={bookingPageLayoutAsideColumnVariants()}>
+        <div className={bookingPageLayoutAsideStickyVariants()}>{asideSlot}</div>
+      </aside>
     </div>
   )
 }

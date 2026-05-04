@@ -7,9 +7,11 @@ import {
   tripsCatalogHeroStatVariants,
   tripsCatalogHeroStatValueVariants,
 } from '@/features/trips/components/TripsCatalogHero/TripsCatalogHero.styles'
+import { MOCK_TRIPS } from '@/features/trips/data/mockTrips'
 
 export default function TripsCatalogHero() {
   const { t } = useTranslation()
+  const tripCatalogCount = MOCK_TRIPS.length
 
   return (
     <header className={tripsCatalogHeroRootVariants()}>
@@ -32,7 +34,7 @@ export default function TripsCatalogHero() {
               {t('trips.page.statTripsLabel')}
             </span>
             <span className={tripsCatalogHeroStatValueVariants()}>
-              {t('trips.page.statTripsValue')}
+              {t('trips.page.statTripsValue', { count: tripCatalogCount })}
             </span>
           </div>
           <div className={tripsCatalogHeroStatVariants()}>

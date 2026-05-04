@@ -3,7 +3,7 @@ import { cva } from 'class-variance-authority'
 export const bookingSuccessViewRootVariants = cva('mx-auto w-full max-w-lg py-section')
 
 export const bookingSuccessViewCardVariants = cva(
-  'overflow-hidden rounded-[1.1rem] border shadow-card ring-1 ring-black/[0.03] dark:ring-white/[0.04]',
+  'overflow-hidden rounded-[1.1rem] border text-foreground shadow-card ring-1 ring-black/[0.03] dark:ring-white/[0.04]',
 )
 
 export const bookingSuccessViewCardSuccessVariants = cva(

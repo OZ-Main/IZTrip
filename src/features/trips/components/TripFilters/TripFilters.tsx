@@ -76,6 +76,9 @@ type TripFiltersProps = {
   onDurationFilterChange: (next: TripDurationFilter) => void
   sortBy: TripSortOption
   onSortChange: (next: TripSortOption) => void
+  availableCategoryFilters?: TripCategoryFilter[]
+  availableAudienceFilters?: TripAudienceFilter[]
+  availableDurationFilters?: TripDurationFilter[]
   className?: string
 }
 
@@ -132,10 +135,16 @@ export default function TripFilters({
   onDurationFilterChange,
   sortBy,
   onSortChange,
+  availableCategoryFilters,
+  availableAudienceFilters,
+  availableDurationFilters,
   className,
 }: TripFiltersProps) {
   const { t } = useTranslation()
   const fieldId = useId()
+  const categoryOptions = availableCategoryFilters ?? CATEGORY_FILTERS
+  const audienceOptions = availableAudienceFilters ?? AUDIENCE_FILTERS
+  const durationOptions = availableDurationFilters ?? DURATION_FILTERS
   const categoryFieldId = `${fieldId}-category`
   const audienceFieldId = `${fieldId}-audience`
   const durationFieldId = `${fieldId}-duration`
@@ -185,7 +194,7 @@ export default function TripFilters({
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              {CATEGORY_FILTERS.map((value) => (
+              {categoryOptions.map((value) => (
                 <SelectItem key={value} value={value}>
                   {categoryFilterLabel(t, value)}
                 </SelectItem>
@@ -206,7 +215,7 @@ export default function TripFilters({
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              {AUDIENCE_FILTERS.map((value) => (
+              {audienceOptions.map((value) => (
                 <SelectItem key={value} value={value}>
                   {audienceFilterLabel(t, value)}
                 </SelectItem>
@@ -227,7 +236,7 @@ export default function TripFilters({
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              {DURATION_FILTERS.map((value) => (
+              {durationOptions.map((value) => (
                 <SelectItem key={value} value={value}>
                   {durationFilterLabel(t, value)}
                 </SelectItem>

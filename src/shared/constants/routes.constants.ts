@@ -5,6 +5,7 @@ export const ROUTE_SEGMENT = {
   tripSlugParam: ':tripSlug',
   booking: 'booking',
   about: 'about',
+  saved: 'saved',
   login: 'login',
   register: 'register',
   wildcard: '*',
@@ -16,6 +17,7 @@ export const APP_ROUTE = {
   tripDetails: (tripSlug: string) => `/trips/${tripSlug}`,
   booking: (tripSlug: string) => `/booking/${tripSlug}`,
   about: '/about',
+  saved: '/saved',
   login: '/login',
   register: '/register',
 } as const

@@ -29,11 +29,11 @@ export const homeHeroTrustItemVariants = cva(
 )
 
 export const homeHeroPreviewVariants = cva(
-  'relative mt-relaxed rounded-card border border-hero-foreground/15 bg-hero-foreground/10 p-card shadow-card backdrop-blur-md lg:mt-0',
+  'relative mt-relaxed rounded-card border border-hero-foreground/15 bg-hero-foreground/10 p-card shadow-none backdrop-blur-md lg:mt-0',
 )
 
 export const homeHeroPreviewImageVariants = cva(
-  'aspect-[4/3] w-full overflow-hidden rounded-[0.75rem] object-cover sm:aspect-[16/10]',
+  'block aspect-[4/3] w-full overflow-hidden rounded-[0.75rem] object-cover sm:aspect-[16/10]',
 )
 
 export const homeHeroPreviewStackVariants = cva(
@@ -44,7 +44,9 @@ export const homeHeroPreviewImageLinkVariants = cva(
   'relative z-0 block min-h-[44px] overflow-hidden rounded-[0.75rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
 )
 
-export const homeHeroBadgeRowVariants = cva('relative z-10 mt-relaxed flex flex-wrap gap-tight sm:mt-stack')
+export const homeHeroBadgeRowVariants = cva(
+  'relative z-10 mt-tight flex flex-wrap gap-tight sm:mt-stack',
+)
 
 export const homeHeroBadgeVariants = cva(
   'rounded-full border border-hero-foreground/15 bg-hero-foreground/10 px-3 py-1 text-caption font-semibold text-hero-foreground',

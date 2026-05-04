@@ -47,28 +47,28 @@ export default function Header() {
     <header className={headerRootVariants()}>
       <div className={headerInnerVariants()}>
         <div className="flex min-w-0 flex-1 items-center gap-tight">
-          <Button
-            type="button"
-            variant="ghost"
-            size="icon"
-            className="shrink-0 lg:hidden"
-            aria-label={t('nav.openMenu')}
-            onClick={() => setMobileNavOpen(true)}
-          >
-            <Menu className="h-6 w-6" aria-hidden />
-          </Button>
-          <Link
-            to={APP_ROUTE.home}
-            className="flex min-w-0 items-center gap-tight"
-            onClick={closeMobileNav}
-          >
-            <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary font-display text-caption font-bold text-primary-foreground shadow-sm sm:h-10 sm:w-10">
-              IZ
-            </span>
-            <span className={cn(headerBrandVariants(), 'hidden min-w-0 truncate sm:inline')}>
-              {t('brand.name')}
-            </span>
-          </Link>
+          <div className="flex shrink-0 items-center gap-tight">
+            <Button
+              type="button"
+              variant="ghost"
+              size="icon"
+              className="shrink-0 text-foreground hover:bg-accent/15 hover:text-foreground lg:hidden"
+              aria-label={t('nav.openMenu')}
+              onClick={() => setMobileNavOpen(true)}
+            >
+              <Menu className="h-6 w-6" aria-hidden />
+            </Button>
+            <Link
+              to={APP_ROUTE.home}
+              className="hidden min-w-0 items-center gap-tight lg:flex"
+              onClick={closeMobileNav}
+            >
+              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary font-display text-caption font-bold text-primary-foreground shadow-sm sm:h-10 sm:w-10">
+                YZ
+              </span>
+              <span className={cn(headerBrandVariants(), 'min-w-0 truncate')}>{t('brand.name')}</span>
+            </Link>
+          </div>
           <nav
             className={cn(
               headerNavVariants(),
@@ -86,14 +86,21 @@ export default function Header() {
             <NavLink to={APP_ROUTE.trips} className={({ isActive }) => navLinkClassName(isActive)}>
               {t('nav.trips')}
             </NavLink>
+            {user ? (
+              <NavLink to={APP_ROUTE.saved} className={({ isActive }) => navLinkClassName(isActive)}>
+                {t('nav.saved')}
+              </NavLink>
+            ) : null}
             <NavLink to={APP_ROUTE.about} className={({ isActive }) => navLinkClassName(isActive)}>
               {t('nav.about')}
             </NavLink>
           </nav>
         </div>
-        <div className={headerActionsVariants()}>
-          <LanguageSwitcher />
-          <ThemeSwitcher />
+        <div className={cn(headerActionsVariants(), 'max-md:gap-1')}>
+          <div className="flex shrink-0 items-center gap-0.5 sm:gap-tight">
+            <LanguageSwitcher />
+            <ThemeSwitcher />
+          </div>
           <div className="hidden items-center gap-tight lg:flex lg:flex-wrap lg:justify-end">
             {user ? (
               <div className="flex flex-col items-stretch gap-tight sm:flex-row sm:items-center">
@@ -152,6 +159,15 @@ export default function Header() {
             >
               {t('nav.trips')}
             </NavLink>
+            {user ? (
+              <NavLink
+                to={APP_ROUTE.saved}
+                className={({ isActive }) => navLinkClassName(isActive)}
+                onClick={closeMobileNav}
+              >
+                {t('nav.saved')}
+              </NavLink>
+            ) : null}
             <NavLink
               to={APP_ROUTE.about}
               className={({ isActive }) => navLinkClassName(isActive)}

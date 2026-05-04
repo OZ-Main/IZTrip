@@ -22,7 +22,7 @@ export default function HomePage() {
     <div className="space-y-section">
       <HomeHero previewTrip={previewTrip} />
 
-      <section className="min-w-0 max-w-full space-y-relaxed overflow-x-hidden rounded-[1.25rem] border border-border/50 bg-muted/10 px-card py-relaxed sm:px-form sm:py-form dark:bg-muted/5">
+      <section className="min-w-0 max-w-full space-y-relaxed overflow-x-clip rounded-[1.25rem] border border-border/50 bg-muted/10 px-card py-relaxed dark:bg-muted/5 sm:px-form sm:py-form">
         <SectionHeader
           title={t('home.featured.title')}
           description={t('home.featured.description')}

@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "IZ Trip"
+    "name": "YZ Trip"
   },
   "trust": {
     "heroNoPayment": "No upfront payment",
@@ -15,6 +15,22 @@
   "common": {
     "loadingApp": "Preparing your trip workspace…",
     "close": "Close"
+  },
+  "savedTrips": {
+    "page": {
+      "title": "Saved trips",
+      "description": "Trips you have saved with the heart on each card. Open one to see details or request a date.",
+      "browseTrips": "Browse catalog"
+    },
+    "guest": {
+      "title": "Sign in to see saved trips",
+      "description": "Create an account or sign in to save tours and find them here anytime.",
+      "signIn": "Sign in"
+    },
+    "empty": {
+      "title": "No saved trips yet",
+      "description": "Browse the catalog and tap the heart on a trip to save it to this list."
+    }
   },
   "language": {
     "switcherLabel": "Language",
@@ -36,6 +52,7 @@
     "mainLabel": "Primary",
     "home": "Home",
     "trips": "Trips",
+    "saved": "Saved",
     "about": "About",
     "signIn": "Sign in",
     "register": "Create account",
@@ -52,7 +69,7 @@
     "marketingFootnote": "Independent, Moldova-focused travel desk — built for calm planning.",
     "signIn": "Sign in",
     "signInDescription": "Access saved trips and secure booking requests.",
-    "registerTitle": "Create your IZ Trip account",
+    "registerTitle": "Create your YZ Trip account",
     "registerDescription": "Save preferences and book curated Moldova experiences.",
     "email": "Email",
     "password": "Password",
@@ -62,8 +79,8 @@
     "registering": "Creating account…",
     "createAccount": "Create account",
     "signedIn": "Welcome back!",
-    "registered": "Account created — welcome to IZ Trip!",
-    "noAccount": "New to IZ Trip?",
+    "registered": "Account created — welcome to YZ Trip!",
+    "noAccount": "New to YZ Trip?",
     "createOne": "Create an account",
     "haveAccount": "Already have an account?",
     "signInInstead": "Sign in instead",
@@ -106,7 +123,7 @@
       "viewAll": "View all trips"
     },
     "how": {
-      "title": "How IZ Trip works",
+      "title": "How YZ Trip works",
       "description": "Three calm steps from inspiration to a saved request our team can act on.",
       "step1": {
         "badge": "01",
@@ -140,7 +157,7 @@
       "custom": "Tell us your idea — we route it through the same structured request flow."
     },
     "trust": {
-      "title": "Why travelers trust IZ Trip",
+      "title": "Why travelers trust YZ Trip",
       "description": "We bias toward clarity: what you book, who it suits, and what happens next.",
       "cards": {
         "routes": {
@@ -174,7 +191,7 @@
       "description": "Filter by travel style and who is traveling — each route includes honest pacing notes, transparent “from” pricing, and upcoming departures.",
       "kicker": "Curated catalog",
       "statTripsLabel": "Curated trips",
-      "statTripsValue": "6 routes live",
+      "statTripsValue": "{{count}} routes live",
       "statRoutesLabel": "Moldova coverage",
       "statRoutesValue": "North, Codrii, Chișinău, and Nistru viewpoints",
       "statDatesLabel": "Flexible departures",
@@ -239,6 +256,18 @@
       "description": "Try widening your filters to see more curated experiences.",
       "resetFilters": "Reset filters"
     },
+    "pagination": {
+      "label": "Trip list pages",
+      "prev": "Previous",
+      "next": "Next",
+      "pageStatus": "Page {{page}} of {{pageCount}}"
+    },
+    "save": {
+      "add": "Save trip",
+      "remove": "Remove saved trip",
+      "loginTooltip": "Sign in to save trips to your account",
+      "loginRequired": "Sign in to save trips and keep them across devices."
+    },
     "catalog": {
       "orheiul-vechi": {
         "title": "Orheiul Vechi & Râul Răut viewpoints",
@@ -253,7 +282,7 @@
         "included2": "Round-trip transport from Chișinău meeting point",
         "included3": "Lunch at a trusted guesthouse or restaurant partner",
         "included4": "Museum and protected-area access fees where applicable",
-        "included5": "IZ Trip coordination and day-of guest support",
+        "included5": "YZ Trip coordination and day-of guest support",
         "itineraryDay1Title": "Chișinău → Orheiul Vechi loop",
         "itineraryDay1Body": "Morning pickup, guided walk through the archaeological complex, lunch in Butuceni, optional cellar visit add-on when schedules allow, return by early evening."
       },
@@ -266,7 +295,7 @@
         "highlight2": "Structured tasting flight with local cheeses and bread",
         "highlight3": "Photography-friendly stops in iconic “streets” named after grapes",
         "highlight4": "Optional upgrade: extended vintage tasting (on request, age 18+)",
-        "included1": "Private IZ Trip host and winery gallery tickets",
+        "included1": "Private YZ Trip host and winery gallery tickets",
         "included2": "Round-trip transport from central Chișinău",
         "included3": "Guided tasting with spittoons and pacing for comfort",
         "included4": "Still and sparkling pours selected with the cellar team",
@@ -285,7 +314,7 @@
         "included1": "Family-oriented guide and fortress entry",
         "included2": "Transport from Chișinău with rest stops",
         "included3": "Snack pack and bottled water",
-        "included4": "IZ Trip emergency contact for the travel day",
+        "included4": "YZ Trip emergency contact for the travel day",
         "itineraryDay1Title": "Fortress walk, river lookout, relaxed return",
         "itineraryDay1Body": "Morning departure, guided rampart loop, lunch break in Soroca town (meal not included unless selected add-on), riverside viewpoint, return by evening."
       },
@@ -300,7 +329,7 @@
         "highlight4": "Rain-friendly indoor alternates pre-planned",
         "included1": "Licensed city guide",
         "included2": "Printed/digital route with translated glossary",
-        "included3": "IZ Trip concierge tip sheet for dinner reservations",
+        "included3": "YZ Trip concierge tip sheet for dinner reservations",
         "itineraryDay1Title": "Central loop with park detours",
         "itineraryDay1Body": "Meet at the Cathedral Park area, weave through historic streets, pause for stories, optional café stop, finish near independent restaurants."
       },
@@ -336,7 +365,7 @@
         "included2": "Two lunches, one dinner, one breakfast",
         "included3": "Overnight accommodation (family rooms on request)",
         "included4": "Transport from Chișinău with trail snacks",
-        "included5": "IZ Trip safety kit and backup weather routing",
+        "included5": "YZ Trip safety kit and backup weather routing",
         "included6": "Digital photo tips sheet for phone cameras",
         "itineraryDay1Title": "Into the hills & farm table",
         "itineraryDay1Body": "Morning pickup, ridge hike, farm visit, settle into camp/cabins, dinner.",
@@ -448,7 +477,7 @@
   "about": {
     "hero": {
       "kicker": "Moldova-first curated travel",
-      "title": "About IZ Trip",
+      "title": "About YZ Trip",
       "subtitle": "We are an independent travel desk focused on Moldova — pairing small-group routes with transparent pricing, local partners, and organized booking requests."
     },
     "mission": {
@@ -456,7 +485,7 @@
       "body": "Help travelers explore Moldova with confidence: clear itineraries, honest pacing notes, and a booking flow that respects your time."
     },
     "pillars": {
-      "title": "What makes IZ Trip different",
+      "title": "What makes YZ Trip different",
       "lead": "Four principles shape every route card, host relationship, and follow-up workflow."
     },
     "pillar1": {
@@ -476,7 +505,7 @@
       "body": "Account-based requests stay structured for our coordinators and for your history."
     },
     "audience": {
-      "title": "Who IZ Trip is for",
+      "title": "Who YZ Trip is for",
       "lead": "If you value calm planning and human follow-up, you are in the right place.",
       "families": "Families who want realistic pacing and snack-friendly days",
       "kids": "School groups and kids clubs that need clear supervision notes",
