@@ -12,6 +12,7 @@ import BookingTripSummaryCard from '@/features/booking/components/BookingTripSum
 import PageHeader from '@/components/layout/PageHeader/PageHeader'
 import { MOCK_TRIPS } from '@/features/trips/data/mockTrips'
 import { findTripBySlug } from '@/features/trips/helpers/tripLookup.helpers'
+import PageBackNavLink from '@/shared/components/PageBackNavLink/PageBackNavLink'
 import { APP_ROUTE } from '@/shared/constants/routes.constants'
 
 type BookingSubmissionOutcome = null | 'full' | 'emailWarning'
@@ -45,8 +46,11 @@ export default function BookingPage() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-content space-y-relaxed pb-section pt-0 sm:space-y-section sm:pb-section sm:pt-0">
-      <PageHeader title={t('booking.page.title')} description={t('booking.page.description')} />
+    <div className="mx-auto flex w-full max-w-content flex-col gap-stack pb-section pt-0 sm:gap-relaxed lg:gap-section sm:pb-section sm:pt-0">
+      <div className="flex flex-col gap-tight">
+        <PageBackNavLink to={APP_ROUTE.tripDetails(trip.slug)} label={t('booking.page.backToTrip')} />
+        <PageHeader title={t('booking.page.title')} description={t('booking.page.description')} />
+      </div>
       <BookingPageLayout
         formSlot={
           <BookingFormCard>

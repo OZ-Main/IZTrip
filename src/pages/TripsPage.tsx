@@ -35,7 +35,8 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/components/ui/sheet'
-import { useNavigateBack } from '@/shared/hooks/useNavigateBack'
+import PageBackNavLink from '@/shared/components/PageBackNavLink/PageBackNavLink'
+import { APP_ROUTE } from '@/shared/constants/routes.constants'
 import { cn } from '@/shared/utils/cn'
 
 function categoryFilterLabel(t: (key: string) => string, value: TripCategoryFilter) {
@@ -79,6 +80,8 @@ type TripsResultsMetaProps = {
   t: (key: string, options?: Record<string, unknown>) => string
   onResetFilters?: () => void
   className?: string
+  compact?: boolean
+  showResetButton?: boolean
 }
 
 function TripsResultsMeta({
@@ -90,17 +93,37 @@ function TripsResultsMeta({
   t,
   onResetFilters,
   className,
+  compact,
+  showResetButton = true,
 }: TripsResultsMetaProps) {
   return (
-    <div className={cn('border-t border-border/60 pt-form-field', className)}>
-      <div className="flex flex-wrap items-start gap-x-3 gap-y-2 sm:items-center sm:justify-between">
-        <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-2 gap-y-2">
-          <p className="shrink-0 text-body-sm font-semibold text-foreground tabular-nums sm:text-body">
+    <div className={cn('border-t border-border/60', compact ? 'pt-3' : 'pt-form-field', className)}>
+      <div
+        className={cn(
+          'flex flex-wrap items-start sm:items-center sm:justify-between',
+          compact ? 'gap-x-2 gap-y-1.5' : 'gap-x-3 gap-y-2',
+        )}
+      >
+        <div
+          className={cn(
+            'flex min-w-0 flex-1 flex-wrap items-center',
+            compact ? 'gap-x-1.5 gap-y-1' : 'gap-x-2 gap-y-2',
+          )}
+        >
+          <p
+            className={cn(
+              'shrink-0 font-semibold tabular-nums text-foreground',
+              compact ? 'text-caption' : 'text-body-sm sm:text-body',
+            )}
+          >
             {t('trips.results.available', { count })}
           </p>
           {hasActiveFilters ? (
             <div
-              className="flex min-w-0 flex-wrap items-center gap-tight"
+              className={cn(
+                'flex min-w-0 flex-wrap items-center',
+                compact ? 'gap-1' : 'gap-tight',
+              )}
               aria-label={t('trips.results.activeFilters')}
             >
               {categoryFilter !== ALL_TRIP_CATEGORIES_FILTER ? (
@@ -136,15 +159,18 @@ function TripsResultsMeta({
             </div>
           ) : null}
         </div>
-        {hasActiveFilters && onResetFilters ? (
+        {showResetButton && hasActiveFilters && onResetFilters ? (
           <Button
             type="button"
             variant="outline"
             size="sm"
-            className="h-9 shrink-0 gap-1.5"
+            className={cn(
+              'shrink-0',
+              compact ? 'h-8 gap-1 px-2 text-caption' : 'h-9 gap-1.5',
+            )}
             onClick={onResetFilters}
           >
-            <X className="h-4 w-4" aria-hidden />
+            <X className={cn(compact ? 'h-3 w-3' : 'h-4 w-4')} aria-hidden />
             {t('trips.filters.resetAll')}
           </Button>
         ) : null}
@@ -155,7 +181,6 @@ function TripsResultsMeta({
 
 export default function TripsPage() {
   const { t } = useTranslation()
-  const navigateBack = useNavigateBack()
   const [filtersOpen, setFiltersOpen] = useState(false)
   const {
     categoryFilter,
@@ -239,51 +264,79 @@ export default function TripsPage() {
   }
 
   return (
-    <div className="space-y-section">
+    <div className="space-y-section-sm sm:space-y-section">
       <TripsCatalogHero />
 
       <div className="md:hidden">
         <Button
           type="button"
           variant="outline"
-          className="h-12 w-full justify-center gap-2"
+          className="h-11 w-full justify-center gap-2 text-caption sm:h-12 sm:text-body"
           onClick={() => setFiltersOpen(true)}
         >
-          <Filter className="h-4 w-4 shrink-0" aria-hidden />
+          <Filter className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" aria-hidden />
           {t('trips.filters.openButton')}
         </Button>
         <Sheet open={filtersOpen} onOpenChange={setFiltersOpen}>
           <SheetContent
             side="bottom"
             closeLabel={t('common.close')}
-            className="max-h-[min(90vh,36rem)] gap-stack overflow-y-auto rounded-t-[1.25rem]"
+            className="flex max-h-[min(92vh,42rem)] flex-col gap-0 overflow-hidden rounded-t-[1.25rem] p-0 sm:max-h-[min(90vh,38rem)]"
           >
-            <SheetHeader className="pr-10 text-left">
-              <SheetTitle>{t('trips.filters.drawerTitle')}</SheetTitle>
-              <SheetDescription>{t('trips.filters.drawerDescription')}</SheetDescription>
+            <SheetHeader className="border-b border-border/70 px-4 pb-3 pt-4 text-left sm:px-6">
+              <SheetTitle className="font-display text-heading-md font-semibold sm:text-heading-lg">
+                {t('trips.filters.drawerTitle')}
+              </SheetTitle>
+              <SheetDescription className="text-caption leading-snug sm:text-body-sm">
+                {t('trips.filters.drawerDescription')}
+              </SheetDescription>
             </SheetHeader>
-            <TripFilters
-              categoryFilter={categoryFilter}
-              audienceFilter={audienceFilter}
-              durationFilter={durationFilter}
-              onCategoryFilterChange={setCategoryFilter}
-              onAudienceFilterChange={setAudienceFilter}
-              onDurationFilterChange={setDurationFilter}
-              sortBy={sortBy}
-              onSortChange={handleSortChange}
-              availableCategoryFilters={availableCategoryFilters}
-              availableAudienceFilters={availableAudienceFilters}
-              availableDurationFilters={availableDurationFilters}
-            />
-            <TripsResultsMeta
-              count={filteredTrips.length}
-              hasActiveFilters={hasActiveFilters}
-              categoryFilter={categoryFilter}
-              audienceFilter={audienceFilter}
-              durationFilter={durationFilter}
-              t={t}
-              onResetFilters={resetTripListFilters}
-            />
+            <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-4 pt-3 sm:px-6">
+              <TripFilters
+                categoryFilter={categoryFilter}
+                audienceFilter={audienceFilter}
+                durationFilter={durationFilter}
+                onCategoryFilterChange={setCategoryFilter}
+                onAudienceFilterChange={setAudienceFilter}
+                onDurationFilterChange={setDurationFilter}
+                sortBy={sortBy}
+                onSortChange={handleSortChange}
+                availableCategoryFilters={availableCategoryFilters}
+                availableAudienceFilters={availableAudienceFilters}
+                availableDurationFilters={availableDurationFilters}
+              />
+              <TripsResultsMeta
+                compact
+                count={filteredTrips.length}
+                hasActiveFilters={hasActiveFilters}
+                categoryFilter={categoryFilter}
+                audienceFilter={audienceFilter}
+                durationFilter={durationFilter}
+                t={t}
+                showResetButton={false}
+                className="mt-4 border-border/50"
+              />
+            </div>
+            <div className="flex shrink-0 items-stretch gap-2 border-t border-border/70 bg-background px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 shadow-[0_-10px_30px_-12px_rgba(0,0,0,0.12)] sm:px-6">
+              {hasActiveFilters ? (
+                <Button
+                  type="button"
+                  variant="ghost"
+                  className="h-11 shrink-0 px-3 text-caption font-medium text-muted-foreground hover:text-foreground"
+                  onClick={resetTripListFilters}
+                >
+                  {t('trips.filters.sheetReset')}
+                </Button>
+              ) : null}
+              <Button
+                type="button"
+                variant="accent"
+                className={cn('min-h-11', hasActiveFilters ? 'flex-1' : 'w-full')}
+                onClick={() => setFiltersOpen(false)}
+              >
+                {t('trips.filters.apply')}
+              </Button>
+            </div>
           </SheetContent>
         </Sheet>
       </div>
@@ -338,11 +391,7 @@ export default function TripsPage() {
           <TripsPaginationBar page={currentPage} pageCount={pageCount} onPageChange={setPage} />
         </>
       )}
-      <p className="text-center text-body-sm text-muted-foreground">
-        <Button type="button" variant="link" className="min-h-11" onClick={() => navigateBack()}>
-          {t('trips.backHome')}
-        </Button>
-      </p>
+      <PageBackNavLink to={APP_ROUTE.home} label={t('trips.backHome')} />
     </div>
   )
 }

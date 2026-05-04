@@ -24,7 +24,7 @@ export default function FeaturedTrips({ trips, className, layout = 'grid' }: Fea
     return (
       <div className={gridClassName}>
         {trips.map((trip) => (
-          <TripCard key={trip.id} trip={trip} />
+          <TripCard key={trip.id} trip={trip} density={isHomeLayout ? 'compact' : 'default'} />
         ))}
       </div>
     )
@@ -40,7 +40,7 @@ export default function FeaturedTrips({ trips, className, layout = 'grid' }: Fea
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.22, delay: index * 0.06, ease: [0.22, 1, 0.36, 1] }}
         >
-          <TripCard trip={trip} />
+          <TripCard trip={trip} density={isHomeLayout ? 'compact' : 'default'} />
         </motion.div>
       ))}
     </div>

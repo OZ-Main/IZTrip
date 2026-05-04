@@ -5,11 +5,15 @@ export const tripDetailsLayoutRootVariants = cva(
 )
 
 export const tripDetailsLayoutMainVariants = cva(
-  'flex min-w-0 flex-col gap-tight sm:gap-relaxed',
+  'flex min-w-0 flex-col gap-tight pb-[calc(5rem+env(safe-area-inset-bottom))] sm:gap-relaxed lg:pb-0',
 )
 
-export const tripDetailsLayoutMobileBookingVariants = cva(
-  'sticky top-[calc(var(--header-height-mobile)+0.5rem)] z-30 self-start sm:top-24 lg:hidden',
+export const tripDetailsLayoutMobileDockVariants = cva(
+  'pointer-events-none fixed inset-x-0 bottom-0 z-40 lg:hidden',
+)
+
+export const tripDetailsLayoutMobileDockInnerVariants = cva(
+  'pointer-events-auto mx-auto flex max-w-content justify-center px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-2',
 )
 
 export const tripDetailsLayoutAsideVariants = cva('hidden min-w-0 lg:block lg:h-full lg:min-h-0 lg:self-stretch')

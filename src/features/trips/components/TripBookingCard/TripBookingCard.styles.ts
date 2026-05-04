@@ -1,5 +1,15 @@
 import { cva } from 'class-variance-authority'
 
+export const tripBookingDockRootVariants = cva(
+  'flex w-full max-w-full items-center gap-3 rounded-2xl border border-primary/25 bg-card/95 px-3 py-2 shadow-overlay backdrop-blur-md ring-1 ring-black/5 dark:bg-card/92 dark:ring-white/10',
+)
+
+export const tripBookingDockPriceBlockVariants = cva('min-w-0 flex-1')
+
+export const tripBookingDockMetaVariants = cva(
+  'truncate text-caption font-medium text-muted-foreground',
+)
+
 export const tripBookingCardRootVariants = cva(
   'animate-iz-surface-in rounded-[1.1rem] border border-primary/20 bg-gradient-to-br from-card via-card to-primary/5 p-card shadow-card ring-1 ring-primary/10 sm:p-form',
 )

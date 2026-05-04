@@ -35,7 +35,7 @@ export default function HomeStyleCategoryCard({
   return (
     <Link to={href} className={cn(homeStyleCategoryCardRootVariants({ tone }))}>
       <span className={homeStyleCategoryCardIconWrapVariants()}>
-        <Icon className="h-5 w-5" aria-hidden />
+        <Icon className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden />
       </span>
       <span className={homeStyleCategoryCardTitleVariants()}>
         {t(`trips.categories.${category}`)}

@@ -38,9 +38,10 @@ import { cn } from '@/shared/utils/cn'
 
 type TripCardProps = {
   trip: TripDefinition
+  density?: 'default' | 'compact'
 }
 
-export default function TripCard({ trip }: TripCardProps) {
+export default function TripCard({ trip, density = 'default' }: TripCardProps) {
   const { t, i18n } = useTranslation()
   const [imageFailed, setImageFailed] = useState(false)
   const nextDateIso = getNextAvailableTripDateIso(trip)
@@ -67,7 +68,7 @@ export default function TripCard({ trip }: TripCardProps) {
             />
             <div className={tripCardImageOverlayVariants()} aria-hidden />
             <div className={tripCardImageTopVariants()}>
-              <div className="flex flex-wrap gap-tight">
+              <div className="flex flex-wrap gap-1 sm:gap-tight">
                 <CategoryBadge
                   category={trip.category}
                   className="border border-border/70 bg-card/95 text-foreground shadow-md ring-1 ring-black/10 backdrop-blur-md dark:bg-card/90 dark:ring-white/10"
@@ -86,13 +87,13 @@ export default function TripCard({ trip }: TripCardProps) {
             </div>
           </div>
         </Link>
-        <TripCardSaveButton trip={trip} className="absolute right-card top-card z-20" />
+        <TripCardSaveButton trip={trip} className="absolute right-3 top-3 z-20 sm:right-card sm:top-card" />
       </div>
       <Link
         to={detailsPath}
         className={cn(
-          tripCardBodyVariants(),
-          'mt-tight flex flex-1 flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+          tripCardBodyVariants({ density }),
+          'flex flex-1 flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:mt-tight',
         )}
         aria-label={tripTitle}
       >
@@ -100,7 +101,7 @@ export default function TripCard({ trip }: TripCardProps) {
           <span>{t('trips.card.durationLabel', { count: trip.durationDays })}</span>
         </p>
         <h3 className={tripCardTitleVariants()}>{tripTitle}</h3>
-        <p className={tripCardDescriptionVariants()}>
+        <p className={tripCardDescriptionVariants({ density })}>
           {t(`trips.catalog.${trip.slug}.shortDescription`)}
         </p>
         <div className={tripCardTrustRowVariants()}>
@@ -111,15 +112,15 @@ export default function TripCard({ trip }: TripCardProps) {
         <div className={tripCardFooterVariants()}>
           <div className={tripCardFooterTopVariants()}>
             <div className="min-w-0 space-y-0.5">
-              <p className="text-caption text-muted-foreground">{t('trips.card.nextDeparture')}</p>
-              <p className="text-body font-medium text-foreground">
+              <p className="text-caption leading-tight text-muted-foreground">{t('trips.card.nextDeparture')}</p>
+              <p className="text-caption font-medium leading-snug text-foreground sm:text-body-sm">
                 {nextDateIso
                   ? formatTripDateDisplay(nextDateIso, i18n.language)
                   : t('trips.card.noUpcomingDates')}
               </p>
             </div>
-            <div className="min-w-0 space-y-0.5 sm:text-right">
-              <p className="text-caption text-muted-foreground">{t('trips.card.from')}</p>
+            <div className="min-w-0 space-y-0.5 text-right">
+              <p className="text-caption leading-tight text-muted-foreground">{t('trips.card.from')}</p>
               <p className={tripCardPriceVariants()}>{formatTripPriceEur(trip.priceEur)}</p>
             </div>
           </div>

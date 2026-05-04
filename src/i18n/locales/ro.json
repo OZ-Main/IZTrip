@@ -2,6 +2,43 @@
   "brand": {
     "name": "YZ Trip"
   },
+  "seo": {
+    "titleSuffix": " | YZ Trip",
+    "defaultTitle": "YZ Trip — tururi Moldova, excursii de o zi și weekend-uri curatoriate",
+    "defaultDescription": "Catalog curatoriat de tururi în Moldova: cultură, vin, natură, familie și ieșiri din Chișinău. Solicită date cu prețuri transparente și coordonare locală.",
+    "home": {
+      "title": "Tururi Moldova și experiențe de călătorie curatoriate",
+      "description": "Planifică fără ghicit — rute pentru familii, experiențe la crame, cetăți și weekend-uri în natură, cu plecare din Chișinău."
+    },
+    "trips": {
+      "title": "Catalog tururi Moldova",
+      "description": "Filtrează excursii după temă, public și durată — ritm realist și indicii de preț pe fiecare tur."
+    },
+    "about": {
+      "title": "Despre YZ Trip",
+      "description": "Birou de turism focalizat pe Moldova — rute curatoriate, coordonare calmă și solicitări gestionate de oameni reali."
+    },
+    "saved": {
+      "title": "Tururi Moldova salvate",
+      "description": "Tururile salvate din catalog — deschide un tur pentru detalii sau solicită o dată de plecare."
+    },
+    "login": {
+      "title": "Autentificare",
+      "description": "Autentifică-te la YZ Trip ca să salvezi tururi și să trimiți cereri de rezervare structurate."
+    },
+    "register": {
+      "title": "Creare cont",
+      "description": "Creează cont YZ Trip ca să salvezi tururi, să păstrezi contextul rezervărilor și să primești răspuns de la echipă."
+    },
+    "booking": {
+      "title": "Solicită o dată pentru tur",
+      "description": "Trimite o cerere structurată pentru turul ales în Moldova — dată preferată, număr de persoane și date de contact."
+    },
+    "tripMissing": {
+      "title": "Tur negăsit",
+      "description": "Acest URL nu corespunde catalogului nostru. Deschide un tur actualizat din pagina excursiilor."
+    }
+  },
   "trust": {
     "heroNoPayment": "Fără plată în avans",
     "heroCuratedRoutes": "Trasee locale curatoriate",
@@ -108,10 +145,13 @@
     "hero": {
       "eyebrow": "Călătorii curatoriate în Moldova",
       "title": "Escapade de weekend, plimbări urbane și rute la țară — cu grijă locală",
+      "titleShort": "Excursii Moldova, cu grijă locală",
       "subtitle": "Răsfoiește un catalog axat pe Moldova: grupuri mici, parteneri verificați, prețuri clare și solicitări de rezervare care rămân organizate.",
+      "subtitleShort": "Grupuri mici în Moldova — prețuri clare și rezervare simplă.",
       "primaryCta": "Vezi excursiile",
       "secondaryCta": "Creează cont gratuit",
       "previewBadge": "Rută recomandată",
+      "previewTripLinkLabel": "Deschide detaliile excursiei: {{title}}",
       "previewMeta": "{{duration}} · de la {{price}}",
       "badgeCurated": "Ghiduri locale",
       "badgeSmallGroups": "Grupuri mici",
@@ -119,12 +159,16 @@
     },
     "featured": {
       "title": "Experiențe recomandate în Moldova",
+      "titleShort": "Excursii recomandate",
       "description": "Trei rute alese ca să începi rapid — crame, cetăți, chei și plimbări urbane.",
+      "descriptionShort": "Trei rute ca să începi rapid.",
       "viewAll": "Toate excursiile"
     },
     "how": {
       "title": "Cum funcționează YZ Trip",
+      "titleShort": "Cum funcționează",
       "description": "Trei pași calmi de la inspirație la o solicitare pe care echipa o poate prelua.",
+      "descriptionShort": "Alegi excursia, data, trimiți solicitarea.",
       "step1": {
         "badge": "01",
         "title": "Alege o excursie curatoriată",
@@ -143,7 +187,9 @@
     },
     "categories": {
       "title": "Explorează după stil",
+      "titleShort": "După stil",
       "description": "Intră în catalog dintr-o atingere — filtrele sunt prietenoase pe mobil.",
+      "descriptionShort": "Deschizi catalogul dintr-o atingere.",
       "explore": "Vezi excursiile potrivite"
     },
     "categoryDescriptions": {
@@ -158,7 +204,9 @@
     },
     "trust": {
       "title": "De ce au încredere călătorii",
+      "titleShort": "De ce au încredere",
       "description": "Ne orientăm spre claritate: ce rezervi, cui i se potrivește și ce urmează.",
+      "descriptionShort": "Liste clare și solicitări organizate.",
       "cards": {
         "routes": {
           "title": "Trasee locale curatoriate",
@@ -180,7 +228,9 @@
     },
     "finalCta": {
       "title": "Pregătit pentru următorul weekend în Moldova?",
+      "titleShort": "Weekend în Moldova?",
       "description": "Explorează catalogul mai întâi sau creează un cont când ești gata să ceri o dată.",
+      "descriptionShort": "Vezi excursiile sau creează cont când vrei o dată.",
       "primary": "Răsfoiește excursiile",
       "secondary": "Creează cont"
     }
@@ -188,7 +238,9 @@
   "trips": {
     "page": {
       "title": "Excursii gândite pentru weekenduri în Moldova",
+      "titleShort": "Excursii weekend Moldova",
       "description": "Filtrează după stil și public — fiecare rută include note sincere de ritm, preț „de la” și plecări viitoare.",
+      "descriptionShort": "Filtrezi după stil și grup — preț și date pe fiecare card.",
       "kicker": "Catalog curatoriat",
       "statTripsLabel": "Excursii curatoriate",
       "statTripsValue": "{{count}} rute disponibile",
@@ -223,9 +275,11 @@
       "duration2": "2 zile",
       "duration3Plus": "3+ zile",
       "drawerTitle": "Filtrează excursiile",
-      "drawerDescription": "Folosește listele pentru categorie, public, durată și sortare. Numărul excursiilor apare dedesubt; închide panoul când ai terminat.",
+      "drawerDescription": "Alege categoria, publicul, durata și sortarea. Lista se actualizează imediat.",
       "openButton": "Filtre",
-      "resetAll": "Șterge filtrele"
+      "resetAll": "Șterge filtrele",
+      "sheetReset": "Șterge",
+      "apply": "Aplică"
     },
     "categories": {
       "kids": "Copii",
@@ -411,7 +465,8 @@
   "booking": {
     "page": {
       "title": "Solicită excursia",
-      "description": "Nu este nevoie de plată acum. Spune-ne cine călătorește și când — salvăm solicitarea în siguranță și revenim personal."
+      "description": "Nu este nevoie de plată acum. Spune-ne cine călătorește și când — salvăm solicitarea în siguranță și revenim personal.",
+      "backToTrip": "Înapoi la excursie"
     },
     "summaryTitle": "Rezumat excursie",
     "summaryEyebrow": "Cerere pentru",
@@ -480,15 +535,19 @@
     "hero": {
       "kicker": "Călătorii curatoriate, axate pe Moldova",
       "title": "Despre YZ Trip",
-      "subtitle": "Suntem un desk independent axat pe Moldova — grupuri mici, parteneri locali, prețuri clare și solicitări de rezervare organizate."
+      "subtitle": "Suntem un desk independent axat pe Moldova — grupuri mici, parteneri locali, prețuri clare și solicitări de rezervare organizate.",
+      "subtitleShort": "Rute Moldova curatoriate — prețuri clare și suport uman la rezervare."
     },
     "mission": {
       "title": "Misiunea noastră",
-      "body": "Ajutăm călătorii să exploreze Moldova cu încredere: itinerare clare, note sincere despre ritm și un flux de solicitare care îți respectă timpul."
+      "body": "Ajutăm călătorii să exploreze Moldova cu încredere: itinerare clare, note sincere despre ritm și un flux de solicitare care îți respectă timpul.",
+      "bodyShort": "Te ajutăm să explorezi Moldova cu itinerare calme și solicitări respectuoase."
     },
     "pillars": {
       "title": "Ce face diferit YZ Trip",
-      "lead": "Patru principii ghidează fiecare card de rută, relația cu gazdele și pașii de urmărire."
+      "titleShort": "Ce ne diferențiază",
+      "lead": "Patru principii ghidează fiecare card de rută, relația cu gazdele și pașii de urmărire.",
+      "leadShort": "Patru principii în spatele fiecărei rute."
     },
     "pillar1": {
       "title": "Planificare locală mai întâi",
@@ -509,6 +568,7 @@
     "audience": {
       "title": "Pentru cine este YZ Trip",
       "lead": "Dacă îți place planificarea calmă și urmărirea umană, ești în locul potrivit.",
+      "leadShort": "Pentru cei care vor claritate și urmărire umană.",
       "families": "Familii care vor ritm realist și zile prietenoase cu gustări",
       "kids": "Grupuri școlare și cluburi pentru copii care au nevoie de note clare de supraveghere",
       "friends": "Prieteni și adulți care caută vin, cultură și arhitectură cu profunzime",
@@ -516,7 +576,9 @@
     },
     "closing": {
       "title": "Vezi catalogul, apoi cere o dată",
-      "body": "Nu trebuie să rezervi instant — explorează excursiile, împărtășește-le grupului și revino când ești gata."
+      "titleShort": "Catalogul întâi, apoi solicitarea",
+      "body": "Nu trebuie să rezervi instant — explorează excursiile, împărtășește-le grupului și revino când ești gata.",
+      "bodyShort": "Explorezi întâi — ceri o dată când ești gata."
     },
     "ctaPrimary": "Răsfoiește excursiile",
     "ctaSecondary": "Creează cont"

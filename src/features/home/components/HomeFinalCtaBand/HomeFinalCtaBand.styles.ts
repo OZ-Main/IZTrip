@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 
 export const homeFinalCtaBandRootVariants = cva(
-  'relative overflow-hidden rounded-[1.25rem] border border-primary/20 bg-gradient-to-br from-secondary via-primary/8 to-primary/15 px-card py-section text-center shadow-card sm:px-form',
+  'relative isolate rounded-xl border border-primary/20 bg-gradient-to-br from-secondary via-primary/8 to-primary/15 px-card py-stack text-center shadow-card ring-1 ring-inset ring-black/5 dark:ring-white/10 sm:rounded-[1.25rem] sm:py-section sm:px-form',
 )
 
 export const homeFinalCtaBandWashVariants = cva(

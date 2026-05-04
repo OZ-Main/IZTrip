@@ -12,7 +12,7 @@ export default function TripDetails({ trip }: TripDetailsProps) {
   const bookingPath = APP_ROUTE.booking(trip.slug)
 
   return (
-    <article className="w-full overflow-visible space-y-relaxed sm:space-y-section">
+    <article className="w-full overflow-visible space-y-stack sm:space-y-relaxed lg:space-y-section">
       <TripDetailsHero trip={trip} />
       <TripDetailsLayout trip={trip} bookingPath={bookingPath}>
         <TripDetailsContent trip={trip} />

@@ -1,6 +1,10 @@
 import type { Config } from 'tailwindcss'
 import tailwindcssAnimate from 'tailwindcss-animate'
 
+/*
+  Breakpoints align with globals.css typography/spacing tiers:
+  default (<640px) mobile, sm (≥640px) tablet, lg (≥1024px) desktop web.
+*/
 const config: Config = {
   darkMode: ['class'],
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],

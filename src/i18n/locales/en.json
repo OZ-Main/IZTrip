@@ -2,6 +2,43 @@
   "brand": {
     "name": "YZ Trip"
   },
+  "seo": {
+    "titleSuffix": " | YZ Trip",
+    "defaultTitle": "YZ Trip — Moldova tours, day trips & curated weekends",
+    "defaultDescription": "Browse curated Moldova tours: culture, wine, nature, family trips and Chișinău escapes. Request dates with transparent pricing and local coordination.",
+    "home": {
+      "title": "Moldova tours & curated travel experiences",
+      "description": "Plan Moldova trips without guesswork — family-friendly routes, wine experiences, fortress days, and weekend nature escapes from Chișinău."
+    },
+    "trips": {
+      "title": "Browse Moldova tours & experiences",
+      "description": "Filter curated Moldova day trips and weekends by theme, audience, and duration. Transparent pricing cues and realistic pacing on every listing."
+    },
+    "about": {
+      "title": "About YZ Trip",
+      "description": "Independent Moldova-focused travel desk — curated routes, calm coordination, and booking requests tied to real humans."
+    },
+    "saved": {
+      "title": "Saved Moldova trips",
+      "description": "Trips you saved from the catalog — open any listing to view details or request a departure date."
+    },
+    "login": {
+      "title": "Sign in",
+      "description": "Sign in to YZ Trip to save trips and send structured Moldova booking requests."
+    },
+    "register": {
+      "title": "Create account",
+      "description": "Create a YZ Trip account to save tours, keep booking context, and hear back from our coordination team."
+    },
+    "booking": {
+      "title": "Request a trip date",
+      "description": "Submit a structured booking request for your chosen Moldova tour — preferred date, group size, and contact details."
+    },
+    "tripMissing": {
+      "title": "Trip not found",
+      "description": "This Moldova tour URL does not match our catalog. Open an updated listing from the trips page."
+    }
+  },
   "trust": {
     "heroNoPayment": "No upfront payment",
     "heroCuratedRoutes": "Curated local routes",
@@ -108,10 +145,13 @@
     "hero": {
       "eyebrow": "Curated Moldova travel",
       "title": "Weekend escapes, city walks, and countryside routes — planned with local care",
+      "titleShort": "Moldova trips, planned with care",
       "subtitle": "Browse a Moldova-first catalog of small-group experiences with clear pricing, vetted partners, and booking requests that stay organized from day one.",
+      "subtitleShort": "Small-group Moldova routes — clear pricing and simple booking.",
       "primaryCta": "Explore trips",
       "secondaryCta": "Create free account",
       "previewBadge": "Featured route",
+      "previewTripLinkLabel": "Open trip details: {{title}}",
       "previewMeta": "{{duration}} · from {{price}}",
       "badgeCurated": "Local guides",
       "badgeSmallGroups": "Small groups",
@@ -119,12 +159,16 @@
     },
     "featured": {
       "title": "Featured Moldova experiences",
+      "titleShort": "Featured trips",
       "description": "Three handpicked routes to start fast — wineries, fortresses, gorges, and city walks.",
+      "descriptionShort": "Three routes to start fast.",
       "viewAll": "View all trips"
     },
     "how": {
       "title": "How YZ Trip works",
+      "titleShort": "How it works",
       "description": "Three calm steps from inspiration to a saved request our team can act on.",
+      "descriptionShort": "Browse, pick dates, send your request.",
       "step1": {
         "badge": "01",
         "title": "Choose a curated trip",
@@ -143,7 +187,9 @@
     },
     "categories": {
       "title": "Explore by travel style",
+      "titleShort": "Browse by style",
       "description": "Jump into the catalog with one tap — filters stay thumb-friendly on mobile.",
+      "descriptionShort": "Open the catalog with one tap.",
       "explore": "See matching trips"
     },
     "categoryDescriptions": {
@@ -158,7 +204,9 @@
     },
     "trust": {
       "title": "Why travelers trust YZ Trip",
+      "titleShort": "Why travelers trust us",
       "description": "We bias toward clarity: what you book, who it suits, and what happens next.",
+      "descriptionShort": "Clear listings and structured booking.",
       "cards": {
         "routes": {
           "title": "Curated local routes",
@@ -180,7 +228,9 @@
     },
     "finalCta": {
       "title": "Ready to plan your next Moldova weekend?",
+      "titleShort": "Plan a Moldova weekend?",
       "description": "Explore the catalog first, or create an account when you are ready to request a date.",
+      "descriptionShort": "Browse trips or sign in when you want to request dates.",
       "primary": "Browse trips",
       "secondary": "Create account"
     }
@@ -188,7 +238,9 @@
   "trips": {
     "page": {
       "title": "Trips crafted for Moldova weekends",
+      "titleShort": "Moldova weekend trips",
       "description": "Filter by travel style and who is traveling — each route includes honest pacing notes, transparent “from” pricing, and upcoming departures.",
+      "descriptionShort": "Filter by style and group — clear pricing and dates on every card.",
       "kicker": "Curated catalog",
       "statTripsLabel": "Curated trips",
       "statTripsValue": "{{count}} routes live",
@@ -222,9 +274,11 @@
       "duration2": "2 days",
       "duration3Plus": "3+ days",
       "drawerTitle": "Filter trips",
-      "drawerDescription": "Use the dropdowns for category, audience, duration, and sort. Trip count updates below; close when you are done.",
+      "drawerDescription": "Choose category, audience, duration, and sort. The list updates as you change options.",
       "openButton": "Filters",
-      "resetAll": "Clear filters"
+      "resetAll": "Clear filters",
+      "sheetReset": "Clear",
+      "apply": "Apply"
     },
     "categories": {
       "kids": "Kids",
@@ -409,7 +463,8 @@
   "booking": {
     "page": {
       "title": "Request your trip",
-      "description": "No payment is required now. Tell us who is traveling and when — we save your request securely and follow up personally."
+      "description": "No payment is required now. Tell us who is traveling and when — we save your request securely and follow up personally.",
+      "backToTrip": "Back to trip"
     },
     "summaryTitle": "Trip summary",
     "summaryEyebrow": "You are requesting",
@@ -478,15 +533,19 @@
     "hero": {
       "kicker": "Moldova-first curated travel",
       "title": "About YZ Trip",
-      "subtitle": "We are an independent travel desk focused on Moldova — pairing small-group routes with transparent pricing, local partners, and organized booking requests."
+      "subtitle": "We are an independent travel desk focused on Moldova — pairing small-group routes with transparent pricing, local partners, and organized booking requests.",
+      "subtitleShort": "Curated Moldova routes with transparent pricing and human booking support."
     },
     "mission": {
       "title": "Our mission",
-      "body": "Help travelers explore Moldova with confidence: clear itineraries, honest pacing notes, and a booking flow that respects your time."
+      "body": "Help travelers explore Moldova with confidence: clear itineraries, honest pacing notes, and a booking flow that respects your time.",
+      "bodyShort": "Help travelers explore Moldova with calm itineraries and a respectful booking flow."
     },
     "pillars": {
       "title": "What makes YZ Trip different",
-      "lead": "Four principles shape every route card, host relationship, and follow-up workflow."
+      "titleShort": "What sets us apart",
+      "lead": "Four principles shape every route card, host relationship, and follow-up workflow.",
+      "leadShort": "Four principles behind every route."
     },
     "pillar1": {
       "title": "Local-first planning",
@@ -507,6 +566,7 @@
     "audience": {
       "title": "Who YZ Trip is for",
       "lead": "If you value calm planning and human follow-up, you are in the right place.",
+      "leadShort": "For planners who want clarity and human follow-up.",
       "families": "Families who want realistic pacing and snack-friendly days",
       "kids": "School groups and kids clubs that need clear supervision notes",
       "friends": "Friends and adults seeking wine, culture, and architecture depth",
@@ -514,7 +574,9 @@
     },
     "closing": {
       "title": "See the catalog, then request a date",
-      "body": "No pressure to book instantly — explore trips, share them with your group, and reach out when the timing feels right."
+      "titleShort": "Browse trips, then request a date",
+      "body": "No pressure to book instantly — explore trips, share them with your group, and reach out when the timing feels right.",
+      "bodyShort": "Explore first — request when the timing feels right."
     },
     "ctaPrimary": "Browse curated trips",
     "ctaSecondary": "Create account"

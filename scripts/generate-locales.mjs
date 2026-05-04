@@ -337,9 +337,11 @@ const uiEn = {
       duration3Plus: '3+ days',
       drawerTitle: 'Filter trips',
       drawerDescription:
-        'Use the dropdowns for category, audience, duration, and sort. Trip count updates below; close when you are done.',
+        'Choose category, audience, duration, and sort. The list updates as you change options.',
       openButton: 'Filters',
       resetAll: 'Clear filters',
+      sheetReset: 'Clear',
+      apply: 'Apply',
     },
     categories: {
       kids: 'Kids',
@@ -926,9 +928,11 @@ ro.trips.filters.category = 'Categorie'
 ro.trips.filters.audience = 'Public'
 ro.trips.filters.drawerTitle = 'Filtrează excursiile'
 ro.trips.filters.drawerDescription =
-  'Folosește listele pentru categorie, public, durată și sortare. Numărul excursiilor apare dedesubt; închide panoul când ai terminat.'
+  'Alege categoria, publicul, durata și sortarea. Lista se actualizează imediat.'
 ro.trips.filters.openButton = 'Filtre'
 ro.trips.filters.resetAll = 'Șterge filtrele'
+ro.trips.filters.sheetReset = 'Șterge'
+ro.trips.filters.apply = 'Aplică'
 ro.trips.filters.duration = 'Durată'
 ro.trips.filters.durationAll = 'Orice durată'
 ro.trips.filters.duration1 = '1 zi'
@@ -1231,9 +1235,11 @@ ru.trips.filters.category = 'Категория'
 ru.trips.filters.audience = 'Аудитория'
 ru.trips.filters.drawerTitle = 'Фильтр туров'
 ru.trips.filters.drawerDescription =
-  'Выберите категорию, аудиторию, длительность и сортировку в списках. Число туров ниже; закройте панель, когда закончите.'
+  'Выберите категорию, аудиторию, длительность и сортировку. Список обновляется сразу.'
 ru.trips.filters.openButton = 'Фильтры'
 ru.trips.filters.resetAll = 'Сбросить фильтры'
+ru.trips.filters.sheetReset = 'Сбросить'
+ru.trips.filters.apply = 'Применить'
 ru.trips.filters.duration = 'Длительность'
 ru.trips.filters.durationAll = 'Любая длительность'
 ru.trips.filters.duration1 = '1 день'

@@ -11,7 +11,12 @@ import {
   homeHeroGlowVariants,
   homeHeroGridVariants,
   homeHeroMeshVariants,
+  homeHeroPreviewImageFigureVariants,
   homeHeroPreviewImageLinkVariants,
+  homeHeroPreviewImageMobileCaptionEyebrowVariants,
+  homeHeroPreviewImageMobileCaptionMetaVariants,
+  homeHeroPreviewImageMobileCaptionTitleVariants,
+  homeHeroPreviewImageMobileCaptionVariants,
   homeHeroPreviewImageVariants,
   homeHeroPreviewStackVariants,
   homeHeroPreviewVariants,
@@ -24,7 +29,9 @@ import {
   formatTripPriceEur,
 } from '@/features/trips/helpers/tripFormat.helpers'
 import type { TripDefinition } from '@/features/trips/types/trip.types'
+import { HERO_SURFACE_DECOR_CLIP_CLASSNAME } from '@/shared/constants/heroDecor.constants'
 import { APP_ROUTE } from '@/shared/constants/routes.constants'
+import { useIsNarrowViewport } from '@/shared/hooks/useIsNarrowViewport'
 import { cn } from '@/shared/utils/cn'
 
 type HomeHeroProps = {
@@ -35,30 +42,39 @@ type HomeHeroProps = {
 export default function HomeHero({ previewTrip, className }: HomeHeroProps) {
   const { t } = useTranslation()
   const user = useAuthStore((authStore) => authStore.user)
+  const isNarrowViewport = useIsNarrowViewport()
   const detailsPath = APP_ROUTE.tripDetails(previewTrip.slug)
+  const heroTitle = t(isNarrowViewport ? 'home.hero.titleShort' : 'home.hero.title')
+  const heroSubtitle = t(isNarrowViewport ? 'home.hero.subtitleShort' : 'home.hero.subtitle')
+  const previewTripTitle = t(`trips.catalog.${previewTrip.slug}.title`)
+  const previewMetaLine = t('home.hero.previewMeta', {
+    duration: formatTripDurationDays(previewTrip.durationDays, t),
+    price: formatTripPriceEur(previewTrip.priceEur),
+  })
+  const previewTripLinkLabel = t('home.hero.previewTripLinkLabel', { title: previewTripTitle })
 
   return (
     <section className={cn(homeHeroRootVariants(), 'animate-iz-surface-in', className)}>
-      <div className={homeHeroGlowVariants()} aria-hidden />
-      <div className={homeHeroGlowSecondaryVariants()} aria-hidden />
-      <div className={homeHeroMeshVariants()} aria-hidden />
+      <div className={HERO_SURFACE_DECOR_CLIP_CLASSNAME} aria-hidden>
+        <div className={homeHeroGlowVariants()} />
+        <div className={homeHeroGlowSecondaryVariants()} />
+        <div className={homeHeroMeshVariants()} />
+      </div>
       <div className={homeHeroGridVariants()}>
-        <div className="min-w-0 space-y-relaxed">
-          <p className="text-label uppercase tracking-[0.12em] text-hero-foreground/75">
+        <div className="min-w-0 space-y-stack sm:space-y-relaxed">
+          <p className="text-caption font-semibold uppercase tracking-[0.12em] text-hero-foreground/75 sm:text-label">
             {t('home.hero.eyebrow')}
           </p>
-          <h1 className="text-balance font-display text-display-xl font-semibold tracking-tight sm:text-[2.65rem] sm:leading-[1.12]">
-            {t('home.hero.title')}
+          <h1 className="text-balance font-display text-heading-lg font-semibold tracking-tight sm:text-display-xl">
+            {heroTitle}
           </h1>
-          <p className="max-w-2xl text-body-lg text-hero-foreground/90">
-            {t('home.hero.subtitle')}
-          </p>
+          <p className="max-w-2xl text-body text-hero-foreground/90 sm:text-body-lg">{heroSubtitle}</p>
           <div className="flex flex-col gap-tight sm:flex-row sm:items-center">
             <Button
               type="button"
               size="lg"
               variant="accent"
-              className="min-h-11 w-full sm:w-auto"
+              className="min-h-10 w-full px-6 py-2.5 text-caption sm:min-h-12 sm:w-auto sm:px-8 sm:py-3 sm:text-label"
               asChild
             >
               <Link to={APP_ROUTE.trips}>{t('home.hero.primaryCta')}</Link>
@@ -68,7 +84,7 @@ export default function HomeHero({ previewTrip, className }: HomeHeroProps) {
                 type="button"
                 size="lg"
                 variant="secondary"
-                className="min-h-11 w-full border-2 border-hero-foreground/45 bg-hero-foreground/18 text-hero-foreground shadow-sm hover:bg-hero-foreground/28 sm:w-auto"
+                className="min-h-10 w-full border-2 border-hero-foreground/45 bg-hero-foreground/18 px-6 py-2.5 text-caption text-hero-foreground shadow-sm hover:bg-hero-foreground/28 sm:min-h-12 sm:w-auto sm:px-8 sm:py-3 sm:text-label"
                 asChild
               >
                 <Link to={APP_ROUTE.register}>{t('home.hero.secondaryCta')}</Link>
@@ -77,15 +93,15 @@ export default function HomeHero({ previewTrip, className }: HomeHeroProps) {
           </div>
           <ul className={homeHeroTrustListVariants()}>
             <li className={homeHeroTrustItemVariants()}>
-              <Wallet className="h-4 w-4 shrink-0 text-accent" aria-hidden />
+              <Wallet className="h-3.5 w-3.5 shrink-0 text-accent sm:h-4 sm:w-4" aria-hidden />
               <span>{t('trust.heroNoPayment')}</span>
             </li>
-            <li className={homeHeroTrustItemVariants()}>
-              <MapPin className="h-4 w-4 shrink-0 text-accent" aria-hidden />
+            <li className={cn(homeHeroTrustItemVariants(), 'hidden sm:inline-flex')}>
+              <MapPin className="h-3.5 w-3.5 shrink-0 text-accent sm:h-4 sm:w-4" aria-hidden />
               <span>{t('trust.heroCuratedRoutes')}</span>
             </li>
-            <li className={homeHeroTrustItemVariants()}>
-              <Users className="h-4 w-4 shrink-0 text-accent" aria-hidden />
+            <li className={cn(homeHeroTrustItemVariants(), 'hidden sm:inline-flex')}>
+              <Users className="h-3.5 w-3.5 shrink-0 text-accent sm:h-4 sm:w-4" aria-hidden />
               <span>{t('trust.heroSmallGroups')}</span>
             </li>
           </ul>
@@ -96,24 +112,32 @@ export default function HomeHero({ previewTrip, className }: HomeHeroProps) {
               {t('home.hero.previewBadge')}
             </p>
             <p className="mt-tight line-clamp-2 text-body-sm font-semibold text-card-foreground">
-              {t(`trips.catalog.${previewTrip.slug}.title`)}
+              {previewTripTitle}
             </p>
-            <p className="mt-tight text-caption text-muted-foreground">
-              {t('home.hero.previewMeta', {
-                duration: formatTripDurationDays(previewTrip.durationDays, t),
-                price: formatTripPriceEur(previewTrip.priceEur),
-              })}
-            </p>
+            <p className="mt-tight text-caption text-muted-foreground">{previewMetaLine}</p>
           </div>
-          <Link to={detailsPath} className={cn(homeHeroPreviewImageLinkVariants(), 'group')}>
-            <img
-              src={previewTrip.imageSrc}
-              alt=""
-              className={cn(
-                homeHeroPreviewImageVariants(),
-                'transition-transform duration-motion-slow ease-motion-out motion-safe:group-hover:scale-[1.02]',
-              )}
-            />
+          <Link
+            to={detailsPath}
+            aria-label={previewTripLinkLabel}
+            className={cn(homeHeroPreviewImageLinkVariants(), 'group')}
+          >
+            <span className={homeHeroPreviewImageFigureVariants()}>
+              <img
+                src={previewTrip.imageSrc}
+                alt=""
+                className={cn(
+                  homeHeroPreviewImageVariants(),
+                  'transition-transform duration-motion-slow ease-motion-out motion-safe:group-hover:scale-[1.02]',
+                )}
+              />
+              <span className={homeHeroPreviewImageMobileCaptionVariants()}>
+                <span className={homeHeroPreviewImageMobileCaptionEyebrowVariants()}>
+                  {t('home.hero.previewBadge')}
+                </span>
+                <span className={homeHeroPreviewImageMobileCaptionTitleVariants()}>{previewTripTitle}</span>
+                <span className={homeHeroPreviewImageMobileCaptionMetaVariants()}>{previewMetaLine}</span>
+              </span>
+            </span>
           </Link>
           <div className={homeHeroBadgeRowVariants()}>
             <span className={homeHeroBadgeVariants()}>{t('home.hero.badgeCurated')}</span>

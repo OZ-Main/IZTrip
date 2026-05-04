@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority'
 
 export const homeHeroRootVariants = cva(
-  'relative overflow-hidden rounded-[1.25rem] border border-primary/15 bg-gradient-to-br from-hero via-primary to-[hsl(158_48%_14%)] px-card py-section text-hero-foreground shadow-overlay sm:px-form sm:py-[2.75rem]',
+  'relative isolate rounded-xl border border-primary/15 bg-gradient-to-br from-hero via-primary to-[hsl(158_48%_14%)] px-card py-6 text-hero-foreground shadow-overlay ring-1 ring-inset ring-black/10 dark:ring-white/10 sm:rounded-[1.25rem] sm:px-form sm:py-[2.75rem] lg:py-section',
 )
 
 export const homeHeroGlowVariants = cva(
@@ -17,23 +17,43 @@ export const homeHeroMeshVariants = cva(
 )
 
 export const homeHeroGridVariants = cva(
-  'relative z-10 mx-auto grid max-w-content gap-relaxed lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center',
+  'relative z-10 mx-auto grid max-w-content gap-stack sm:gap-relaxed lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center',
 )
 
 export const homeHeroTrustListVariants = cva(
-  'mt-relaxed flex flex-col gap-tight text-body-sm text-hero-foreground/85 sm:flex-row sm:flex-wrap sm:gap-x-relaxed',
+  'mt-stack flex flex-col gap-tight text-caption text-hero-foreground/85 sm:mt-relaxed sm:flex-row sm:flex-wrap sm:gap-x-relaxed sm:text-body-sm',
 )
 
 export const homeHeroTrustItemVariants = cva(
-  'inline-flex items-center gap-tight rounded-full border border-hero-foreground/15 bg-hero-foreground/10 px-3 py-2 backdrop-blur-sm',
+  'inline-flex items-center gap-tight rounded-full border border-hero-foreground/15 bg-hero-foreground/10 px-2.5 py-1.5 backdrop-blur-sm sm:px-3 sm:py-2',
 )
 
 export const homeHeroPreviewVariants = cva(
-  'relative mt-relaxed rounded-card border border-hero-foreground/15 bg-hero-foreground/10 p-card shadow-none backdrop-blur-md lg:mt-0',
+  'relative mt-stack rounded-xl border border-hero-foreground/15 bg-hero-foreground/10 p-3 shadow-none backdrop-blur-md sm:mt-relaxed sm:rounded-card sm:p-card lg:mt-0',
 )
 
 export const homeHeroPreviewImageVariants = cva(
   'block aspect-[4/3] w-full overflow-hidden rounded-[0.75rem] object-cover sm:aspect-[16/10]',
+)
+
+export const homeHeroPreviewImageFigureVariants = cva(
+  'relative overflow-hidden rounded-[0.75rem]',
+)
+
+export const homeHeroPreviewImageMobileCaptionVariants = cva(
+  'pointer-events-none absolute inset-x-0 bottom-0 z-[1] bg-gradient-to-t from-black/78 via-black/40 to-transparent px-3 pb-3 pt-12 text-left sm:hidden',
+)
+
+export const homeHeroPreviewImageMobileCaptionEyebrowVariants = cva(
+  'text-caption font-semibold uppercase tracking-[0.14em] text-white/85',
+)
+
+export const homeHeroPreviewImageMobileCaptionTitleVariants = cva(
+  'mt-tight line-clamp-2 text-body-sm font-semibold leading-snug text-white',
+)
+
+export const homeHeroPreviewImageMobileCaptionMetaVariants = cva(
+  'mt-tight text-caption text-white/80',
 )
 
 export const homeHeroPreviewStackVariants = cva(
@@ -41,13 +61,13 @@ export const homeHeroPreviewStackVariants = cva(
 )
 
 export const homeHeroPreviewImageLinkVariants = cva(
-  'relative z-0 block min-h-[44px] overflow-hidden rounded-[0.75rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+  'relative z-0 block min-h-[44px] rounded-[0.75rem] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
 )
 
 export const homeHeroBadgeRowVariants = cva(
-  'relative z-10 mt-tight flex flex-wrap gap-tight sm:mt-stack',
+  'relative z-10 mt-tight hidden flex-wrap gap-tight sm:mt-stack sm:flex',
 )
 
 export const homeHeroBadgeVariants = cva(
-  'rounded-full border border-hero-foreground/15 bg-hero-foreground/10 px-3 py-1 text-caption font-semibold text-hero-foreground',
+  'rounded-full border border-hero-foreground/15 bg-hero-foreground/10 px-2.5 py-1 text-caption font-semibold text-hero-foreground sm:px-3',
 )

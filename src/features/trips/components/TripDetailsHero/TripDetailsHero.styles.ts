@@ -23,7 +23,7 @@ export const tripDetailsHeroTintVariants = cva(
 )
 
 export const tripDetailsHeroBottomVariants = cva(
-  'relative z-10 flex w-full flex-col gap-relaxed px-card pb-card pt-20 sm:px-form sm:pb-form sm:pt-24 lg:flex-row lg:items-end lg:justify-between lg:gap-form',
+  'relative z-10 flex w-full flex-col gap-stack px-card pb-card pt-11 sm:gap-relaxed sm:px-form sm:pb-form sm:pt-24 lg:flex-row lg:items-end lg:justify-between lg:gap-form',
 )
 
 export const tripDetailsHeroCopyVariants = cva('min-w-0 max-w-3xl space-y-tight animate-iz-surface-in')

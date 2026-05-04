@@ -11,6 +11,9 @@ import {
   tripBookingCardRootVariants,
   tripBookingCardTrustHighlightVariants,
   tripBookingCardTrustVariants,
+  tripBookingDockMetaVariants,
+  tripBookingDockPriceBlockVariants,
+  tripBookingDockRootVariants,
 } from '@/features/trips/components/TripBookingCard/TripBookingCard.styles'
 import {
   formatTripDateDisplay,
@@ -27,11 +30,32 @@ import { Button } from '@/components/ui/button'
 type TripBookingCardProps = {
   trip: TripDefinition
   bookingPath: string
+  presentation?: 'panel' | 'dock'
 }
 
-export default function TripBookingCard({ trip, bookingPath }: TripBookingCardProps) {
+export default function TripBookingCard({
+  trip,
+  bookingPath,
+  presentation = 'panel',
+}: TripBookingCardProps) {
   const { t, i18n } = useTranslation()
   const nextDateIso = getNextAvailableTripDateIso(trip)
+
+  if (presentation === 'dock') {
+    return (
+      <div className={tripBookingDockRootVariants()}>
+        <div className={tripBookingDockPriceBlockVariants()}>
+          <p className={tripBookingDockMetaVariants()}>{t('tripDetails.priceFrom')}</p>
+          <p className="truncate font-display text-heading-sm font-semibold leading-tight text-primary">
+            {formatTripPriceEur(trip.priceEur)}
+          </p>
+        </div>
+        <Button type="button" size="sm" variant="accent" className="h-9 shrink-0 px-3 text-caption" asChild>
+          <Link to={bookingPath}>{t('tripDetails.bookCta')}</Link>
+        </Button>
+      </div>
+    )
+  }
 
   return (
     <div className={tripBookingCardRootVariants()}>
